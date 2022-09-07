@@ -5,8 +5,7 @@ site:
 content:
   sources:
     - url: https://github.com/eventicle/eventiclejs.git
-      branches: [doc-update, 'v{0..9}*']
-      tags: ['v{0..9}*']
+      branches: [doc-update]
       start_path: docs
       version: true
 ui:
