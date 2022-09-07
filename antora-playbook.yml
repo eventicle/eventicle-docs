@@ -1,0 +1,16 @@
+site:
+  title: Eventicle JS
+  url: https://book.eventicle.com/
+  start_page: eventiclejs::index.adoc
+content:
+  sources:
+    - url: https://github.com/gjdawson/eventiclejs.git
+      branches: [doc-update, test]
+      start_path: docs
+      version: true
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+output:
+  clean: true
