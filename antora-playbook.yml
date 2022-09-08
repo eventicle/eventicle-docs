@@ -12,5 +12,11 @@ ui:
   bundle:
     url: https://github.com/eventicle/antora-ui/releases/latest/download/ui-bundle.zip
     snapshot: true
+antora:
+  extensions:
+    - require: '@sntke/antora-mermaid-extension'
+      mermaid_library_url: https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+      script_stem: header-scripts
+      mermaid_initialize_options: "{ startOnLoad: true }"
 output:
   clean: true
