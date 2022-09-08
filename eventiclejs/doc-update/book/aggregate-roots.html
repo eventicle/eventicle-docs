@@ -8,12 +8,9 @@
     <meta name="generator" content="Antora 3.1.0">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});
-    </script>
   </head>
   <body class="article">
-<header class="header">
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script><script>mermaid.initialize("{ startOnLoad: true }");</script><header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://book.eventicle.com">Eventicle JS</a>
@@ -194,16 +191,13 @@
 <div class="sect1">
 <h2 id="_aggregate_roots_event_driven_domain_entities"><a class="anchor" href="#_aggregate_roots_event_driven_domain_entities"></a>Aggregate Roots: Event Driven Domain Entities</h2>
 <div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>graph TD
-  A[Christmas] --&gt;|Get money| B(Go shopping)
-  B --&gt; C{Let me think}
-  C --&gt;|One| D[Laptop]
-  C --&gt;|Two| E[iPhonesss]
-  C --&gt;|Three| F[fa:fa-car Car]</pre>
-</div>
-</div>
+<div class="imageblock"><div class="mermaid content">graph TD
+  A[Christmas] -->|Get money| B(Go shopping)
+  B --> C{Let me think}
+  C -->|One| D[Laptop]
+  C -->|Two| E[iPhonesss]
+  C -->|Three| F[fa:fa-car Car]
+</div></div>
 <div class="paragraph">
 <p>event sourcing</p>
 </div>
