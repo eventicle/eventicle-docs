@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>interface ds.DataQuery :: Eventicle JS</title>
+    <link rel="canonical" href="https://book.eventicle.com/eventicle-utilities/docs/api/eventicle_eventicle-utilities_ds_DataQuery_interface.html">
+    <meta name="generator" content="Antora 3.1.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script><script>mermaid.initialize("{ startOnLoad: true }");</script><header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://book.eventicle.com">Eventicle JS</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Components</a>
+          <div class="navbar-dropdown">
+              <a class="navbar-item" href="../../../eventiclejs/index.html">EventicleJS</a>
+              <a class="navbar-item" href="../index.html">EventicleJS Utilities</a>
+              <a class="navbar-item" href="../../../datastore-postgres/main/index.html">Postgres Datastore</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://github.com/eventicle/eventiclejs">EventicleJS Repository</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="eventicle-utilities" data-version="docs">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">EventicleJS Utilities</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">API documentation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="eventicle_eventicle-utilities.html">@eventicle/eventicle-utilities</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="eventicle_eventicle-utilities_ds_DataQuery_interface.html">ds.DataQuery</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventicle-utilities_ds_DataSorting_interface.html">ds.DataSorting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventicle-utilities_ds_DataStore_interface.html">ds.DataStore</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventicle-utilities_ds_PagedRecords_interface.html">ds.PagedRecords</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventicle-utilities_ds_Query_type.html">ds.Query</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventicle-utilities_ds_Record_interface.html">ds.Record</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventicle-utilities_ds_TransactionData_interface.html">ds.TransactionData</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventicle-utilities_ds_TransactionListener_interface.html">ds.TransactionListener</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventicle-utilities_ds_TransactionOptions_interface.html">ds.TransactionOptions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventicle-utilities_LockManager_2_interface.html">LockManager_2</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventicle-utilities_LogApi_interface.html">LogApi</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">EventicleJS Utilities</span>
+    <span class="version">docs</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../eventiclejs/index.html">EventicleJS</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../eventiclejs/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">EventicleJS Utilities</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">docs</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../datastore-postgres/main/index.html">Postgres Datastore</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../datastore-postgres/main/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../eventiclejs/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">EventicleJS Utilities</a></li>
+    <li>API documentation</li>
+    <li><a href="eventicle_eventicle-utilities.html">@eventicle/eventicle-utilities</a></li>
+    <li><a href="eventicle_eventicle-utilities_ds_DataQuery_interface.html">ds.DataQuery</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/eventicle/eventicle-utilities/edit/docs/docs/modules/api/pages/eventicle_eventicle-utilities_ds_DataQuery_interface.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">interface ds.DataQuery</h1>
+<div class="sect1">
+<h2 id="_properties"><a class="anchor" href="#_properties"></a>Properties</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="eventicle_eventicle-utilities_ds_DataQuery_op_member"><a class="anchor" href="#eventicle_eventicle-utilities_ds_DataQuery_op_member"></a>op</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">op: "EQ" | "LT" | "GT" | "LTE" | "GTE" | "BETWEEN" | "IN" | "OBJECT" | "LIKE";</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventicle-utilities_ds_DataQuery_value_member"><a class="anchor" href="#eventicle_eventicle-utilities_ds_DataQuery_value_member"></a>value</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">value: string | number | [number, number] | string[] | {
+        [key: string]: any;
+    };</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>package @eventicle/eventiclejs :: Eventicle JS</title>
+    <link rel="canonical" href="https://book.eventicle.com/eventiclejs/api/eventicle_eventiclejs.html">
+    <meta name="generator" content="Antora 3.1.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script><script>mermaid.initialize("{ startOnLoad: true }");</script><header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://book.eventicle.com">Eventicle JS</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Components</a>
+          <div class="navbar-dropdown">
+              <a class="navbar-item" href="../index.html">EventicleJS</a>
+              <a class="navbar-item" href="../../eventicle-utilities/docs/index.html">EventicleJS Utilities</a>
+              <a class="navbar-item" href="../../datastore-postgres/main/index.html">Postgres Datastore</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://github.com/eventicle/eventiclejs">EventicleJS Repository</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="eventiclejs" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">EventicleJS</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">The Book of Eventicle</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../book/aggregate-roots.html">Aggregate Roots</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../book/commands.html">Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../book/sagas.html">Sagas</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../book/query.html">Querying Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../book/datastore.html">The Datastore</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../book/observability.html">Observability</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../book/testing.html">Testing</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">API documentation</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="eventicle_eventiclejs.html">@eventicle/eventiclejs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventiclejs_AggregateRoot_class.html">AggregateRoot</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventiclejs_Command_interface.html">Command</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventiclejs_CommandIntent_interface.html">CommandIntent</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventiclejs_CommandReturn_interface.html">CommandReturn</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventiclejs_EncodedEvent_interface.html">EncodedEvent</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventiclejs_EventAdapter_interface.html">EventAdapter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventiclejs_EventClientCodec_interface.html">EventClientCodec</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventiclejs_EventicleEvent_interface.html">EventicleEvent</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventiclejs_EventView_interface.html">EventView</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventiclejs_InMemoryDatastore_class.html">InMemoryDatastore</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventiclejs_LocalScheduleJobRunner_class.html">LocalScheduleJobRunner</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventiclejs_RawEventView_interface.html">RawEventView</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventiclejs_SagaInstance_class.html">SagaInstance</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">EventicleJS</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">EventicleJS</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../eventicle-utilities/docs/index.html">EventicleJS Utilities</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../eventicle-utilities/docs/index.html">docs</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../datastore-postgres/main/index.html">Postgres Datastore</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../datastore-postgres/main/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">EventicleJS</a></li>
+    <li>API documentation</li>
+    <li><a href="eventicle_eventiclejs.html">@eventicle/eventiclejs</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/eventicle/eventiclejs/edit/master/docs/modules/api/pages/eventicle_eventiclejs.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">package @eventicle/eventiclejs</h1>
+<div class="sect1">
+<h2 id="_classes"><a class="anchor" href="#_classes"></a>Classes</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_AggregateRoot_class.html" class="xref page">AggregateRoot</a></strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_InMemoryDatastore_class.html" class="xref page">InMemoryDatastore</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In memory Datastore implementation.</p>
+<p class="tableblock">This is suitable for testing and single instance demonstration purposes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_LocalScheduleJobRunner_class.html" class="xref page">LocalScheduleJobRunner</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A Scheduled Job Runner that uses node-cron, setTimeout and runs as a single node.</p>
+<p class="tableblock">Persists and loads schedules on process stop/ start in the datastore with the types <code>lock-manager-timer</code> and <code>lock-manager-cron</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_SagaInstance_class.html" class="xref page">SagaInstance</a></strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_interfaces"><a class="anchor" href="#_interfaces"></a>Interfaces</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_Command_interface.html" class="xref page">Command</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A Command.</p>
+<p class="tableblock">It is generally preferred  where the command definition is implicit, and more fully type checked.</p>
+<p class="tableblock">This, along with <a href="#eventicle_eventiclejs_dispatchCommand_function_1">dispatchCommand</a> is available if you wish to separate your code more fully, or introduce a remote capable message based command bus.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_CommandIntent_interface.html" class="xref page">CommandIntent</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A CommandIntent is a message instructing Eventicle to perform an action that may emit events that should be sent externally using the</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_CommandReturn_interface.html" class="xref page">CommandReturn</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The global return type for <a href="eventicle_eventiclejs_Command_interface.html" class="xref page">Command</a>, whether the command is explicit, as in <a href="#eventicle_eventiclejs_dispatchCommand_function_1">dispatchCommand</a>, or implicit, as in .</p>
+<p class="tableblock">This return type is passed to the caller, but before that happens, it will be processed by the dispatcher to capture any events that need to be emitted.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_EncodedEvent_interface.html" class="xref page">EncodedEvent</a></strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_EventAdapter_interface.html" class="xref page">EventAdapter</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An adapter is an observer on an event stream.</p>
+<p class="tableblock">It only operates on hot event data, and will never attempt to replay everything</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_EventClientCodec_interface.html" class="xref page">EventClientCodec</a></strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_EventicleEvent_interface.html" class="xref page">EventicleEvent</a></strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_EventView_interface.html" class="xref page">EventView</a></strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_RawEventView_interface.html" class="xref page">RawEventView</a></strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_functions"><a class="anchor" href="#_functions"></a>Functions</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_aggregateObserver_function_1"><a class="anchor" href="#eventicle_eventiclejs_aggregateObserver_function_1"></a>aggregateObserver(aggregateType, id, timeout, exec)</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Block for an asynchronous, event based, workflow to occur.</p>
+</div>
+<div class="paragraph">
+<p>Reads streams and allows short lived observers to be notified if a particular AggregateRoot instance has been modified. This is picked out based on the <code>domainId</code> of the event.</p>
+</div>
+<div class="paragraph">
+<p>This allows a synchronous API to block and wait for asynchronous changes to finish occurring before continuing processing</p>
+</div>
+<div class="paragraph">
+<p>For example, given a <code>User</code> <a href="eventicle_eventiclejs_AggregateRoot_class.html" class="xref page">AggregateRoot</a>, you can wait for a Saga (or other operational component) to approve a user account, by blocking until the given <code>User</code> has raised the <code>user.approved</code> event.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">export class UserAggregate extends AggregateRoot {
+  approved: boolean = false
+
+  constructor() {
+     super("User")
+
+     this.reducers = []
+     // persist the approval in the current aggregate state.
+     // This avoids any potential race conditions between performing the action that requires
+     // approval and the observer starting to monitor. See below.
+     this.reducers["user.approved"] = (ev) =&gt; {
+       this.approved = true
+     }
+  }
+
+  approve() {
+    this.raiseEvent({
+      type: "user.approved",
+      data: {}
+      // other event fields
+    })
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>First register the observer. This will open a new event subscription, with a dynamically generated consumer group. All events on the topic will be received by this instances, so be mindful of doing this on topics with large volumes of data.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">  await registerAdapter(createAggregateObservationAdapter([AnAggregate]));</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In your synchronous API (eg, HTTP/ REST, GQL).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">// The userId is the domainId of the UserAggregate instance we want to observe
+export doActionThatRequiresApproval(userId: string) {
+
+  // perform some action that triggers async workflows
+
+  // now wait for the User to be approved
+  const user = await aggregateObserver(
+                            UserAggregate,
+                            userId,  // the UserAggregate domainId
+                            10000,   // max time to wait for the User instance to come into the required state
+                            (ar, ev) =&gt; {
+          // this is called once straight away with just the current state of the User aggregate (ev is null)
+          // then, every time an event is observed for the UserAggregate with the domainId == userId
+          // check the current state of the aggregate is what you want to see, or the event being received
+          // is the one you are waiting for.  Or, ideally, both of those things
+          // doing both will avoid any race conditions.
+     return ev &amp;&amp; ev.type == "user.approved" || ar.approved
+  });
+
+  // user is now approved, or an Error has been thrown
+  // perform any ops on the user as required.
+
+}</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>aggregateType</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{
+    new (&#8230;&#8203;params: any[]): AR;
+}</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>timeout</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>number</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exec</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(ar: AR, event?: <a href="eventicle_eventiclejs_EventicleEvent_interface.html" class="xref page">EventicleEvent</a>) =&gt; boolean</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Promise&lt;AR&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function aggregateObserver&lt;AR extends AggregateRoot&gt;(aggregateType: {
+    new (...params: any[]): AR;
+}, id: string, timeout: number, exec: (ar: AR, event?: EventicleEvent) =&gt; boolean): Promise&lt;AR&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_allSagaInstances_function_1"><a class="anchor" href="#eventicle_eventiclejs_allSagaInstances_function_1"></a>allSagaInstances(workspaceId)</h3>
+<div class="exampleblock">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>workspaceId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Promise&lt;<a href="eventicle_eventiclejs_SagaInstance_class.html" class="xref page">SagaInstance</a>&lt;any, any&gt;[]&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function allSagaInstances(workspaceId?: string): Promise&lt;SagaInstance&lt;any, any&gt;[]&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_allSagas_function_1"><a class="anchor" href="#eventicle_eventiclejs_allSagas_function_1"></a>allSagas()</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function allSagas(): Promise&lt;Saga&lt;any, any&gt;[]&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_apm_apmJoinEvent_function_1"><a class="anchor" href="#eventicle_eventiclejs_apm_apmJoinEvent_function_1"></a>apm.apmJoinEvent(event, name, type, subtype)</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Will join the APM transaction that is stamped in the event header - <code>apmTrace</code></p>
+</div>
+<div class="paragraph">
+<p>This will generate a new span within the APM transaction.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>event</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_EventicleEvent_interface.html" class="xref page">EventicleEvent</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the event to join the APM trace on</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the APM transaction</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the APM type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>subtype</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the APM subtype</p></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>void</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function apmJoinEvent(event: EventicleEvent, name: string, type: string, subtype: string): void;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_connectBroker_function_1"><a class="anchor" href="#eventicle_eventiclejs_connectBroker_function_1"></a>connectBroker(config)</h3>
+<div class="exampleblock">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>config</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>KafkaConfig</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Promise&lt;void&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function connectBroker(config: KafkaConfig): Promise&lt;void&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_consumeFullEventLog_function_1"><a class="anchor" href="#eventicle_eventiclejs_consumeFullEventLog_function_1"></a>consumeFullEventLog(stream)</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Will cold replay the entire event stream into a list.</p>
+</div>
+<div class="paragraph">
+<p>Mostly useful for testing, use against long running event streams/ Kafka will blow your local memory!</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stream</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The event stream to cold replay</p></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Promise&lt;<a href="eventicle_eventiclejs_EventicleEvent_interface.html" class="xref page">EventicleEvent</a>[]&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function consumeFullEventLog(stream: string): Promise&lt;EventicleEvent[]&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_createAggregateObservationAdapter_function_1"><a class="anchor" href="#eventicle_eventiclejs_createAggregateObservationAdapter_function_1"></a>createAggregateObservationAdapter(aggregates)</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Create a new EventAdapter with a dynamic Consumer group id that will subscribe to the topics for the given AggregateRoots</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>aggregates</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{
+    new (): AR;
+}[]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the list of aggregate roots to observe. Their topic names will be extracted.</p></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\~AggregateObservationAdapter</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function createAggregateObservationAdapter&lt;AR extends AggregateRoot&gt;(aggregates: {
+    new (): AR;
+}[]): AggregateObservationAdapter;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_dispatchCommand_function_1"><a class="anchor" href="#eventicle_eventiclejs_dispatchCommand_function_1"></a>dispatchCommand(commandIntent)</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>This will lookup a pre-registered <a href="eventicle_eventiclejs_Command_interface.html" class="xref page">Command</a> from the , then execute the command with the given payload.</p>
+</div>
+<div class="paragraph">
+<p>It is generally preferred  where the command definition is implicit, and more fully type checked.</p>
+</div>
+<div class="paragraph">
+<p>This, along with <a href="#eventicle_eventiclejs_dispatchCommand_function_1">dispatchCommand</a> is available if you wish to separate your code more fully, or introduce a remote capable message based command bus.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>commandIntent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_CommandIntent_interface.html" class="xref page">CommandIntent</a>&lt;T&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Promise&lt;<a href="eventicle_eventiclejs_CommandReturn_interface.html" class="xref page">CommandReturn</a>&lt;T&gt;&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function dispatchCommand&lt;T&gt;(commandIntent: CommandIntent&lt;T&gt;): Promise&lt;CommandReturn&lt;T&gt;&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_eventClient_function_1"><a class="anchor" href="#eventicle_eventiclejs_eventClient_function_1"></a>eventClient()</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function eventClient(): EventClient;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_eventClientCodec_function_1"><a class="anchor" href="#eventicle_eventiclejs_eventClientCodec_function_1"></a>eventClientCodec()</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function eventClientCodec(): EventClientCodec;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_eventClientOnDatastore_function_1"><a class="anchor" href="#eventicle_eventiclejs_eventClientOnDatastore_function_1"></a>eventClientOnDatastore()</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>This is a test capable event client.</p>
+</div>
+<div class="paragraph">
+<p>It fully implements the event client semantics, and persists its events into the given data store.</p>
+</div>
+<div class="paragraph">
+<p>Good to pair with the InMemDataStore for testing and local dev usage.</p>
+</div>
+<div class="paragraph">
+<p>Not recommended for production (really!), as you disable any possibility of distribution</p>
+</div>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function eventClientOnDatastore(): EventClient;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_eventClientOnKafka_function_1"><a class="anchor" href="#eventicle_eventiclejs_eventClientOnKafka_function_1"></a>eventClientOnKafka(config, consumerConfig)</h3>
+<div class="exampleblock">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>config</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>KafkaConfig</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>consumerConfig</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\~ConsumerConfigFactory</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Promise&lt;\~EventClient&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function eventClientOnKafka(config: KafkaConfig, consumerConfig?: ConsumerConfigFactory): Promise&lt;EventClient&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_eventSourceName_function_1"><a class="anchor" href="#eventicle_eventiclejs_eventSourceName_function_1"></a>eventSourceName()</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function eventSourceName(): string;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_metrics_function_1"><a class="anchor" href="#eventicle_eventiclejs_metrics_function_1"></a>metrics()</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function metrics(): {
+    "view-latency": any;
+    "adapter-latency": any;
+    "saga-latency": any;
+};</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_registerAdapter_function_1"><a class="anchor" href="#eventicle_eventiclejs_registerAdapter_function_1"></a>registerAdapter(adapter)</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>This will connect the given EventAdapter to event streams.</p>
+</div>
+<div class="paragraph">
+<p>An EventAdapter is a <code>hot</code> subscription, and will receive events emitted after it first connects.</p>
+</div>
+<div class="paragraph">
+<p>If it is offline for a period, the backing event store (eg, Kafka) will allow the adapter to reconnect and pick up from where it had previous processed up to.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>adapter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_EventAdapter_interface.html" class="xref page">EventAdapter</a></code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Promise&lt;\~EventSubscriptionControl&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function registerAdapter(adapter: EventAdapter): Promise&lt;EventSubscriptionControl&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_registerCommand_function_1"><a class="anchor" href="#eventicle_eventiclejs_registerCommand_function_1"></a>registerCommand(command)</h3>
+<div class="exampleblock">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>command</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_Command_interface.html" class="xref page">Command</a>&lt;I, O&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>void</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function registerCommand&lt;I, O&gt;(command: Command&lt;I, O&gt;): void;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_registerRawView_function_1"><a class="anchor" href="#eventicle_eventiclejs_registerRawView_function_1"></a>registerRawView(view)</h3>
+<div class="exampleblock">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>view</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_RawEventView_interface.html" class="xref page">RawEventView</a></code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Promise&lt;\~EventSubscriptionControl&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function registerRawView(view: RawEventView): Promise&lt;EventSubscriptionControl&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_registerSaga_function_1"><a class="anchor" href="#eventicle_eventiclejs_registerSaga_function_1"></a>registerSaga(saga)</h3>
+<div class="exampleblock">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>saga</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\~Saga&lt;TimeoutNames, Y&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Promise&lt;\~EventSubscriptionControl&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function registerSaga&lt;TimeoutNames, Y&gt;(saga: Saga&lt;TimeoutNames, Y&gt;): Promise&lt;EventSubscriptionControl&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_registerView_function_1"><a class="anchor" href="#eventicle_eventiclejs_registerView_function_1"></a>registerView(view)</h3>
+<div class="exampleblock">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>view</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_EventView_interface.html" class="xref page">EventView</a></code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Promise&lt;\~EventSubscriptionControl&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function registerView(view: EventView): Promise&lt;EventSubscriptionControl&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_removeAllSagas_function_1"><a class="anchor" href="#eventicle_eventiclejs_removeAllSagas_function_1"></a>removeAllSagas()</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function removeAllSagas(): Promise&lt;void&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_saga_function_1"><a class="anchor" href="#eventicle_eventiclejs_saga_function_1"></a>saga(name)</h3>
+<div class="exampleblock">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\~Saga&lt;TimeoutNames, SagaInstanceData&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function saga&lt;TimeoutNames, SagaInstanceData&gt;(name: string): Saga&lt;TimeoutNames, SagaInstanceData&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_scheduler_function_1"><a class="anchor" href="#eventicle_eventiclejs_scheduler_function_1"></a>scheduler()</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function scheduler(): ScheduleJobRunner;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_setEventClient_function_1"><a class="anchor" href="#eventicle_eventiclejs_setEventClient_function_1"></a>setEventClient(cl)</h3>
+<div class="exampleblock">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\~EventClient</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>void</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function setEventClient(cl: EventClient): void;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_setEventClientCodec_function_1"><a class="anchor" href="#eventicle_eventiclejs_setEventClientCodec_function_1"></a>setEventClientCodec(cl)</h3>
+<div class="exampleblock">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_EventClientCodec_interface.html" class="xref page">EventClientCodec</a></code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>void</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function setEventClientCodec(cl: EventClientCodec): void;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_setEventSourceName_function_1"><a class="anchor" href="#eventicle_eventiclejs_setEventSourceName_function_1"></a>setEventSourceName(name)</h3>
+<div class="exampleblock">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>void</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function setEventSourceName(name: string): void;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_setScheduler_function_1"><a class="anchor" href="#eventicle_eventiclejs_setScheduler_function_1"></a>setScheduler(scheduler)</h3>
+<div class="exampleblock">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>scheduler</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ScheduleJobRunner</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>void</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function setScheduler(scheduler: ScheduleJobRunner): void;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

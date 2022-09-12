@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Untitled :: Eventicle JS</title>
+    <link rel="canonical" href="https://book.eventicle.com/eventiclejs/extension/postgresql.html">
+    <meta name="generator" content="Antora 3.1.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script><script>mermaid.initialize("{ startOnLoad: true }");</script><header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://book.eventicle.com">Eventicle JS</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Components</a>
+          <div class="navbar-dropdown">
+              <a class="navbar-item" href="../index.html">EventicleJS</a>
+              <a class="navbar-item" href="../../eventicle-utilities/docs/index.html">EventicleJS Utilities</a>
+              <a class="navbar-item" href="../../datastore-postgres/main/index.html">Postgres Datastore</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://github.com/eventicle/eventiclejs">EventicleJS Repository</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="eventiclejs" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">EventicleJS</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">The Book of Eventicle</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../book/aggregate-roots.html">Aggregate Roots</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../book/commands.html">Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../book/sagas.html">Sagas</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../book/query.html">Querying Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../book/datastore.html">The Datastore</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../book/observability.html">Observability</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../book/testing.html">Testing</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">API documentation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../api/eventicle_eventiclejs.html">@eventicle/eventiclejs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_AggregateRoot_class.html">AggregateRoot</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_Command_interface.html">Command</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_CommandIntent_interface.html">CommandIntent</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_CommandReturn_interface.html">CommandReturn</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EncodedEvent_interface.html">EncodedEvent</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventAdapter_interface.html">EventAdapter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventClientCodec_interface.html">EventClientCodec</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventicleEvent_interface.html">EventicleEvent</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventView_interface.html">EventView</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_InMemoryDatastore_class.html">InMemoryDatastore</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_LocalScheduleJobRunner_class.html">LocalScheduleJobRunner</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_RawEventView_interface.html">RawEventView</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_SagaInstance_class.html">SagaInstance</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">EventicleJS</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">EventicleJS</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../eventicle-utilities/docs/index.html">EventicleJS Utilities</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../eventicle-utilities/docs/index.html">docs</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../datastore-postgres/main/index.html">Postgres Datastore</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../datastore-postgres/main/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/eventicle/eventiclejs/edit/master/docs/modules/extension/pages/postgresql.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<div class="sect1">
+<h2 id="_postgresql"><a class="anchor" href="#_postgresql"></a>PostgreSQL</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_datastore"><a class="anchor" href="#_datastore"></a>DataStore</h3>
+<div class="sect3">
+<h4 id="_required_tables"><a class="anchor" href="#_required_tables"></a>Required Tables</h4>
+<div class="paragraph">
+<p>The PSQL datastore is implemented abstract, and provides 3 extension points.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Whether a given Error should roll back a transaction when encoutered or not</p>
+</li>
+<li>
+<p>A method to convert the PSQL rows in a query to an Eventicle Record</p>
+</li>
+<li>
+<p>A method to lookup the name of the table to query against, permitting some datastore types to be persisted separately from each other.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This is a recommended starter implementation</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export class PSQLDataStore extends KnexPSQLDataStore&lt;Error&gt; {
+
+  isCustomError(error: Error): error is PaymentError {
+      return false <i class="conum" data-value="1"></i><b>(1)</b>
+  }
+
+  entityMapper: (row: any) =&gt; Record = (row) =&gt; {
+    return {                   <i class="conum" data-value="2"></i><b>(2)</b>
+      id: row.id,
+      type: row.type,
+      createdAt: row.createdat,
+      content: row.content
+    };
+  }
+
+  constructor() {
+    super(Knex({                     <i class="conum" data-value="3"></i><b>(3)</b>
+        ...
+      }))
+  }
+
+  tableName(type: string): string {
+    return "datastore"               <i class="conum" data-value="4"></i><b>(4)</b>
+  }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>All errors will roll back the transaction if they are thrown</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Simple mapping of a JSONB content column and createdat timestamp to the Record</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Knex init config.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Only use a single table to store everything.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_recommended_schema_and_indices"><a class="anchor" href="#_recommended_schema_and_indices"></a>Recommended Schema and Indices</h4>
+<div class="paragraph">
+<p>These are the recommended starter indices that cover Eventicle internal usage.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-postgresql hljs" data-lang="postgresql">CREATE TABLE datastore (
+  id uuid NOT NULL PRIMARY KEY,
+  type VARCHAR(100),
+  createdat timestamp,
+  content jsonb NOT NULL
+);
+
+create index event_external_id on datastore (id);
+create index ds_id_type on datastore (id, type);
+create index ds_type on datastore (type);
+create index domainId on datastore using btree (type, (content -&gt;&gt; 'domainId'));
+create index sagaEvent on datastore using btree (type, (content -&gt;&gt; 'eventType'), (content -&gt;&gt; 'saga'));</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you use the datastore for your own components, you can gain efficient querying using JSONB indices</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_lock_manager"><a class="anchor" href="#_lock_manager"></a>Lock Manager</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_sql_logging"><a class="anchor" href="#_sql_logging"></a>SQL Logging</h3>
+<div class="paragraph">
+<p>You can instruct the</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Untitled :: Eventicle JS</title>
+    <link rel="canonical" href="https://book.eventicle.com/eventiclejs/book/advanced-event-client.html">
+    <meta name="generator" content="Antora 3.1.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script><script>mermaid.initialize("{ startOnLoad: true }");</script><header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://book.eventicle.com">Eventicle JS</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Components</a>
+          <div class="navbar-dropdown">
+              <a class="navbar-item" href="../index.html">EventicleJS</a>
+              <a class="navbar-item" href="../../eventicle-utilities/docs/index.html">EventicleJS Utilities</a>
+              <a class="navbar-item" href="../../datastore-postgres/main/index.html">Postgres Datastore</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://github.com/eventicle/eventiclejs">EventicleJS Repository</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="eventiclejs" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">EventicleJS</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">The Book of Eventicle</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="aggregate-roots.html">Aggregate Roots</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="commands.html">Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sagas.html">Sagas</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="query.html">Querying Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="datastore.html">The Datastore</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="observability.html">Observability</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="testing.html">Testing</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">API documentation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../api/eventicle_eventiclejs.html">@eventicle/eventiclejs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_AggregateRoot_class.html">AggregateRoot</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_Command_interface.html">Command</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_CommandIntent_interface.html">CommandIntent</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_CommandReturn_interface.html">CommandReturn</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EncodedEvent_interface.html">EncodedEvent</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventAdapter_interface.html">EventAdapter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventClientCodec_interface.html">EventClientCodec</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventicleEvent_interface.html">EventicleEvent</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventView_interface.html">EventView</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_InMemoryDatastore_class.html">InMemoryDatastore</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_LocalScheduleJobRunner_class.html">LocalScheduleJobRunner</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_RawEventView_interface.html">RawEventView</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_SagaInstance_class.html">SagaInstance</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">EventicleJS</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">EventicleJS</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../eventicle-utilities/docs/index.html">EventicleJS Utilities</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../eventicle-utilities/docs/index.html">docs</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../datastore-postgres/main/index.html">Postgres Datastore</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../datastore-postgres/main/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/eventicle/eventiclejs/edit/master/docs/modules/book/pages/advanced-event-client.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<div class="sect1">
+<h2 id="_advanced_event_client"><a class="anchor" href="#_advanced_event_client"></a>Advanced Event Client</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_clean_starting_event_client_proxy"><a class="anchor" href="#_clean_starting_event_client_proxy"></a>Clean Starting Event Client Proxy</h3>
+<div class="paragraph">
+<p>EventClient setup will generally fail if the underlying transport is not available.</p>
+</div>
+<div class="paragraph">
+<p><code>cleanStartingProxyEventClient</code> exists to allow your application to start up even if the underlying event client fails.</p>
+</div>
+<div class="paragraph">
+<p>If replaces the event client with a no-op proxy that will fail all <code>emit</code> calls, but otherwise setup Views, Adapters and Sagas correctly.</p>
+</div>
+<div class="paragraph">
+<p>It will then periodically attempt to recreate the event client until it succeeds. Once that occurs, all the pending subscriptions are attached to it and the system will become live.</p>
+</div>
+<div class="listingblock">
+<div class="title">Wrap eventClientOnKafka with cleanStartingProxyEventClient to permit broker connection failure during startup</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import {setEventClient, eventClientOnKafka} from "@eventicle/eventiclejs";
+import {cleanStartingProxyEventClient} from "@eventicle/eventiclejs/dist/events/core/cleanStartingProxyEventClient";
+
+// .. other setups
+
+setEventClient(await cleanStartingProxyEventClient(() =&gt; eventClientOnKafka(kafkaConfig)));</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_kill_switches_disconnect_event_client"><a class="anchor" href="#_kill_switches_disconnect_event_client"></a>Kill Switches/ Disconnect Event Client</h3>
+<div class="paragraph">
+<p>In some cases, you may need to forcefully disconnect your application from the event infrastructure, while leaving it running. For example, during Kafka broker recreation.</p>
+</div>
+<div class="paragraph">
+<p>This is supported by calling <code>eventClient().shutdown()</code></p>
+</div>
+<div class="paragraph">
+<p>Once the kill switch has been activated, it is not currently possible to reconnect without full recreation of the eventClient.  Shutdown/ recreate is not a behaviour that is well tested, and so it is recommended to restart your application in this case.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import {setEventClient, eventClientOnKafka} from "@eventicle/eventiclejs";
+import {cleanStartingProxyEventClient} from "@eventicle/eventiclejs/dist/events/core/cleanStartingProxyEventClient";
+
+// .. other setups
+
+setEventClient(await cleanStartingProxyEventClient(() =&gt; eventClientOnKafka(kafkaConfig)));
+
+// app runs
+
+await eventClient().shutdown()
+
+let health: KafkaClientHealth = getKafkaClientHealth()
+
+health.healthy === false
+health.producer.status === "disconnected"
+
+await eventClient().emit( ... ) <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>This will now always throw an error - "Kill Switch Thrown"</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
