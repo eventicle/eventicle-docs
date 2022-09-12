@@ -5,7 +5,15 @@ site:
 content:
   sources:
     - url: https://github.com/eventicle/eventiclejs.git
-      branches: [doc-update]
+      branches: [master]
+      start_path: docs
+      version: true
+    - url: https://github.com/eventicle/eventicle-utilities.git
+      branches: [ docs ]
+      start_path: docs
+      version: true
+    - url: https://github.com/eventicle/datastore-postgres.git
+      branches: [ main ]
       start_path: docs
       version: true
 ui:
