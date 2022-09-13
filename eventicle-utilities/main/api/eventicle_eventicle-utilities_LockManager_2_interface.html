@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>interface ds.TransactionData :: Eventicle JS</title>
-    <link rel="canonical" href="https://book.eventicle.com/eventicle-utilities/docs/api/eventicle_eventicle-utilities_ds_TransactionData_interface.html">
+    <title>interface LockManager_2 :: Eventicle JS</title>
+    <link rel="canonical" href="https://book.eventicle.com/eventicle-utilities/main/api/eventicle_eventicle-utilities_LockManager_2_interface.html">
     <meta name="generator" content="Antora 3.1.0">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -41,7 +41,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="eventicle-utilities" data-version="docs">
+<div class="nav-container" data-component="eventicle-utilities" data-version="main">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -74,7 +74,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="eventicle_eventicle-utilities_ds_Record_interface.html">ds.Record</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="eventicle_eventicle-utilities_ds_TransactionData_interface.html">ds.TransactionData</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -83,7 +83,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="eventicle_eventicle-utilities_ds_TransactionOptions_interface.html">ds.TransactionOptions</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="eventicle_eventicle-utilities_LockManager_2_interface.html">LockManager_2</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -99,7 +99,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">EventicleJS Utilities</span>
-    <span class="version">docs</span>
+    <span class="version">main</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -114,7 +114,7 @@
       <a class="title" href="../index.html">EventicleJS Utilities</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../index.html">docs</a>
+          <a href="../index.html">main</a>
         </li>
       </ul>
     </li>
@@ -140,43 +140,63 @@
     <li><a href="../index.html">EventicleJS Utilities</a></li>
     <li>API documentation</li>
     <li><a href="eventicle_eventicle-utilities.html">@eventicle/eventicle-utilities</a></li>
-    <li><a href="eventicle_eventicle-utilities_ds_TransactionData_interface.html">ds.TransactionData</a></li>
+    <li><a href="eventicle_eventicle-utilities_LockManager_2_interface.html">LockManager_2</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/eventicle/eventicle-utilities/edit/docs/docs/modules/api/pages/eventicle_eventicle-utilities_ds_TransactionData_interface.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eventicle/eventicle-utilities/edit/main/docs/modules/api/pages/eventicle_eventicle-utilities_LockManager_2_interface.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">interface ds.TransactionData</h1>
+<h1 class="page">interface LockManager_2</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>A lock manager</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_properties"><a class="anchor" href="#_properties"></a>Properties</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="eventicle_eventicle-utilities_ds_TransactionData_data_member"><a class="anchor" href="#eventicle_eventicle-utilities_ds_TransactionData_data_member"></a>data</h3>
+<h3 id="eventicle_eventicle-utilities_LockManager_2_tryLock_member"><a class="anchor" href="#eventicle_eventicle-utilities_LockManager_2_tryLock_member"></a>tryLock</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Obtain a lock over a shared resource.</p>
+</div>
+<div class="paragraph">
+<p>If the lock is not immediately available, will call onLockFailure and terminate</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">data: {
-        [key: string]: any;
-    };</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">tryLock: &lt;T&gt;(id: string, onLock: () =&gt; Promise&lt;T&gt;, onLockFailure: () =&gt; void) =&gt; Promise&lt;T&gt;;</code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="eventicle_eventicle-utilities_ds_TransactionData_id_member"><a class="anchor" href="#eventicle_eventicle-utilities_ds_TransactionData_id_member"></a>id</h3>
+<h3 id="eventicle_eventicle-utilities_LockManager_2_withLock_member"><a class="anchor" href="#eventicle_eventicle-utilities_LockManager_2_withLock_member"></a>withLock</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Obtain a lock over a shared resource.</p>
+</div>
+<div class="paragraph">
+<p>Will block until the lock becomes available.</p>
+</div>
+<div class="paragraph">
+<p>Will call onLockFailure if the lock is not available within the built in timeout</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">id: string;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">withLock: &lt;T&gt;(id: string, onLock: () =&gt; Promise&lt;T&gt;, onLockFailure: () =&gt; void) =&gt; Promise&lt;T&gt;;</code></pre>
 </div>
 </div>
 </div>
