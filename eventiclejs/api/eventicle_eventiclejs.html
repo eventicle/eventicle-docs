@@ -55,25 +55,43 @@
     <a class="nav-link" href="../index.html">The Book of Eventicle</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Core Concepts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../book/aggregate-roots.html">Aggregate Roots</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../book/aggregate-root-xstate.html">XState Aggregate Root -  Formal State Machines</a>
   </li>
-  <li class="nav-item" data-depth="2">
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../book/commands.html">Commands</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../book/sagas.html">Sagas</a>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/sagas.html">Event Sagas</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../book/query.html">Querying Data</a>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/query.html">Event Views</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../book/datastore.html">The Datastore</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../book/observability.html">Observability</a>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">How To</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/observability.html">Observability</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../book/testing.html">Testing</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -125,6 +143,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="eventicle_eventiclejs_SagaInstance_class.html">SagaInstance</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventiclejs_XStateAggregate_class.html">XStateAggregate</a>
   </li>
 </ul>
   </li>
@@ -219,6 +240,10 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_SagaInstance_class.html" class="xref page">SagaInstance</a></strong></p></td>
 <td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_XStateAggregate_class.html" class="xref page">XStateAggregate</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An Eventicle Aggregate that uses the XState statechart to manage its internal state.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1087,6 +1112,51 @@ export doActionThatRequiresApproval(userId: string) {
 <div class="title">Signature</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function removeAllSagas(): Promise&lt;void&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_removeXstateEvents_function_1"><a class="anchor" href="#eventicle_eventiclejs_removeXstateEvents_function_1"></a>removeXstateEvents(events)</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>This function removes any internal xstate-status events from the given list. Use inside a <a href="eventicle_eventiclejs_Command_interface.html" class="xref page">Command</a> in conjunction with an <a href="eventicle_eventiclejs_XStateAggregate_class.html" class="xref page">XStateAggregate</a> to filter out any XState internal status events and not emit them to the event bus.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>events</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_EventicleEvent_interface.html" class="xref page">EventicleEvent</a>[]</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_EventicleEvent_interface.html" class="xref page">EventicleEvent</a>[]</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function removeXstateEvents(events: EventicleEvent[]): EventicleEvent[];</code></pre>
 </div>
 </div>
 </div>

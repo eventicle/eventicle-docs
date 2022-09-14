@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>interface EventicleEvent :: Eventicle JS</title>
-    <link rel="canonical" href="https://book.eventicle.com/eventiclejs/api/eventicle_eventiclejs_EventicleEvent_interface.html">
+    <title>class XStateAggregate :: Eventicle JS</title>
+    <link rel="canonical" href="https://book.eventicle.com/eventiclejs/api/eventicle_eventiclejs_XStateAggregate_class.html">
     <meta name="generator" content="Antora 3.1.0">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
@@ -126,7 +126,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="eventicle_eventiclejs_EventClientCodec_interface.html">EventClientCodec</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="eventicle_eventiclejs_EventicleEvent_interface.html">EventicleEvent</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -144,7 +144,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="eventicle_eventiclejs_SagaInstance_class.html">SagaInstance</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="eventicle_eventiclejs_XStateAggregate_class.html">XStateAggregate</a>
   </li>
 </ul>
@@ -198,132 +198,291 @@
     <li><a href="../index.html">EventicleJS</a></li>
     <li>API documentation</li>
     <li><a href="eventicle_eventiclejs.html">@eventicle/eventiclejs</a></li>
-    <li><a href="eventicle_eventiclejs_EventicleEvent_interface.html">EventicleEvent</a></li>
+    <li><a href="eventicle_eventiclejs_XStateAggregate_class.html">XStateAggregate</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/eventicle/eventiclejs/edit/master/docs/modules/api/pages/eventicle_eventiclejs_EventicleEvent_interface.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eventicle/eventiclejs/edit/master/docs/modules/api/pages/eventicle_eventiclejs_XStateAggregate_class.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">interface EventicleEvent</h1>
+<h1 class="page">class XStateAggregate</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>An Eventicle Aggregate that uses the XState statechart to manage its internal state.</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_properties"><a class="anchor" href="#_properties"></a>Properties</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="eventicle_eventiclejs_EventicleEvent_causedById_member"><a class="anchor" href="#eventicle_eventiclejs_EventicleEvent_causedById_member"></a>causedById</h3>
+<h3 id="eventicle_eventiclejs_XStateAggregate_machineFactory_member"><a class="anchor" href="#eventicle_eventiclejs_XStateAggregate_machineFactory_member"></a>machineFactory</h3>
 <div class="exampleblock">
 <div class="content">
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">causedById?: string;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">readonly machineFactory: (_this: any) =&gt; any;</code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="eventicle_eventiclejs_EventicleEvent_causedByType_member"><a class="anchor" href="#eventicle_eventiclejs_EventicleEvent_causedByType_member"></a>causedByType</h3>
+<h3 id="eventicle_eventiclejs_XStateAggregate_service_member"><a class="anchor" href="#eventicle_eventiclejs_XStateAggregate_service_member"></a>service</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>XState State chart service for this aggregate instance</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">causedByType?: string;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">service: Interpreter&lt;DefaultContext, any, EventObject, {
+        value: any;
+        context: DefaultContext;
+    }, TypegenDisabled&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_constructors"><a class="anchor" href="#_constructors"></a>Constructors</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_XStateAggregate_constructor_1"><a class="anchor" href="#eventicle_eventiclejs_XStateAggregate_constructor_1"></a>(constructor)(type, machineFactory)</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Constructor</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the name of the aggregate (e.g. "complaints")</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>machineFactory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(_this: any) =&gt; any</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a function that returns a XState StateMachine (from a XState createMachine() function call)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">constructor(type: string, machineFactory: (_this: any) =&gt; any);</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_methods"><a class="anchor" href="#_methods"></a>Methods</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_XStateAggregate_handleEvent_member_1"><a class="anchor" href="#eventicle_eventiclejs_XStateAggregate_handleEvent_member_1"></a>handleEvent(event)</h3>
+<div class="exampleblock">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>event</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_EventicleEvent_interface.html" class="xref page">EventicleEvent</a></code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>void</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">handleEvent(event: EventicleEvent): void;</code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="eventicle_eventiclejs_EventicleEvent_createdAt_member"><a class="anchor" href="#eventicle_eventiclejs_EventicleEvent_createdAt_member"></a>createdAt</h3>
+<h3 id="eventicle_eventiclejs_XStateAggregate_initStateMachineService_member_1"><a class="anchor" href="#eventicle_eventiclejs_XStateAggregate_initStateMachineService_member_1"></a>initStateMachineService(initialState)</h3>
 <div class="exampleblock">
 <div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>initialState</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>any</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>void</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">createdAt?: number;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">protected initStateMachineService(initialState?: any): void;</code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="eventicle_eventiclejs_EventicleEvent_data_member"><a class="anchor" href="#eventicle_eventiclejs_EventicleEvent_data_member"></a>data</h3>
+<h3 id="eventicle_eventiclejs_XStateAggregate_raiseEvent_member_1"><a class="anchor" href="#eventicle_eventiclejs_XStateAggregate_raiseEvent_member_1"></a>raiseEvent(event)</h3>
 <div class="exampleblock">
 <div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>event</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_EventicleEvent_interface.html" class="xref page">EventicleEvent</a></code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_EventicleEvent_interface.html" class="xref page">EventicleEvent</a></code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">data: any;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">raiseEvent(event: EventicleEvent): EventicleEvent;</code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="eventicle_eventiclejs_EventicleEvent_domainId_member"><a class="anchor" href="#eventicle_eventiclejs_EventicleEvent_domainId_member"></a>domainId</h3>
+<h3 id="eventicle_eventiclejs_XStateAggregate_shutdown_member_1"><a class="anchor" href="#eventicle_eventiclejs_XStateAggregate_shutdown_member_1"></a>shutdown()</h3>
 <div class="exampleblock">
 <div class="content">
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">domainId?: string;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">shutdown(): void;</code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="eventicle_eventiclejs_EventicleEvent_id_member"><a class="anchor" href="#eventicle_eventiclejs_EventicleEvent_id_member"></a>id</h3>
+<h3 id="eventicle_eventiclejs_XStateAggregate_xsend_member_1"><a class="anchor" href="#eventicle_eventiclejs_XStateAggregate_xsend_member_1"></a>xsend(msg)</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Sends a XState Event into the interpreted XState machine</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>msg</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>any</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>void</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">id?: string;</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="eventicle_eventiclejs_EventicleEvent_source_member"><a class="anchor" href="#eventicle_eventiclejs_EventicleEvent_source_member"></a>source</h3>
-<div class="exampleblock">
-<div class="content">
-<div class="listingblock">
-<div class="title">Signature</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">source?: string;</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="eventicle_eventiclejs_EventicleEvent_stream_member"><a class="anchor" href="#eventicle_eventiclejs_EventicleEvent_stream_member"></a>stream</h3>
-<div class="exampleblock">
-<div class="content">
-<div class="listingblock">
-<div class="title">Signature</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">stream?: string;</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="eventicle_eventiclejs_EventicleEvent_type_member"><a class="anchor" href="#eventicle_eventiclejs_EventicleEvent_type_member"></a>type</h3>
-<div class="exampleblock">
-<div class="content">
-<div class="listingblock">
-<div class="title">Signature</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">type: string;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">protected xsend(msg: any): void;</code></pre>
 </div>
 </div>
 </div>
