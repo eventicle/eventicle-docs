@@ -20,6 +20,14 @@ ui:
   bundle:
     url: https://github.com/eventicle/antora-ui/releases/latest/download/ui-bundle.zip
     snapshot: true
+  supplemental_files:
+    - path: CNAME
+      contents: |
+        book.eventicle.com
+    - path: ui.yml
+      contents: |
+        static_files:
+        - CNAME
 antora:
   extensions:
     - require: '@sntke/antora-mermaid-extension'
