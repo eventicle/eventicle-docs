@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>package @eventicle/eventiclejs :: Eventicle JS</title>
     <link rel="canonical" href="https://book.eventicle.com/eventiclejs/api/eventicle_eventiclejs.html">
-    <meta name="generator" content="Antora 3.1.0">
+    <meta name="generator" content="Antora 3.1.1">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
   </head>
@@ -290,7 +290,8 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_EventClientCodec_interface.html" class="xref page">EventClientCodec</a></strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Convert <a href="eventicle_eventiclejs_EventicleEvent_interface.html" class="xref page">EventicleEvent</a> to/ from <a href="eventicle_eventiclejs_EncodedEvent_interface.html" class="xref page">EncodedEvent</a>.</p>
+<p class="tableblock">EncodedEvent is suitable for the  implementations to send on the wire, as it is a Buffer and a set of message headers.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_EventicleEvent_interface.html" class="xref page">EventicleEvent</a></strong></p></td>
@@ -982,6 +983,18 @@ export doActionThatRequiresApproval(userId: string) {
 <h3 id="eventicle_eventiclejs_registerRawView_function_1"><a class="anchor" href="#eventicle_eventiclejs_registerRawView_function_1"></a>registerRawView(view)</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Will register a raw event view</p>
+</div>
+<div class="paragraph">
+<p>This subscribes it to the appropriate event streams. For every event received, handeEvent will be called.</p>
+</div>
+<div class="paragraph">
+<p>Events are not processed through the <a href="eventicle_eventiclejs_EventClientCodec_interface.html" class="xref page">EventClientCodec</a>, and so are observed encoded as an <a href="eventicle_eventiclejs_EncodedEvent_interface.html" class="xref page">EncodedEvent</a></p>
+</div>
+<div class="paragraph">
+<p>This can be useful if you want to persist the event in a raw form, as a binary encoded stream.</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Parameters</caption>
 <colgroup>
@@ -1000,7 +1013,7 @@ export doActionThatRequiresApproval(userId: string) {
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>view</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_RawEventView_interface.html" class="xref page">RawEventView</a></code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The View to subscribe to event streams</p></td>
 </tr>
 </tbody>
 <tfoot>
