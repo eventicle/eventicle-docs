@@ -167,15 +167,17 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventicle-utilities_ds_DataQuery_interface.html" class="xref page">ds.DataQuery</a></strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allow querying against a single field.</p>
+<p class="tableblock">Will be mapped to a specific query technology by the underlying Datastore implementation.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventicle-utilities_ds_DataSorting_interface.html" class="xref page">ds.DataSorting</a></strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sort a</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventicle-utilities_ds_DataStore_interface.html" class="xref page">ds.DataStore</a></strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Abstraction around data storage in the form of document style records.</p>
+<p class="tableblock">Eventicle contains a built in InMemoryDatastore. Others can be imported as needed.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventicle-utilities_ds_PagedRecords_interface.html" class="xref page">ds.PagedRecords</a></strong></p></td>
@@ -187,19 +189,21 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventicle-utilities_ds_TransactionData_interface.html" class="xref page">ds.TransactionData</a></strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bag of data that is associated with a given Transaction inside the Datastore.</p>
+<p class="tableblock">Datastore/ eventClient specific. Can be added to by user code, but data inside it should be considered subject to change between versions</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventicle-utilities_ds_TransactionListener_interface.html" class="xref page">ds.TransactionListener</a></strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Datastore implementations that support Transactions will emit events on transaction start and commit. This interface defines the listener for those interfaces.</p>
+<p class="tableblock">Notably, eventClient implementations register a TransactionListener in order to commit events after any local database is committed.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventicle-utilities_ds_TransactionOptions_interface.html" class="xref page">ds.TransactionOptions</a></strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Control whether a new Datastore transaction is required, and if so, if it should join an existing transaction or create a new one to use.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventicle-utilities_LockManager_2_interface.html" class="xref page">LockManager_2</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A lock manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lock abstraction. This interface is used inside of Eventicle to provide semaphore access to shared resources. Notably, this obtains exclusive locks around AggregateRoot instances when processing inside of Commands and Saga steps.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventicle-utilities_LogApi_interface.html" class="xref page">LogApi</a></strong></p></td>
@@ -216,6 +220,9 @@
 <h3 id="eventicle_eventicle-utilities_ds_dataStore_function_1"><a class="anchor" href="#eventicle_eventicle-utilities_ds_dataStore_function_1"></a>ds.dataStore()</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>The current  implementation that Eventicle uses for internal data. Can be used by application code to obtain a reference if required.</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -229,6 +236,9 @@
 <h3 id="eventicle_eventicle-utilities_ds_setDataStore_function_1"><a class="anchor" href="#eventicle_eventicle-utilities_ds_setDataStore_function_1"></a>ds.setDataStore(dataStore)</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Set the Datastore implementation that Eventicle will use to persist in.</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Parameters</caption>
 <colgroup>
@@ -776,6 +786,9 @@
 <h3 id="eventicle_eventicle-utilities_pause_function_1"><a class="anchor" href="#eventicle_eventicle-utilities_pause_function_1"></a>pause(ms)</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Utility function to pause for a given number of ms.</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Parameters</caption>
 <colgroup>

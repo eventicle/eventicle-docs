@@ -151,6 +151,16 @@
 </aside>
 <article class="doc">
 <h1 class="page">interface ds.DataStore</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Abstraction around data storage in the form of document style records.</p>
+</div>
+<div class="paragraph">
+<p>Eventicle contains a built in InMemoryDatastore. Others can be imported as needed.</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_methods"><a class="anchor" href="#_methods"></a>Methods</h2>
 <div class="sectionbody">
@@ -158,6 +168,9 @@
 <h3 id="eventicle_eventicle-utilities_ds_DataStore_createEntity_member_1"><a class="anchor" href="#eventicle_eventicle-utilities_ds_DataStore_createEntity_member_1"></a>createEntity(workspaceId, type, content)</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Create a new entity in the datastore.</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Parameters</caption>
 <colgroup>
@@ -176,7 +189,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>workspaceId</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tenant</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>type</code></p></td>
@@ -210,6 +223,9 @@
 <h3 id="eventicle_eventicle-utilities_ds_DataStore_deleteEntity_member_1"><a class="anchor" href="#eventicle_eventicle-utilities_ds_DataStore_deleteEntity_member_1"></a>deleteEntity(workspaceId, type, id)</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Remove a single Record by its ID</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Parameters</caption>
 <colgroup>
@@ -228,17 +244,17 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>workspaceId</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The tenant</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>type</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the record type</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>id</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the id of the entity.</p></td>
 </tr>
 </tbody>
 <tfoot>
@@ -262,6 +278,9 @@
 <h3 id="eventicle_eventicle-utilities_ds_DataStore_deleteMany_member_1"><a class="anchor" href="#eventicle_eventicle-utilities_ds_DataStore_deleteMany_member_1"></a>deleteMany(workspaceId, type, query)</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Delete multiple  from the Datastore via a  result</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Parameters</caption>
 <colgroup>
@@ -280,17 +299,17 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>workspaceId</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the tenant</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>type</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the Record type</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventicle-utilities_ds_Query_type.html" class="xref page">ds.Query</a></code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The query, any matching Records will be deleted.</p></td>
 </tr>
 </tbody>
 <tfoot>
@@ -314,6 +333,9 @@
 <h3 id="eventicle_eventicle-utilities_ds_DataStore_findEntity_member_1"><a class="anchor" href="#eventicle_eventicle-utilities_ds_DataStore_findEntity_member_1"></a>findEntity(workspaceId, type, query, sorting)</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Find  using a given , and optionally sort the results using a</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Parameters</caption>
 <colgroup>
@@ -371,6 +393,9 @@
 <h3 id="eventicle_eventicle-utilities_ds_DataStore_findEntityPaginated_member_1"><a class="anchor" href="#eventicle_eventicle-utilities_ds_DataStore_findEntityPaginated_member_1"></a>findEntityPaginated(workspaceId, type, query, sorting, page, pageSize)</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Find  using a given , and optionally sort the results using a , with pagination information provided in</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Parameters</caption>
 <colgroup>
@@ -389,7 +414,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>workspaceId</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The tenant id.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>type</code></p></td>
@@ -404,7 +429,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sorting</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventicle-utilities_ds_DataSorting_interface.html" class="xref page">ds.DataSorting</a></code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">How to sort the results</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>page</code></p></td>
@@ -438,6 +463,9 @@
 <h3 id="eventicle_eventicle-utilities_ds_DataStore_getEntity_member_1"><a class="anchor" href="#eventicle_eventicle-utilities_ds_DataStore_getEntity_member_1"></a>getEntity(workspaceId, type, id)</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Look up a single  by its ID</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Parameters</caption>
 <colgroup>
@@ -456,17 +484,17 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>workspaceId</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">when running on a multi-tenant Datastore, selects the tenant.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>type</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of the Record</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>id</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The record ID</p></td>
 </tr>
 </tbody>
 <tfoot>
@@ -506,6 +534,9 @@
 <h3 id="eventicle_eventicle-utilities_ds_DataStore_hasTransactionData_member_1"><a class="anchor" href="#eventicle_eventicle-utilities_ds_DataStore_hasTransactionData_member_1"></a>hasTransactionData()</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Whether transaction data currently exists in this context.</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -613,6 +644,9 @@
 <h3 id="eventicle_eventicle-utilities_ds_DataStore_saveEntity_member_1"><a class="anchor" href="#eventicle_eventicle-utilities_ds_DataStore_saveEntity_member_1"></a>saveEntity(workspaceId, type, item)</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Save updates an existing entity</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Parameters</caption>
 <colgroup>
@@ -631,17 +665,17 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>workspaceId</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The tenant</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>type</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the record type</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>item</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ds.Record_2</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The existing Record. Must have come from  or</p></td>
 </tr>
 </tbody>
 <tfoot>
@@ -665,6 +699,9 @@
 <h3 id="eventicle_eventicle-utilities_ds_DataStore_transaction_member_1"><a class="anchor" href="#eventicle_eventicle-utilities_ds_DataStore_transaction_member_1"></a>transaction(exec, options)</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Open a transaction (or optionally join one if it exists)</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Parameters</caption>
 <colgroup>
@@ -683,12 +720,12 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>exec</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>() =&gt; Promise&lt;T&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">transaction is open within this execution. Once this function promise resolves, the transaction is committed or rolled back If <code>exec</code> Promise rejects, then the transaction is rolled back.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>options</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventicle-utilities_ds_TransactionOptions_interface.html" class="xref page">ds.TransactionOptions</a></code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">if exists, controls if the trnasction should be new, or an existing on can be used.</p></td>
 </tr>
 </tbody>
 <tfoot>

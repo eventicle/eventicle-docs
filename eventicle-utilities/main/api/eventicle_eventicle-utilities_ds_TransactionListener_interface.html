@@ -151,6 +151,16 @@
 </aside>
 <article class="doc">
 <h1 class="page">interface ds.TransactionListener</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Datastore implementations that support Transactions will emit events on transaction start and commit. This interface defines the listener for those interfaces.</p>
+</div>
+<div class="paragraph">
+<p>Notably, eventClient implementations register a TransactionListener in order to commit events after any local database is committed.</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_properties"><a class="anchor" href="#_properties"></a>Properties</h2>
 <div class="sectionbody">
