@@ -209,6 +209,16 @@
 </aside>
 <article class="doc">
 <h1 class="page">class SagaInstance</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The data for a single execution of a</p>
+</div>
+<div class="paragraph">
+<p>Sagas are stateful concepts, and this type contains the state.</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_properties"><a class="anchor" href="#_properties"></a>Properties</h2>
 <div class="sectionbody">
@@ -242,6 +252,9 @@
 <h3 id="eventicle_eventiclejs_SagaInstance_timersToAdd_member"><a class="anchor" href="#eventicle_eventiclejs_SagaInstance_timersToAdd_member"></a>timersToAdd</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Private instance data</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -264,6 +277,9 @@
 <h3 id="eventicle_eventiclejs_SagaInstance_timersToRemove_member"><a class="anchor" href="#eventicle_eventiclejs_SagaInstance_timersToRemove_member"></a>timersToRemove</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Private instance data</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -372,6 +388,9 @@
 <h3 id="eventicle_eventiclejs_SagaInstance_get_member_1"><a class="anchor" href="#eventicle_eventiclejs_SagaInstance_get_member_1"></a>get(name)</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Get a piece of arbitrary data from the saga instance</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Parameters</caption>
 <colgroup>
@@ -390,7 +409,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>keyof T</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">THe key</p></td>
 </tr>
 </tbody>
 <tfoot>
@@ -469,6 +488,9 @@
 <h3 id="eventicle_eventiclejs_SagaInstance_set_member_1"><a class="anchor" href="#eventicle_eventiclejs_SagaInstance_set_member_1"></a>set(name, value)</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Set a piece of arbitrary data into the saga instance</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Parameters</caption>
 <colgroup>
@@ -487,12 +509,12 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>keyof T</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The key</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>value</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>any</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the value. Must be able to encode to JSON.</p></td>
 </tr>
 </tbody>
 <tfoot>
@@ -516,6 +538,12 @@
 <h3 id="eventicle_eventiclejs_SagaInstance_upsertTimer_member_1"><a class="anchor" href="#eventicle_eventiclejs_SagaInstance_upsertTimer_member_1"></a>upsertTimer(name, config)</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Create (or overwrite) a timer to call. Can be either a simple timer (millis to wait), or a cron timer.</p>
+</div>
+<div class="paragraph">
+<p>If the timer is no longer wanted, it must be removed by calling</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Parameters</caption>
 <colgroup>
@@ -534,7 +562,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>TimeoutNames</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The timer to call</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>config</code></p></td>
