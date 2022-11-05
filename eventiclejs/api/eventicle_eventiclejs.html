@@ -124,6 +124,9 @@
     <a class="nav-link" href="eventicle_eventiclejs_EventAdapter_interface.html">EventAdapter</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventiclejs_EventClient_interface.html">EventClient</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="eventicle_eventiclejs_EventClientCodec_interface.html">EventClientCodec</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -140,6 +143,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="eventicle_eventiclejs_RawEventView_interface.html">RawEventView</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventiclejs_Saga_class.html">Saga</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="eventicle_eventiclejs_SagaInstance_class.html">SagaInstance</a>
@@ -238,8 +244,12 @@
 <p class="tableblock">Persists and loads schedules on process stop/ start in the datastore with the types <code>lock-manager-timer</code> and <code>lock-manager-cron</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_Saga_class.html" class="xref page">Saga</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A saga!</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_SagaInstance_class.html" class="xref page">SagaInstance</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The data for a single execution of a</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The data for a single execution of a <a href="eventicle_eventiclejs_Saga_class.html" class="xref page">Saga</a></p>
 <p class="tableblock">Sagas are stateful concepts, and this type contains the state.</p></td>
 </tr>
 <tr>
@@ -268,16 +278,16 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_Command_interface.html" class="xref page">Command</a></strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A Command.</p>
-<p class="tableblock">It is generally preferred  where the command definition is implicit, and more fully type checked.</p>
+<p class="tableblock">It is generally preferred <a href="#eventicle_eventiclejs_dispatchDirectCommand_function_1">dispatchDirectCommand</a> where the command definition is implicit, and more fully type checked.</p>
 <p class="tableblock">This, along with <a href="#eventicle_eventiclejs_dispatchCommand_function_1">dispatchCommand</a> is available if you wish to separate your code more fully, or introduce a remote capable message based command bus.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_CommandIntent_interface.html" class="xref page">CommandIntent</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A CommandIntent is a message instructing Eventicle to perform an action that may emit events that should be sent externally using the</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A CommandIntent is a message instructing Eventicle to perform an action that may emit events that should be sent externally using the <a href="eventicle_eventiclejs_EventClient_interface.html" class="xref page">EventClient</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_CommandReturn_interface.html" class="xref page">CommandReturn</a></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The global return type for <a href="eventicle_eventiclejs_Command_interface.html" class="xref page">Command</a>, whether the command is explicit, as in <a href="#eventicle_eventiclejs_dispatchCommand_function_1">dispatchCommand</a>, or implicit, as in .</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The global return type for <a href="eventicle_eventiclejs_Command_interface.html" class="xref page">Command</a>, whether the command is explicit, as in <a href="#eventicle_eventiclejs_dispatchCommand_function_1">dispatchCommand</a>, or implicit, as in <a href="#eventicle_eventiclejs_dispatchDirectCommand_function_1">dispatchDirectCommand</a>.</p>
 <p class="tableblock">This return type is passed to the caller, but before that happens, it will be processed by the dispatcher to capture any events that need to be emitted.</p></td>
 </tr>
 <tr>
@@ -290,9 +300,13 @@
 <p class="tableblock">It only operates on hot event data, and will never attempt to replay everything</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_EventClient_interface.html" class="xref page">EventClient</a></strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_EventClientCodec_interface.html" class="xref page">EventClientCodec</a></strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Convert <a href="eventicle_eventiclejs_EventicleEvent_interface.html" class="xref page">EventicleEvent</a> to/ from <a href="eventicle_eventiclejs_EncodedEvent_interface.html" class="xref page">EncodedEvent</a>.</p>
-<p class="tableblock">EncodedEvent is suitable for the  implementations to send on the wire, as it is a Buffer and a set of message headers.</p></td>
+<p class="tableblock">EncodedEvent is suitable for the <a href="eventicle_eventiclejs_EventClient_interface.html" class="xref page">EventClient</a> implementations to send on the wire, as it is a Buffer and a set of message headers.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_EventicleEvent_interface.html" class="xref page">EventicleEvent</a></strong></p></td>
@@ -716,7 +730,7 @@ export doActionThatRequiresApproval(userId: string) {
 <p>This will lookup a pre-registered <a href="eventicle_eventiclejs_Command_interface.html" class="xref page">Command</a> from the , then execute the command with the given payload.</p>
 </div>
 <div class="paragraph">
-<p>It is generally preferred  where the command definition is implicit, and more fully type checked.</p>
+<p>It is generally preferred <a href="#eventicle_eventiclejs_dispatchDirectCommand_function_1">dispatchDirectCommand</a> where the command definition is implicit, and more fully type checked.</p>
 </div>
 <div class="paragraph">
 <p>This, along with <a href="#eventicle_eventiclejs_dispatchCommand_function_1">dispatchCommand</a> is available if you wish to separate your code more fully, or introduce a remote capable message based command bus.</p>
@@ -754,6 +768,59 @@ export doActionThatRequiresApproval(userId: string) {
 <div class="title">Signature</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function dispatchCommand&lt;T&gt;(commandIntent: CommandIntent&lt;T&gt;): Promise&lt;CommandReturn&lt;T&gt;&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_dispatchDirectCommand_function_1"><a class="anchor" href="#eventicle_eventiclejs_dispatchDirectCommand_function_1"></a>dispatchDirectCommand(command, streamToEmit)</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Dispatch a command directly, without a CommandIntent message in between.</p>
+</div>
+<div class="paragraph">
+<p>Cannot be distributed or load balanced, but requires less boilerplate.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>command</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>() =&gt; Promise&lt;<a href="eventicle_eventiclejs_CommandReturn_interface.html" class="xref page">CommandReturn</a>&lt;T&gt;&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>streamToEmit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Promise&lt;T&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function dispatchDirectCommand&lt;T&gt;(command: () =&gt; Promise&lt;CommandReturn&lt;T&gt;&gt;, streamToEmit: string): Promise&lt;T&gt;;</code></pre>
 </div>
 </div>
 </div>
@@ -843,7 +910,7 @@ export doActionThatRequiresApproval(userId: string) {
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Promise&lt;\~EventClient&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Promise&lt;<a href="eventicle_eventiclejs_EventClient_interface.html" class="xref page">EventClient</a>&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tfoot>
@@ -1055,7 +1122,7 @@ export doActionThatRequiresApproval(userId: string) {
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>saga</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\~Saga&lt;TimeoutNames, Y&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_Saga_class.html" class="xref page">Saga</a>&lt;TimeoutNames, Y&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -1204,7 +1271,7 @@ export doActionThatRequiresApproval(userId: string) {
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\~Saga&lt;TimeoutNames, SagaInstanceData&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_Saga_class.html" class="xref page">Saga</a>&lt;TimeoutNames, SagaInstanceData&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tfoot>
@@ -1252,7 +1319,7 @@ export doActionThatRequiresApproval(userId: string) {
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cl</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\~EventClient</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_EventClient_interface.html" class="xref page">EventClient</a></code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>

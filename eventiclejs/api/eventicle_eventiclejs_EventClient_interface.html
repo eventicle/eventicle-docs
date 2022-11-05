@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>interface EventView :: Eventicle JS</title>
-    <link rel="canonical" href="https://book.eventicle.com/eventiclejs/api/eventicle_eventiclejs_EventView_interface.html">
+    <title>interface EventClient :: Eventicle JS</title>
+    <link rel="canonical" href="https://book.eventicle.com/eventiclejs/api/eventicle_eventiclejs_EventClient_interface.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
@@ -123,7 +123,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="eventicle_eventiclejs_EventAdapter_interface.html">EventAdapter</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="eventicle_eventiclejs_EventClient_interface.html">EventClient</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -132,7 +132,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="eventicle_eventiclejs_EventicleEvent_interface.html">EventicleEvent</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="eventicle_eventiclejs_EventView_interface.html">EventView</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -204,54 +204,135 @@
     <li><a href="../index.html">EventicleJS</a></li>
     <li>API documentation</li>
     <li><a href="eventicle_eventiclejs.html">@eventicle/eventiclejs</a></li>
-    <li><a href="eventicle_eventiclejs_EventView_interface.html">EventView</a></li>
+    <li><a href="eventicle_eventiclejs_EventClient_interface.html">EventClient</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/eventicle/eventiclejs/edit/master/docs/modules/api/pages/eventicle_eventiclejs_EventView_interface.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eventicle/eventiclejs/edit/master/docs/modules/api/pages/eventicle_eventiclejs_EventClient_interface.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">interface EventView</h1>
+<h1 class="page">interface EventClient</h1>
 <div class="sect1">
 <h2 id="_properties"><a class="anchor" href="#_properties"></a>Properties</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="eventicle_eventiclejs_EventView_consumerGroup_member"><a class="anchor" href="#eventicle_eventiclejs_EventView_consumerGroup_member"></a>consumerGroup</h3>
+<h3 id="eventicle_eventiclejs_EventClient_coldHotStream_member"><a class="anchor" href="#eventicle_eventiclejs_EventClient_coldHotStream_member"></a>coldHotStream</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Play from persisted storage the continue from in memory</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">consumerGroup: string;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">coldHotStream: (config: {
+        rawEvents: true;
+        stream: string | string[];
+        groupId?: string;
+        handler: (event: EncodedEvent) =&gt; Promise&lt;void&gt;;
+        onError: (error: any) =&gt; void;
+    } | {
+        rawEvents: false;
+        stream: string | string[];
+        groupId?: string;
+        handler: (event: EventicleEvent) =&gt; Promise&lt;void&gt;;
+        onError: (error: any) =&gt; void;
+    } | {
+        stream: string | string[];
+        groupId?: string;
+        handler: (event: EventicleEvent) =&gt; Promise&lt;void&gt;;
+        onError: (error: any) =&gt; void;
+    }) =&gt; Promise&lt;EventSubscriptionControl&gt;;</code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="eventicle_eventiclejs_EventView_handleEvent_member"><a class="anchor" href="#eventicle_eventiclejs_EventView_handleEvent_member"></a>handleEvent</h3>
+<h3 id="eventicle_eventiclejs_EventClient_coldStream_member"><a class="anchor" href="#eventicle_eventiclejs_EventClient_coldStream_member"></a>coldStream</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Play from persisted storage</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">handleEvent: (event: EventicleEvent) =&gt; Promise&lt;void&gt;;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">coldStream: (stream: string, handler: (event: EventicleEvent) =&gt; Promise&lt;void&gt;, onError: (error: any) =&gt; void, onDone: () =&gt; void) =&gt; Promise&lt;EventSubscriptionControl&gt;;</code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="eventicle_eventiclejs_EventView_streamsToSubscribe_member"><a class="anchor" href="#eventicle_eventiclejs_EventView_streamsToSubscribe_member"></a>streamsToSubscribe</h3>
+<h3 id="eventicle_eventiclejs_EventClient_emit_member"><a class="anchor" href="#eventicle_eventiclejs_EventClient_emit_member"></a>emit</h3>
 <div class="exampleblock">
 <div class="content">
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">streamsToSubscribe: string[];</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">emit: (event: EventicleEvent[] | EncodedEvent[], stream: string) =&gt; Promise&lt;void&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_EventClient_hotRawStream_member"><a class="anchor" href="#eventicle_eventiclejs_EventClient_hotRawStream_member"></a>hotRawStream</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Only play hot data.</p>
+</div>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">hotRawStream: (stream: string | string[], consumerName: string, handler: (event: EncodedEvent) =&gt; Promise&lt;void&gt;, onError: (error: any) =&gt; void) =&gt; Promise&lt;EventSubscriptionControl&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_EventClient_hotStream_member"><a class="anchor" href="#eventicle_eventiclejs_EventClient_hotStream_member"></a>hotStream</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Only play hot data.</p>
+</div>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">hotStream: (stream: string | string[], consumerName: string, handler: (event: EventicleEvent) =&gt; Promise&lt;void&gt;, onError: (error: any) =&gt; void) =&gt; Promise&lt;EventSubscriptionControl&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_EventClient_isConnected_member"><a class="anchor" href="#eventicle_eventiclejs_EventClient_isConnected_member"></a>isConnected</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">isConnected: () =&gt; boolean;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_EventClient_shutdown_member"><a class="anchor" href="#eventicle_eventiclejs_EventClient_shutdown_member"></a>shutdown</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">shutdown: () =&gt; Promise&lt;void&gt;;</code></pre>
 </div>
 </div>
 </div>

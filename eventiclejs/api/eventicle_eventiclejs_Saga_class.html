@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>class XStateAggregate :: Eventicle JS</title>
-    <link rel="canonical" href="https://book.eventicle.com/eventiclejs/api/eventicle_eventiclejs_XStateAggregate_class.html">
+    <title>class Saga :: Eventicle JS</title>
+    <link rel="canonical" href="https://book.eventicle.com/eventiclejs/api/eventicle_eventiclejs_Saga_class.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
@@ -144,13 +144,13 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="eventicle_eventiclejs_RawEventView_interface.html">RawEventView</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="eventicle_eventiclejs_Saga_class.html">Saga</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="eventicle_eventiclejs_SagaInstance_class.html">SagaInstance</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="eventicle_eventiclejs_XStateAggregate_class.html">XStateAggregate</a>
   </li>
 </ul>
@@ -204,21 +204,21 @@
     <li><a href="../index.html">EventicleJS</a></li>
     <li>API documentation</li>
     <li><a href="eventicle_eventiclejs.html">@eventicle/eventiclejs</a></li>
-    <li><a href="eventicle_eventiclejs_XStateAggregate_class.html">XStateAggregate</a></li>
+    <li><a href="eventicle_eventiclejs_Saga_class.html">Saga</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/eventicle/eventiclejs/edit/master/docs/modules/api/pages/eventicle_eventiclejs_XStateAggregate_class.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eventicle/eventiclejs/edit/master/docs/modules/api/pages/eventicle_eventiclejs_Saga_class.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">class XStateAggregate</h1>
+<h1 class="page">class Saga</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>An Eventicle Aggregate that uses the XState statechart to manage its internal state.</p>
+<p>A saga!</p>
 </div>
 </div>
 </div>
@@ -226,32 +226,99 @@
 <h2 id="_properties"><a class="anchor" href="#_properties"></a>Properties</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="eventicle_eventiclejs_XStateAggregate_machineFactory_member"><a class="anchor" href="#eventicle_eventiclejs_XStateAggregate_machineFactory_member"></a>machineFactory</h3>
+<h3 id="eventicle_eventiclejs_Saga_errorHandler_member"><a class="anchor" href="#eventicle_eventiclejs_Saga_errorHandler_member"></a>errorHandler</h3>
 <div class="exampleblock">
 <div class="content">
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">readonly machineFactory: (_this: any) =&gt; any;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">errorHandler: (saga: any, event: EventicleEvent, error: Error) =&gt; Promise&lt;void&gt;;</code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="eventicle_eventiclejs_XStateAggregate_service_member"><a class="anchor" href="#eventicle_eventiclejs_XStateAggregate_service_member"></a>service</h3>
+<h3 id="eventicle_eventiclejs_Saga_eventHandler_member"><a class="anchor" href="#eventicle_eventiclejs_Saga_eventHandler_member"></a>eventHandler</h3>
 <div class="exampleblock">
 <div class="content">
-<div class="paragraph">
-<p>XState State chart service for this aggregate instance</p>
-</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">service: Interpreter&lt;DefaultContext, any, EventObject, {
-        value: any;
-        context: DefaultContext;
-    }, TypegenDisabled&gt;;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">eventHandler: Map&lt;string, {
+        config: HandlerConfig&lt;any, InstanceData, TimeoutNames&gt;;
+        handle: (saga: SagaInstance&lt;TimeoutNames, InstanceData&gt;, event: EventicleEvent) =&gt; Promise&lt;void&gt;;
+    }&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_Saga_name_member"><a class="anchor" href="#eventicle_eventiclejs_Saga_name_member"></a>name</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">readonly name: string;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_Saga_starts_member"><a class="anchor" href="#eventicle_eventiclejs_Saga_starts_member"></a>starts</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">starts: Map&lt;string, {
+        config: StartHandlerConfig&lt;any, InstanceData, TimeoutNames&gt;;
+        handle: (saga: SagaInstance&lt;TimeoutNames, InstanceData&gt;, event: EventicleEvent) =&gt; Promise&lt;void&gt;;
+    }&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_Saga_streams_member"><a class="anchor" href="#eventicle_eventiclejs_Saga_streams_member"></a>streams</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">streams: string[];</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_Saga_streamSubs_member"><a class="anchor" href="#eventicle_eventiclejs_Saga_streamSubs_member"></a>streamSubs</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">streamSubs: EventSubscriptionControl[];</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_Saga_timerHandler_member"><a class="anchor" href="#eventicle_eventiclejs_Saga_timerHandler_member"></a>timerHandler</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">timerHandler: Map&lt;TimeoutNames, {
+        handle: (saga: SagaInstance&lt;TimeoutNames, InstanceData&gt;) =&gt; Promise&lt;void&gt;;
+    }&gt;;</code></pre>
 </div>
 </div>
 </div>
@@ -263,11 +330,11 @@
 <h2 id="_constructors"><a class="anchor" href="#_constructors"></a>Constructors</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="eventicle_eventiclejs_XStateAggregate_constructor_1"><a class="anchor" href="#eventicle_eventiclejs_XStateAggregate_constructor_1"></a>(constructor)(type, machineFactory)</h3>
+<h3 id="eventicle_eventiclejs_Saga_constructor_1"><a class="anchor" href="#eventicle_eventiclejs_Saga_constructor_1"></a>(constructor)(name)</h3>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>Constructor</p>
+<p>Constructs a new instance of the <code>Saga</code> class</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Parameters</caption>
@@ -285,21 +352,16 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">the name of the aggregate (e.g. "complaints")</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>machineFactory</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(_this: any) =&gt; any</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">a function that returns a XState StateMachine (from a XState createMachine() function call)</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">constructor(type: string, machineFactory: (_this: any) =&gt; any);</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">constructor(name: string);</code></pre>
 </div>
 </div>
 </div>
@@ -311,7 +373,7 @@
 <h2 id="_methods"><a class="anchor" href="#_methods"></a>Methods</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="eventicle_eventiclejs_XStateAggregate_handleEvent_member_1"><a class="anchor" href="#eventicle_eventiclejs_XStateAggregate_handleEvent_member_1"></a>handleEvent(event)</h3>
+<h3 id="eventicle_eventiclejs_Saga_on_member_1"><a class="anchor" href="#eventicle_eventiclejs_Saga_on_member_1"></a>on(eventName, config, handler)</h3>
 <div class="exampleblock">
 <div class="content">
 <table class="tableblock frame-all grid-all stretch">
@@ -330,15 +392,25 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>event</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_EventicleEvent_interface.html" class="xref page">EventicleEvent</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>eventName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>config</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\~HandlerConfig&lt;T, InstanceData, TimeoutNames&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>handler</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(saga: <a href="eventicle_eventiclejs_SagaInstance_class.html" class="xref page">SagaInstance</a>&lt;TimeoutNames, InstanceData&gt;, event: T) =&gt; Promise&lt;void&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>void</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="#">Saga</a>&lt;TimeoutNames, InstanceData&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tfoot>
@@ -346,14 +418,14 @@
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">handleEvent(event: EventicleEvent): void;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">on&lt;T extends EventicleEvent&gt;(eventName: string, config: HandlerConfig&lt;T, InstanceData, TimeoutNames&gt;, handler: (saga: SagaInstance&lt;TimeoutNames, InstanceData&gt;, event: T) =&gt; Promise&lt;void&gt;): Saga&lt;TimeoutNames, InstanceData&gt;;</code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="eventicle_eventiclejs_XStateAggregate_initStateMachineService_member_1"><a class="anchor" href="#eventicle_eventiclejs_XStateAggregate_initStateMachineService_member_1"></a>initStateMachineService(initialState)</h3>
+<h3 id="eventicle_eventiclejs_Saga_onError_member_1"><a class="anchor" href="#eventicle_eventiclejs_Saga_onError_member_1"></a>onError(handler)</h3>
 <div class="exampleblock">
 <div class="content">
 <table class="tableblock frame-all grid-all stretch">
@@ -372,15 +444,15 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>initialState</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>any</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>handler</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(saga: any, event: <a href="eventicle_eventiclejs_EventicleEvent_interface.html" class="xref page">EventicleEvent</a>, error: Error) =&gt; Promise&lt;void&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>void</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="#">Saga</a>&lt;TimeoutNames, InstanceData&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tfoot>
@@ -388,73 +460,24 @@
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">protected initStateMachineService(initialState?: any): void;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">onError(handler: (saga: any, event: EventicleEvent, error: Error) =&gt; Promise&lt;void&gt;): Saga&lt;TimeoutNames, InstanceData&gt;;</code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="eventicle_eventiclejs_XStateAggregate_raiseEvent_member_1"><a class="anchor" href="#eventicle_eventiclejs_XStateAggregate_raiseEvent_member_1"></a>raiseEvent(event)</h3>
-<div class="exampleblock">
-<div class="content">
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Parameters</caption>
-<colgroup>
-<col style="width: 22.2222%;">
-<col style="width: 33.3333%;">
-<col style="width: 44.4445%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>event</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_EventicleEvent_interface.html" class="xref page">EventicleEvent</a></code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_EventicleEvent_interface.html" class="xref page">EventicleEvent</a></code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tfoot>
-</table>
-<div class="listingblock">
-<div class="title">Signature</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">raiseEvent(event: EventicleEvent): EventicleEvent;</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="eventicle_eventiclejs_XStateAggregate_shutdown_member_1"><a class="anchor" href="#eventicle_eventiclejs_XStateAggregate_shutdown_member_1"></a>shutdown()</h3>
-<div class="exampleblock">
-<div class="content">
-<div class="listingblock">
-<div class="title">Signature</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">shutdown(): void;</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="eventicle_eventiclejs_XStateAggregate_xsend_member_1"><a class="anchor" href="#eventicle_eventiclejs_XStateAggregate_xsend_member_1"></a>xsend(msg)</h3>
+<h3 id="eventicle_eventiclejs_Saga_onTimer_member_1"><a class="anchor" href="#eventicle_eventiclejs_Saga_onTimer_member_1"></a>onTimer(name, handle)</h3>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>Sends a XState Event into the interpreted XState machine</p>
+<p>Register a handler for a timer triggered saga step.</p>
+</div>
+<div class="paragraph">
+<p>This will be called on the timer.</p>
+</div>
+<div class="paragraph">
+<p>No event is present.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Parameters</caption>
@@ -472,15 +495,20 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>msg</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>any</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TimeoutNames</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the timer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>handle</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(saga: <a href="eventicle_eventiclejs_SagaInstance_class.html" class="xref page">SagaInstance</a>&lt;TimeoutNames, InstanceData&gt;) =&gt; Promise&lt;void&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the async function to execute.</p></td>
 </tr>
 </tbody>
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>void</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="#">Saga</a>&lt;TimeoutNames, InstanceData&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tfoot>
@@ -488,7 +516,101 @@
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">protected xsend(msg: any): void;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">onTimer(name: TimeoutNames, handle: (saga: SagaInstance&lt;TimeoutNames, InstanceData&gt;) =&gt; Promise&lt;void&gt;): Saga&lt;TimeoutNames, InstanceData&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_Saga_startOn_member_1"><a class="anchor" href="#eventicle_eventiclejs_Saga_startOn_member_1"></a>startOn(eventName, config, handler)</h3>
+<div class="exampleblock">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>eventName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>config</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\~StartHandlerConfig&lt;T, InstanceData, TimeoutNames&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>handler</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(saga: <a href="eventicle_eventiclejs_SagaInstance_class.html" class="xref page">SagaInstance</a>&lt;TimeoutNames, InstanceData&gt;, event: T) =&gt; Promise&lt;void&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="#">Saga</a>&lt;TimeoutNames, InstanceData&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">startOn&lt;T extends EventicleEvent&gt;(eventName: string, config: StartHandlerConfig&lt;T, InstanceData, TimeoutNames&gt;, handler: (saga: SagaInstance&lt;TimeoutNames, InstanceData&gt;, event: T) =&gt; Promise&lt;void&gt;): Saga&lt;TimeoutNames, InstanceData&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_Saga_subscribeStreams_member_1"><a class="anchor" href="#eventicle_eventiclejs_Saga_subscribeStreams_member_1"></a>subscribeStreams(streams)</h3>
+<div class="exampleblock">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>streams</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string[]</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="#">Saga</a>&lt;TimeoutNames, InstanceData&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">subscribeStreams(streams: string[]): Saga&lt;TimeoutNames, InstanceData&gt;;</code></pre>
 </div>
 </div>
 </div>

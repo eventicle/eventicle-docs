@@ -124,6 +124,9 @@
     <a class="nav-link" href="../api/eventicle_eventiclejs_EventAdapter_interface.html">EventAdapter</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventClient_interface.html">EventClient</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../api/eventicle_eventiclejs_EventClientCodec_interface.html">EventClientCodec</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -140,6 +143,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../api/eventicle_eventiclejs_RawEventView_interface.html">RawEventView</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_Saga_class.html">Saga</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../api/eventicle_eventiclejs_SagaInstance_class.html">SagaInstance</a>
@@ -211,18 +217,116 @@
 <div class="sect1">
 <h2 id="_aggregate_roots_event_driven_domain_entities"><a class="anchor" href="#_aggregate_roots_event_driven_domain_entities"></a>Aggregate Roots: Event Driven Domain Entities</h2>
 <div class="sectionbody">
-<div class="imageblock"><div class="mermaid content">graph TD
-  A[Christmas] -->|Get money| B(Go shopping)
-  B --> C{Let me think}
-  C -->|One| D[Laptop]
-  C -->|Two| E[iPhonesss]
-  C -->|Three| F[fa:fa-car Car]
-</div></div>
 <div class="paragraph">
-<p>event sourcing</p>
+<p>A DDD aggregate is a related set of domain entities that can be loaded and interacted with as a single
+unit.</p>
 </div>
 <div class="paragraph">
-<p>observing and waiting for async state changes in an AR with observationAdapter</p>
+<p>An Eventicle Aggregate Roots [AR] implement the <a href="https://www.eventstore.com/blog/what-is-event-sourcing">Event Sourcing</a> pattern.</p>
+</div>
+<div class="paragraph">
+<p>Each Aggregate Root includes a full event history that created it.  Each time the AR is loaded it is fully re-created from it&#8217;s event history via a set of stateless functional reducers.</p>
+</div>
+<div class="sect2">
+<h3 id="_a_simple_aggregate_root"><a class="anchor" href="#_a_simple_aggregate_root"></a>A Simple Aggregate Root</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export class SystemUser extends AggregateRoot {
+
+  private _name: string  <i class="conum" data-value="1"></i><b>(1)</b>
+
+  constructor() {
+    super("SystemUser");   <i class="conum" data-value="2"></i><b>(2)</b>
+
+    this.reducers = []
+    this.reducers["user.created"] = (event: EventicleEvent) =&gt; {   <i class="conum" data-value="3"></i><b>(3)</b>
+      this.id = event.domainId;          <i class="conum" data-value="4"></i><b>(4)</b>
+      this._name = event.data.username;  <i class="conum" data-value="5"></i><b>(5)</b>
+    }
+  }
+
+  set name(name: string) {
+
+    this.raiseEvent({    <i class="conum" data-value="6"></i><b>(6)</b>
+      type: "user.created",
+      data: {
+        name
+      }
+    })
+  }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Internal property. This will be managed via the event reducers, and never anywhere else.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Configure the aggregate root. This defines the event stream that Commands will emit events to.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>An Event Reducer function. This takes the given event and applies the content to <code>this</code>. It should use the current state of the aggregate when calculating what changes to make, but should never be async or call outside services.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>The first event in the Aggregate Root must initialise the <code>id</code> property from the events <code>domainId</code> property to give a consistent <code>domainId</code> on all subsequent events that the AR generates.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Reducers can take any (or no) state from the event and generate a view of it to represent the current state of the Aggregate Root as at the event just applied.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>Any mutation to the Aggregate Root must be done by raising events on it.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Aggregate Roots can become very complex, with multiple sub objects and resolver hierarchies.</p>
+</div>
+<div class="paragraph">
+<p>You may wish to consider using the <a href="https://xstate.js.org/">XState</a> support in Eventicle for building <a href="aggregate-root-xstate.html" class="xref page">event driven State Machines</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_aggregate_root_reducers"><a class="anchor" href="#_aggregate_root_reducers"></a>Aggregate Root Reducers</h3>
+<div class="paragraph">
+<p>An event sourced Aggregate Root is rebuild every time it is loaded. This is done via the Event Reducers that you see in the example above.</p>
+</div>
+<div class="paragraph">
+<p>Reducers must :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Be synchronous</p>
+</li>
+<li>
+<p>use the current state of the aggregate and the incoming event to calculate changes to the aggregate.</p>
+</li>
+<li>
+<p>Be deterministic.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_loading_saving_aggregates"><a class="anchor" href="#_loading_saving_aggregates"></a>Loading/ Saving Aggregates</h3>
+<div class="paragraph">
+<p>Aggregate Roots instances</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_using_commands_with_aggregate_roots"><a class="anchor" href="#_using_commands_with_aggregate_roots"></a>Using Commands With Aggregate Roots</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_checkpoints_and_directly_querying_aggregate_roots_in_the_datastore"><a class="anchor" href="#_checkpoints_and_directly_querying_aggregate_roots_in_the_datastore"></a>Checkpoints and Directly Querying Aggregate Roots in the Datastore</h3>
+
 </div>
 </div>
 </div>
