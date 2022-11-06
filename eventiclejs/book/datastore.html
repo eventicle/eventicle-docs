@@ -323,36 +323,26 @@ await dataStore().saveEntity(
 <div class="listingblock">
 <div class="title">Transaction that successfully commits</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">---
-const ret: Record = await dataStore().transaction(async () =&gt; {
-    // .. do work within the transaction</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const ret: Record = await dataStore().transaction(async () =&gt; {
+    //.. do work within the transaction
+
+    return datastore().createEntity(...)
+})
+
+console.log(ret.content)</code></pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>    return datastore().createEntity(...)
-})</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>console.log(ret.content)</p>
-</div>
-<hr>
 <div class="listingblock">
 <div class="title">Transaction that Rolls Back</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">---
-const ret: Record = await dataStore().transaction(async () =&gt; {
-    // .. do work within the transaction</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const ret: Record = await dataStore().transaction(async () =&gt; {
+    // .. do work within the transaction
+
+})
+
+console.log(ret.content)</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>})</p>
-</div>
-<div class="paragraph">
-<p>console.log(ret.content)</p>
-</div>
-<hr>
 <div class="sect2">
 <h3 id="_transactiondata"><a class="anchor" href="#_transactiondata"></a>TransactionData</h3>
 
