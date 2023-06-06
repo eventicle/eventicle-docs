@@ -411,14 +411,14 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>keyof T</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>K</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">THe key</p></td>
 </tr>
 </tbody>
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>any</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>T[K]</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tfoot>
@@ -426,7 +426,7 @@
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">get(name: keyof T): any;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">get&lt;K extends keyof T&gt;(name: K): T[K];</code></pre>
 </div>
 </div>
 </div>
