@@ -463,7 +463,7 @@
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">findEntity(workspaceId: string, type: string, query: Query, sorting?: ds.DataSorting): Promise&lt;ds.Record[]&gt;;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">findEntity(workspaceId: string, type: string, query: ds.Query, sorting?: ds.DataSorting): Promise&lt;ds.Record[]&gt;;</code></pre>
 </div>
 </div>
 </div>
@@ -500,41 +500,37 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>query</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{
-        [key: string]: string | null</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DataQuery;
-    }</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Query</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sorting</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>DataSorting</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>page</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>number</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>pageSize</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>number</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 <tfoot>
 <tr>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Promise&lt;PagedRecords&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tfoot>
 </table>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">findEntityPaginated(workspaceId: string, type: string, query: {
-        [key: string]: string | null | ds.DataQuery;
-    }, sorting: ds.DataSorting, page: number, pageSize: number): Promise&lt;ds.PagedRecords&gt;;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">findEntityPaginated(workspaceId: string, type: string, query: ds.Query, sorting: ds.DataSorting, page: number, pageSize: number): Promise&lt;ds.PagedRecords&gt;;</code></pre>
 </div>
 </div>
 </div>
