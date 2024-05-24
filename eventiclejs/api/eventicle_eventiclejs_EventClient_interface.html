@@ -226,18 +226,21 @@
 <div class="title">Signature</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">coldHotStream: (config: {
+        parallelEventCount?: number;
         rawEvents: true;
         stream: string | string[];
         groupId: string;
         handler: (event: EncodedEvent) =&gt; Promise&lt;void&gt;;
         onError: (error: any) =&gt; void;
     } | {
+        parallelEventCount?: number;
         rawEvents: false;
         stream: string | string[];
         groupId: string;
         handler: (event: EventicleEvent) =&gt; Promise&lt;void&gt;;
         onError: (error: any) =&gt; void;
     } | {
+        parallelEventCount?: number;
         stream: string | string[];
         groupId: string;
         handler: (event: EventicleEvent) =&gt; Promise&lt;void&gt;;
@@ -258,7 +261,12 @@
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">coldStream: (stream: string, handler: (event: EventicleEvent) =&gt; Promise&lt;void&gt;, onError: (error: any) =&gt; void, onDone: () =&gt; void) =&gt; Promise&lt;EventSubscriptionControl&gt;;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">coldStream: (config: {
+        stream: string;
+        handler: (event: EventicleEvent) =&gt; Promise&lt;void&gt;;
+        onError: (error: any) =&gt; void;
+        onDone: () =&gt; void;
+    }) =&gt; Promise&lt;EventSubscriptionControl&gt;;</code></pre>
 </div>
 </div>
 </div>
@@ -287,7 +295,13 @@
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">hotRawStream: (stream: string | string[], consumerName: string, handler: (event: EncodedEvent) =&gt; Promise&lt;void&gt;, onError: (error: any) =&gt; void) =&gt; Promise&lt;EventSubscriptionControl&gt;;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">hotRawStream: (config: {
+        parallelEventCount?: number;
+        stream: string | string[];
+        groupId: string;
+        handler: (event: EncodedEvent) =&gt; Promise&lt;void&gt;;
+        onError: (error: any) =&gt; void;
+    }) =&gt; Promise&lt;EventSubscriptionControl&gt;;</code></pre>
 </div>
 </div>
 </div>
@@ -303,7 +317,13 @@
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">hotStream: (stream: string | string[], consumerName: string, handler: (event: EventicleEvent) =&gt; Promise&lt;void&gt;, onError: (error: any) =&gt; void) =&gt; Promise&lt;EventSubscriptionControl&gt;;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">hotStream: (config: {
+        parallelEventCount?: number;
+        stream: string | string[];
+        groupId: string;
+        handler: (event: EventicleEvent) =&gt; Promise&lt;void&gt;;
+        onError: (error: any) =&gt; void;
+    }) =&gt; Promise&lt;EventSubscriptionControl&gt;;</code></pre>
 </div>
 </div>
 </div>
