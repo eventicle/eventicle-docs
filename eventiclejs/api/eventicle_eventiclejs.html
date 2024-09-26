@@ -884,9 +884,12 @@ export doActionThatRequiresApproval(userId: string) {
 </div>
 </div>
 <div class="sect2">
-<h3 id="eventicle_eventiclejs_eventClientOnKafka_function_1"><a class="anchor" href="#eventicle_eventiclejs_eventClientOnKafka_function_1"></a>eventClientOnKafka(config, consumerConfig)</h3>
+<h3 id="eventicle_eventiclejs_eventClientOnKafka_function_1"><a class="anchor" href="#eventicle_eventiclejs_eventClientOnKafka_function_1"></a>eventClientOnKafka(config, consumerConfig, onTopicFailureConfig)</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p><a href="https://kafka.js.org/docs/admin\#a-name-create-topics-a-create-topics" class="bare">https://kafka.js.org/docs/admin\#a-name-create-topics-a-create-topics</a></p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Parameters</caption>
 <colgroup>
@@ -905,12 +908,17 @@ export doActionThatRequiresApproval(userId: string) {
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>config</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>KafkaConfig</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">as per kafkjs</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>consumerConfig</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>\~ConsumerConfigFactory</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">as per kafkajs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>onTopicFailureConfig</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>(topicName: any) =&gt; Promise&lt;\~TopicFailureConfiguration&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If a consumer fails because the topic doesn&#8217;t exist, configure this to request the topic is auto generated with the given config</p></td>
 </tr>
 </tbody>
 <tfoot>
@@ -924,7 +932,7 @@ export doActionThatRequiresApproval(userId: string) {
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function eventClientOnKafka(config: KafkaConfig, consumerConfig?: ConsumerConfigFactory): Promise&lt;EventClient&gt;;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function eventClientOnKafka(config: KafkaConfig, consumerConfig?: ConsumerConfigFactory, onTopicFailureConfig?: (topicName: any) =&gt; Promise&lt;TopicFailureConfiguration&gt;): Promise&lt;EventClient&gt;;</code></pre>
 </div>
 </div>
 </div>
