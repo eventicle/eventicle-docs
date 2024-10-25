@@ -780,7 +780,7 @@ export doActionThatRequiresApproval(userId: string) {
 </div>
 </div>
 <div class="sect2">
-<h3 id="eventicle_eventiclejs_dispatchDirectCommand_function_1"><a class="anchor" href="#eventicle_eventiclejs_dispatchDirectCommand_function_1"></a>dispatchDirectCommand(command, streamToEmit)</h3>
+<h3 id="eventicle_eventiclejs_dispatchDirectCommand_function_1"><a class="anchor" href="#eventicle_eventiclejs_dispatchDirectCommand_function_1"></a>dispatchDirectCommand(command, streamToEmit, transactionControl)</h3>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
@@ -814,6 +814,11 @@ export doActionThatRequiresApproval(userId: string) {
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>string</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>transactionControl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TransactionOptions</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
 </tbody>
 <tfoot>
 <tr>
@@ -826,7 +831,7 @@ export doActionThatRequiresApproval(userId: string) {
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function dispatchDirectCommand&lt;T&gt;(command: () =&gt; Promise&lt;CommandReturn&lt;T&gt;&gt;, streamToEmit: string): Promise&lt;T&gt;;</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function dispatchDirectCommand&lt;T&gt;(command: () =&gt; Promise&lt;CommandReturn&lt;T&gt;&gt;, streamToEmit: string, transactionControl?: TransactionOptions): Promise&lt;T&gt;;</code></pre>
 </div>
 </div>
 </div>
