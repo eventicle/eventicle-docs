@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>interface EventAdapter :: Eventicle JS</title>
     <link rel="canonical" href="https://book.eventicle.com/eventiclejs/api/eventicle_eventiclejs_EventAdapter_interface.html">
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.1.14">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
   </head>
@@ -56,14 +56,35 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/installation.html">Installation &amp; Setup</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/quickstart.html">Quick Start Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/first-application.html">Your First Eventicle Application</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <span class="nav-text">Core Concepts</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/events-and-streams.html">Events and Event Streams</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/event-clients.html">Event Clients</a>
+  </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../book/aggregate-roots.html">Aggregate Roots</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../book/aggregate-root-xstate.html">XState Aggregate Root -  Formal State Machines</a>
+    <a class="nav-link" href="../book/aggregate-root-xstate.html">XState Aggregate Root - Formal State Machines</a>
   </li>
 </ul>
   </li>
@@ -79,17 +100,101 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../book/datastore.html">The Datastore</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/event-encoding.html">Event Encoding &amp; Codecs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#multi-tenancy.adoc">Multi-Tenancy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">How To</span>
+    <span class="nav-text">How To Guides</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../book/observability.html">Observability</a>
+    <a class="nav-link" href="#building-aggregates.adoc">Building Aggregate Roots</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../book/testing.html">Testing</a>
+    <a class="nav-link" href="#implementing-commands.adoc">Implementing Commands</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#creating-views.adoc">Creating Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#building-sagas.adoc">Building Sagas for Workflows</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/testing.html">Testing Event-Driven Code</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#handling-transactions.adoc">Handling Transactions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#outbox-pattern.adoc">Using the Outbox Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-versioning.adoc">Event Versioning &amp; Schema Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#performance-optimization.adoc">Performance Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#error-handling.adoc">Error Handling &amp; Resilience</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Advanced Topics</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/advanced-event-client.html">Advanced Event Client Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/raw-event-view.html">Raw Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/lockmanager.html">Lock Manager</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/scheduler.html">Scheduling &amp; Timers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-adapters.adoc">Event Adapters</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/observability.html">Observability &amp; Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#deployment.adoc">Deployment &amp; Scaling</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#troubleshooting.adoc">Troubleshooting Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Best Practices</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-design.adoc">Event Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#aggregate-design.adoc">Aggregate Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#saga-patterns.adoc">Saga Patterns &amp; Strategies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#production-considerations.adoc">Production Considerations</a>
   </li>
 </ul>
   </li>
@@ -215,10 +320,13 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>An adapter is an observer on an event stream.</p>
+<p>Defines an event adapter for real-time event processing and integration.</p>
 </div>
 <div class="paragraph">
-<p>It only operates on hot event data, and will never attempt to replay everything</p>
+<p>EventAdapter provides a hot-subscription pattern for processing live events as they occur, without replaying historical data. Unlike EventView which processes both historical and live events, adapters focus on real-time integration scenarios like external system synchronization, notifications, and live data feeds.</p>
+</div>
+<div class="paragraph">
+<p>Key Characteristics: - *\*Hot Subscription Only\**: Processes new events, never replays history - \**External Integration\**: Designed for pushing data to external systems - \**Transactional\**: Each event is processed within a database transaction - \**Error Handling\**: Built-in error recovery and monitoring - \**Consumer Groups\*\*: Supports load balancing across multiple instances</p>
 </div>
 </div>
 </div>
@@ -229,6 +337,12 @@
 <h3 id="eventicle_eventiclejs_EventAdapter_consumerGroup_member"><a class="anchor" href="#eventicle_eventiclejs_EventAdapter_consumerGroup_member"></a>consumerGroup</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Consumer group identifier for load balancing and failure recovery.</p>
+</div>
+<div class="paragraph">
+<p>Multiple adapter instances with the same consumer group will share event processing, enabling horizontal scaling and fault tolerance.</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -242,6 +356,12 @@
 <h3 id="eventicle_eventiclejs_EventAdapter_errorHandler_member"><a class="anchor" href="#eventicle_eventiclejs_EventAdapter_errorHandler_member"></a>errorHandler</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Optional custom error handler for event processing failures.</p>
+</div>
+<div class="paragraph">
+<p>If not provided, a default handler logs the error and continues processing. Use this for custom error reporting, retry logic, or dead letter queues.</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -255,6 +375,12 @@
 <h3 id="eventicle_eventiclejs_EventAdapter_handleEvent_member"><a class="anchor" href="#eventicle_eventiclejs_EventAdapter_handleEvent_member"></a>handleEvent</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Event processing function called for each live event.</p>
+</div>
+<div class="paragraph">
+<p>Should be idempotent as events may be redelivered during failures. Typically integrates with external systems or triggers side effects.</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -268,6 +394,12 @@
 <h3 id="eventicle_eventiclejs_EventAdapter_name_member"><a class="anchor" href="#eventicle_eventiclejs_EventAdapter_name_member"></a>name</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Unique adapter identifier for monitoring and debugging.</p>
+</div>
+<div class="paragraph">
+<p>Should be descriptive of the adapter&#8217;s purpose (e.g., 'crm-sync', 'email-notifications').</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -281,6 +413,12 @@
 <h3 id="eventicle_eventiclejs_EventAdapter_streamsToSubscribe_member"><a class="anchor" href="#eventicle_eventiclejs_EventAdapter_streamsToSubscribe_member"></a>streamsToSubscribe</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>List of event streams to monitor for live events.</p>
+</div>
+<div class="paragraph">
+<p>Adapter will receive all new events from these streams. Use specific stream names to reduce noise and improve performance.</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">

@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Your First Eventicle Application :: Eventicle JS</title>
+    <link rel="canonical" href="https://book.eventicle.com/eventiclejs/book/first-application.html">
+    <meta name="generator" content="Antora 3.1.14">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js'; mermaid.initialize("{ startOnLoad: true }");</script><header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://book.eventicle.com">Eventicle JS</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Components</a>
+          <div class="navbar-dropdown">
+              <a class="navbar-item" href="../index.html">EventicleJS</a>
+              <a class="navbar-item" href="../../eventicle-utilities/main/index.html">EventicleJS Utilities</a>
+              <a class="navbar-item" href="../../datastore-postgres/main/index.html">Postgres Datastore</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://github.com/eventicle/eventiclejs">EventicleJS Repository</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="eventiclejs" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">EventicleJS</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">The Book of Eventicle</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="installation.html">Installation &amp; Setup</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="quickstart.html">Quick Start Tutorial</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="first-application.html">Your First Eventicle Application</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Core Concepts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="events-and-streams.html">Events and Event Streams</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="event-clients.html">Event Clients</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="aggregate-roots.html">Aggregate Roots</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="aggregate-root-xstate.html">XState Aggregate Root - Formal State Machines</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="commands.html">Commands</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="sagas.html">Event Sagas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="query.html">Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="datastore.html">The Datastore</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="event-encoding.html">Event Encoding &amp; Codecs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#multi-tenancy.adoc">Multi-Tenancy</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">How To Guides</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#building-aggregates.adoc">Building Aggregate Roots</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#implementing-commands.adoc">Implementing Commands</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#creating-views.adoc">Creating Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#building-sagas.adoc">Building Sagas for Workflows</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="testing.html">Testing Event-Driven Code</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#handling-transactions.adoc">Handling Transactions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#outbox-pattern.adoc">Using the Outbox Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-versioning.adoc">Event Versioning &amp; Schema Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#performance-optimization.adoc">Performance Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#error-handling.adoc">Error Handling &amp; Resilience</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Advanced Topics</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="advanced-event-client.html">Advanced Event Client Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="raw-event-view.html">Raw Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="lockmanager.html">Lock Manager</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="scheduler.html">Scheduling &amp; Timers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-adapters.adoc">Event Adapters</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="observability.html">Observability &amp; Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#deployment.adoc">Deployment &amp; Scaling</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#troubleshooting.adoc">Troubleshooting Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Best Practices</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-design.adoc">Event Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#aggregate-design.adoc">Aggregate Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#saga-patterns.adoc">Saga Patterns &amp; Strategies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#production-considerations.adoc">Production Considerations</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">API documentation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../api/eventicle_eventiclejs.html">@eventicle/eventiclejs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_AggregateRoot_class.html">AggregateRoot</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_Command_interface.html">Command</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_CommandIntent_interface.html">CommandIntent</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_CommandReturn_interface.html">CommandReturn</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EncodedEvent_interface.html">EncodedEvent</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventAdapter_interface.html">EventAdapter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventClient_interface.html">EventClient</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventClientCodec_interface.html">EventClientCodec</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventicleEvent_interface.html">EventicleEvent</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventView_interface.html">EventView</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_InMemoryDatastore_class.html">InMemoryDatastore</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_LocalScheduleJobRunner_class.html">LocalScheduleJobRunner</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_RawEventView_interface.html">RawEventView</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_Saga_class.html">Saga</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_SagaInstance_class.html">SagaInstance</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">EventicleJS</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">EventicleJS</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../eventicle-utilities/main/index.html">EventicleJS Utilities</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../eventicle-utilities/main/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../datastore-postgres/main/index.html">Postgres Datastore</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../datastore-postgres/main/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">EventicleJS</a></li>
+    <li><a href="../index.html">The Book of Eventicle</a></li>
+    <li>Getting Started</li>
+    <li><a href="first-application.html">Your First Eventicle Application</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/eventicle/eventiclejs/edit/master/docs/modules/book/pages/first-application.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Your First Eventicle Application</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This guide walks through building a complete event-sourced application using Eventicle. We&#8217;ll create a task management system that demonstrates all major concepts: aggregates, commands, views, and sagas.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_application_overview"><a class="anchor" href="#_application_overview"></a>Application Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We&#8217;ll build a task management system with these features:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create and assign tasks</p>
+</li>
+<li>
+<p>Track task progress and completion</p>
+</li>
+<li>
+<p>Send notifications when tasks are overdue</p>
+</li>
+<li>
+<p>Generate reports on task completion</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The system will demonstrate:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Aggregates</strong>: Task and Project entities</p>
+</li>
+<li>
+<p><strong>Commands</strong>: User actions like creating tasks</p>
+</li>
+<li>
+<p><strong>Views</strong>: Query-optimized projections</p>
+</li>
+<li>
+<p><strong>Sagas</strong>: Notification workflows</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_project_setup"><a class="anchor" href="#_project_setup"></a>Project Setup</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir task-manager
+cd task-manager
+npm init -y
+npm install @eventicle/eventiclejs uuid @types/uuid
+npm install -D typescript @types/node ts-node jest @types/jest
+npx tsc --init</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Update <code>tsconfig.json</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_domain_events"><a class="anchor" href="#_domain_events"></a>Domain Events</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Define our event types in <code>src/events/task-events.ts</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export interface TaskCreated {
+  type: "TaskCreated";
+  payload: {
+    taskId: string;
+    projectId: string;
+    title: string;
+    description: string;
+    assigneeId: string;
+    dueDate: Date;
+    priority: "low" | "medium" | "high";
+    createdAt: Date;
+  };
+}
+
+export interface TaskAssigned {
+  type: "TaskAssigned";
+  payload: {
+    taskId: string;
+    fromAssigneeId?: string;
+    toAssigneeId: string;
+    assignedAt: Date;
+  };
+}
+
+export interface TaskStatusChanged {
+  type: "TaskStatusChanged";
+  payload: {
+    taskId: string;
+    fromStatus: string;
+    toStatus: string;
+    changedAt: Date;
+    note?: string;
+  };
+}
+
+export interface TaskCompleted {
+  type: "TaskCompleted";
+  payload: {
+    taskId: string;
+    completedBy: string;
+    completedAt: Date;
+    actualHours?: number;
+  };
+}
+
+export interface TaskOverdue {
+  type: "TaskOverdue";
+  payload: {
+    taskId: string;
+    dueDate: Date;
+    daysPastDue: number;
+    assigneeId: string;
+  };
+}
+
+export type TaskEvent =
+  | TaskCreated
+  | TaskAssigned
+  | TaskStatusChanged
+  | TaskCompleted
+  | TaskOverdue;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_task_aggregate"><a class="anchor" href="#_task_aggregate"></a>Task Aggregate</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create <code>src/aggregates/task.ts</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { AggregateRoot } from "@eventicle/eventiclejs";
+import { v4 as uuid } from "uuid";
+import { TaskEvent } from "../events/task-events";
+
+export class Task extends AggregateRoot {
+  projectId: string = "";
+  title: string = "";
+  description: string = "";
+  assigneeId: string = "";
+  status: "todo" | "in-progress" | "review" | "done" = "todo";
+  priority: "low" | "medium" | "high" = "medium";
+  dueDate: Date | null = null;
+  createdAt: Date | null = null;
+  completedAt: Date | null = null;
+  estimatedHours?: number;
+  actualHours?: number;
+
+  constructor() {
+    super("tasks", []);
+
+    this.reducers = {
+      TaskCreated: (event) =&gt; {
+        this.id = event.payload.taskId;
+        this.projectId = event.payload.projectId;
+        this.title = event.payload.title;
+        this.description = event.payload.description;
+        this.assigneeId = event.payload.assigneeId;
+        this.priority = event.payload.priority;
+        this.dueDate = event.payload.dueDate;
+        this.createdAt = event.payload.createdAt;
+      },
+
+      TaskAssigned: (event) =&gt; {
+        this.assigneeId = event.payload.toAssigneeId;
+      },
+
+      TaskStatusChanged: (event) =&gt; {
+        this.status = event.payload.toStatus as any;
+      },
+
+      TaskCompleted: (event) =&gt; {
+        this.status = "done";
+        this.completedAt = event.payload.completedAt;
+        this.actualHours = event.payload.actualHours;
+      },
+
+      TaskOverdue: (event) =&gt; {
+        // Task is marked as overdue - could add a flag
+      }
+    };
+  }
+
+  static create(params: {
+    projectId: string;
+    title: string;
+    description: string;
+    assigneeId: string;
+    dueDate: Date;
+    priority: "low" | "medium" | "high";
+    estimatedHours?: number;
+  }): Task {
+    const task = new Task();
+
+    task.raiseEvent({
+      type: "TaskCreated",
+      payload: {
+        taskId: uuid(),
+        ...params,
+        createdAt: new Date()
+      }
+    });
+
+    return task;
+  }
+
+  reassign(newAssigneeId: string) {
+    if (this.status === "done") {
+      throw new Error("Cannot reassign completed task");
+    }
+
+    if (this.assigneeId === newAssigneeId) {
+      throw new Error("Task already assigned to this user");
+    }
+
+    this.raiseEvent({
+      type: "TaskAssigned",
+      payload: {
+        taskId: this.id,
+        fromAssigneeId: this.assigneeId,
+        toAssigneeId: newAssigneeId,
+        assignedAt: new Date()
+      }
+    });
+  }
+
+  updateStatus(newStatus: "todo" | "in-progress" | "review" | "done", note?: string) {
+    if (this.status === newStatus) {
+      return; // No change needed
+    }
+
+    if (this.status === "done") {
+      throw new Error("Cannot change status of completed task");
+    }
+
+    // Business rule: must go through proper progression
+    const validTransitions = {
+      "todo": ["in-progress"],
+      "in-progress": ["review", "todo"],
+      "review": ["done", "in-progress"],
+      "done": [] // No transitions from done
+    };
+
+    if (!validTransitions[this.status].includes(newStatus)) {
+      throw new Error(`Invalid status transition from ${this.status} to ${newStatus}`);
+    }
+
+    if (newStatus === "done") {
+      this.complete();
+    } else {
+      this.raiseEvent({
+        type: "TaskStatusChanged",
+        payload: {
+          taskId: this.id,
+          fromStatus: this.status,
+          toStatus: newStatus,
+          changedAt: new Date(),
+          note
+        }
+      });
+    }
+  }
+
+  complete(actualHours?: number) {
+    if (this.status === "done") {
+      throw new Error("Task already completed");
+    }
+
+    this.raiseEvent({
+      type: "TaskCompleted",
+      payload: {
+        taskId: this.id,
+        completedBy: this.assigneeId,
+        completedAt: new Date(),
+        actualHours
+      }
+    });
+  }
+
+  markOverdue() {
+    if (!this.dueDate || this.status === "done") {
+      return;
+    }
+
+    const now = new Date();
+    if (now &lt;= this.dueDate) {
+      return; // Not overdue
+    }
+
+    const daysPastDue = Math.floor(
+      (now.getTime() - this.dueDate.getTime()) / (1000 * 60 * 60 * 24)
+    );
+
+    this.raiseEvent({
+      type: "TaskOverdue",
+      payload: {
+        taskId: this.id,
+        dueDate: this.dueDate,
+        daysPastDue,
+        assigneeId: this.assigneeId
+      }
+    });
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_commands"><a class="anchor" href="#_commands"></a>Commands</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create command handlers in <code>src/commands/task-commands.ts</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { dispatchDirectCommand, aggregates } from "@eventicle/eventiclejs";
+import { Task } from "../aggregates/task";
+
+export class TaskCommands {
+  static async createTask(params: {
+    projectId: string;
+    title: string;
+    description: string;
+    assigneeId: string;
+    dueDate: Date;
+    priority: "low" | "medium" | "high";
+    estimatedHours?: number;
+  }) {
+    return dispatchDirectCommand(async () =&gt; {
+      // Validate input
+      if (!params.title.trim()) {
+        throw new Error("Task title is required");
+      }
+
+      if (!params.assigneeId) {
+        throw new Error("Task must be assigned to someone");
+      }
+
+      if (params.dueDate &lt;= new Date()) {
+        throw new Error("Due date must be in the future");
+      }
+
+      // Create task
+      const task = Task.create(params);
+
+      return {
+        response: { taskId: task.id },
+        events: await aggregates.persist(task)
+      };
+    }, "tasks");
+  }
+
+  static async reassignTask(taskId: string, newAssigneeId: string) {
+    return dispatchDirectCommand(async () =&gt; {
+      const task = await aggregates.load(Task, taskId);
+
+      if (!task) {
+        throw new Error("Task not found");
+      }
+
+      task.reassign(newAssigneeId);
+
+      return {
+        response: { taskId: task.id, newAssigneeId },
+        events: await aggregates.persist(task)
+      };
+    }, "tasks");
+  }
+
+  static async updateTaskStatus(
+    taskId: string,
+    newStatus: "todo" | "in-progress" | "review" | "done",
+    note?: string
+  ) {
+    return dispatchDirectCommand(async () =&gt; {
+      const task = await aggregates.load(Task, taskId);
+
+      if (!task) {
+        throw new Error("Task not found");
+      }
+
+      task.updateStatus(newStatus, note);
+
+      return {
+        response: { taskId: task.id, status: newStatus },
+        events: await aggregates.persist(task)
+      };
+    }, "tasks");
+  }
+
+  static async completeTask(taskId: string, actualHours?: number) {
+    return dispatchDirectCommand(async () =&gt; {
+      const task = await aggregates.load(Task, taskId);
+
+      if (!task) {
+        throw new Error("Task not found");
+      }
+
+      task.complete(actualHours);
+
+      return {
+        response: { taskId: task.id, completedAt: new Date() },
+        events: await aggregates.persist(task)
+      };
+    }, "tasks");
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_event_views"><a class="anchor" href="#_event_views"></a>Event Views</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create views for querying in <code>src/views/task-views.ts</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { EventView, EventicleEvent, dataStore } from "@eventicle/eventiclejs";
+
+export interface TaskSummary {
+  taskId: string;
+  projectId: string;
+  title: string;
+  assigneeId: string;
+  status: string;
+  priority: string;
+  dueDate: Date | null;
+  createdAt: Date;
+  completedAt: Date | null;
+  estimatedHours?: number;
+  actualHours?: number;
+  isOverdue: boolean;
+}
+
+export class TaskSummaryView implements EventView {
+  consumerGroup = "TaskSummaryView";
+  streamsToSubscribe = ["tasks"];
+  parallelEventCount = 10;
+
+  async handleEvent(event: EventicleEvent): Promise&lt;void&gt; {
+    const store = await dataStore();
+
+    switch (event.type) {
+      case "TaskCreated":
+        await store.save("task-summaries", event.payload.taskId, {
+          taskId: event.payload.taskId,
+          projectId: event.payload.projectId,
+          title: event.payload.title,
+          assigneeId: event.payload.assigneeId,
+          status: "todo",
+          priority: event.payload.priority,
+          dueDate: event.payload.dueDate,
+          createdAt: event.payload.createdAt,
+          completedAt: null,
+          estimatedHours: event.payload.estimatedHours,
+          actualHours: null,
+          isOverdue: false
+        });
+        break;
+
+      case "TaskAssigned":
+        const taskForAssignment = await store.load("task-summaries", event.payload.taskId);
+        if (taskForAssignment) {
+          taskForAssignment.assigneeId = event.payload.toAssigneeId;
+          await store.save("task-summaries", event.payload.taskId, taskForAssignment);
+        }
+        break;
+
+      case "TaskStatusChanged":
+        const taskForStatus = await store.load("task-summaries", event.payload.taskId);
+        if (taskForStatus) {
+          taskForStatus.status = event.payload.toStatus;
+          await store.save("task-summaries", event.payload.taskId, taskForStatus);
+        }
+        break;
+
+      case "TaskCompleted":
+        const completedTask = await store.load("task-summaries", event.payload.taskId);
+        if (completedTask) {
+          completedTask.status = "done";
+          completedTask.completedAt = event.payload.completedAt;
+          completedTask.actualHours = event.payload.actualHours;
+          await store.save("task-summaries", event.payload.taskId, completedTask);
+        }
+        break;
+
+      case "TaskOverdue":
+        const overdueTask = await store.load("task-summaries", event.payload.taskId);
+        if (overdueTask) {
+          overdueTask.isOverdue = true;
+          await store.save("task-summaries", event.payload.taskId, overdueTask);
+        }
+        break;
+    }
+  }
+
+  async getTask(taskId: string): Promise&lt;TaskSummary | null&gt; {
+    const store = await dataStore();
+    return await store.load("task-summaries", taskId);
+  }
+
+  async getTasksByAssignee(assigneeId: string): Promise&lt;TaskSummary[]&gt; {
+    const store = await dataStore();
+    const allTasks = await store.scan("task-summaries");
+    return allTasks.filter(task =&gt; task.assigneeId === assigneeId);
+  }
+
+  async getTasksByProject(projectId: string): Promise&lt;TaskSummary[]&gt; {
+    const store = await dataStore();
+    const allTasks = await store.scan("task-summaries");
+    return allTasks.filter(task =&gt; task.projectId === projectId);
+  }
+
+  async getOverdueTasks(): Promise&lt;TaskSummary[]&gt; {
+    const store = await dataStore();
+    const allTasks = await store.scan("task-summaries");
+    return allTasks.filter(task =&gt; task.isOverdue &amp;&amp; task.status !== "done");
+  }
+
+  async getTasksByStatus(status: string): Promise&lt;TaskSummary[]&gt; {
+    const store = await dataStore();
+    const allTasks = await store.scan("task-summaries");
+    return allTasks.filter(task =&gt; task.status === status);
+  }
+}
+
+export class ProjectMetricsView implements EventView {
+  consumerGroup = "ProjectMetricsView";
+  streamsToSubscribe = ["tasks"];
+
+  async handleEvent(event: EventicleEvent): Promise&lt;void&gt; {
+    const store = await dataStore();
+
+    switch (event.type) {
+      case "TaskCreated":
+        await this.updateProjectMetrics(event.payload.projectId, "taskCreated");
+        break;
+
+      case "TaskCompleted":
+        const task = await store.load("task-summaries", event.payload.taskId);
+        if (task) {
+          await this.updateProjectMetrics(task.projectId, "taskCompleted", {
+            estimatedHours: task.estimatedHours,
+            actualHours: event.payload.actualHours
+          });
+        }
+        break;
+    }
+  }
+
+  private async updateProjectMetrics(
+    projectId: string,
+    action: string,
+    taskData?: any
+  ): Promise&lt;void&gt; {
+    const store = await dataStore();
+
+    let metrics = await store.load("project-metrics", projectId) || {
+      projectId,
+      totalTasks: 0,
+      completedTasks: 0,
+      totalEstimatedHours: 0,
+      totalActualHours: 0,
+      completionRate: 0
+    };
+
+    switch (action) {
+      case "taskCreated":
+        metrics.totalTasks++;
+        break;
+
+      case "taskCompleted":
+        metrics.completedTasks++;
+        if (taskData?.estimatedHours) {
+          metrics.totalEstimatedHours += taskData.estimatedHours;
+        }
+        if (taskData?.actualHours) {
+          metrics.totalActualHours += taskData.actualHours;
+        }
+        break;
+    }
+
+    metrics.completionRate = metrics.totalTasks &gt; 0
+      ? (metrics.completedTasks / metrics.totalTasks) * 100
+      : 0;
+
+    await store.save("project-metrics", projectId, metrics);
+  }
+
+  async getProjectMetrics(projectId: string): Promise&lt;any&gt; {
+    const store = await dataStore();
+    return await store.load("project-metrics", projectId);
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_notification_saga"><a class="anchor" href="#_notification_saga"></a>Notification Saga</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create a saga for notifications in <code>src/sagas/notification-saga.ts</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { saga, SagaInstance } from "@eventicle/eventiclejs";
+
+interface NotificationData {
+  taskId: string;
+  assigneeId: string;
+  notificationType: "overdue" | "assigned" | "completed";
+  sentAt?: Date;
+}
+
+export function notificationSaga() {
+  return saga&lt;any, NotificationData&gt;("TaskNotificationSaga")
+    .subscribeStreams(["tasks"])
+    .on(
+      "TaskAssigned",
+      {
+        startNewInstance: true,
+        instanceProperty: "taskId",
+        value: (event) =&gt; event.payload.taskId
+      },
+      async (instance, event) =&gt; {
+        instance.data = {
+          taskId: event.payload.taskId,
+          assigneeId: event.payload.toAssigneeId,
+          notificationType: "assigned"
+        };
+
+        await sendNotification(
+          event.payload.toAssigneeId,
+          `You have been assigned a new task: ${event.payload.taskId}`
+        );
+
+        instance.data.sentAt = new Date();
+      }
+    )
+    .on(
+      "TaskOverdue",
+      {
+        matchInstance: (event) =&gt; ({
+          instanceProperty: "taskId",
+          value: event.payload.taskId
+        })
+      },
+      async (instance, event) =&gt; {
+        // Send overdue notification
+        await sendNotification(
+          event.payload.assigneeId,
+          `Task ${event.payload.taskId} is ${event.payload.daysPastDue} days overdue!`
+        );
+
+        // Schedule follow-up reminder in 1 day
+        instance.scheduleTimer("followUpReminder", 24 * 60 * 60 * 1000);
+      }
+    )
+    .on(
+      "TaskCompleted",
+      {
+        matchInstance: (event) =&gt; ({
+          instanceProperty: "taskId",
+          value: event.payload.taskId
+        })
+      },
+      async (instance, event) =&gt; {
+        await sendNotification(
+          event.payload.completedBy,
+          `Great job completing task ${event.payload.taskId}!`
+        );
+
+        // End the saga instance
+        instance.complete();
+      }
+    )
+    .onTimer("followUpReminder", async (instance) =&gt; {
+      await sendNotification(
+        instance.data.assigneeId,
+        `Reminder: Task ${instance.data.taskId} is still overdue!`
+      );
+
+      // Schedule another reminder in 1 day
+      instance.scheduleTimer("followUpReminder", 24 * 60 * 60 * 1000);
+    });
+}
+
+async function sendNotification(userId: string, message: string): Promise&lt;void&gt; {
+  // In a real application, this would integrate with:
+  // - Email service
+  // - Slack/Teams
+  // - Push notifications
+  // - SMS service
+
+  console.log(`📧 Notification to ${userId}: ${message}`);
+
+  // Could emit an event for other systems to handle
+  // await eventClient().emit([{
+  //   type: "NotificationSent",
+  //   stream: "notifications",
+  //   domainId: uuid(),
+  //   payload: { userId, message, sentAt: new Date() }
+  // }]);
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_application_configuration"><a class="anchor" href="#_application_configuration"></a>Application Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create <code>src/config.ts</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import {
+  setEventClient,
+  eventClientInMemory,
+  setDataStore,
+  InMemoryDatastore,
+  registerView,
+  registerSaga
+} from "@eventicle/eventiclejs";
+
+import { TaskSummaryView, ProjectMetricsView } from "./views/task-views";
+import { notificationSaga } from "./sagas/notification-saga";
+
+export function configureApplication() {
+  // Use in-memory implementations for this example
+  // In production, use Kafka and PostgreSQL
+  setDataStore(new InMemoryDatastore());
+  setEventClient(eventClientInMemory());
+
+  // Register views
+  registerView(new TaskSummaryView());
+  registerView(new ProjectMetricsView());
+
+  // Register sagas
+  registerSaga(notificationSaga());
+
+  console.log("✅ Application configured successfully");
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_main_application"><a class="anchor" href="#_main_application"></a>Main Application</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create <code>src/app.ts</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { configureApplication } from "./config";
+import { TaskCommands } from "./commands/task-commands";
+import { TaskSummaryView, ProjectMetricsView } from "./views/task-views";
+import { aggregates, allViews } from "@eventicle/eventiclejs";
+import { Task } from "./aggregates/task";
+
+class TaskManagerApp {
+  private taskView: TaskSummaryView;
+  private metricsView: ProjectMetricsView;
+
+  constructor() {
+    configureApplication();
+
+    // Get registered views
+    const views = allViews();
+    this.taskView = views.find(v =&gt; v instanceof TaskSummaryView) as TaskSummaryView;
+    this.metricsView = views.find(v =&gt; v instanceof ProjectMetricsView) as ProjectMetricsView;
+  }
+
+  async createSampleData() {
+    console.log("🚀 Creating sample tasks...");
+
+    // Create some tasks
+    const task1 = await TaskCommands.createTask({
+      projectId: "project-1",
+      title: "Implement user authentication",
+      description: "Add login and registration functionality",
+      assigneeId: "dev-1",
+      dueDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days from now
+      priority: "high",
+      estimatedHours: 16
+    });
+
+    const task2 = await TaskCommands.createTask({
+      projectId: "project-1",
+      title: "Design database schema",
+      description: "Create tables for user and task management",
+      assigneeId: "dev-2",
+      dueDate: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000), // 3 days from now
+      priority: "high",
+      estimatedHours: 8
+    });
+
+    const task3 = await TaskCommands.createTask({
+      projectId: "project-2",
+      title: "Write documentation",
+      description: "Create API documentation",
+      assigneeId: "dev-1",
+      dueDate: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000), // 14 days from now
+      priority: "medium",
+      estimatedHours: 12
+    });
+
+    // Progress some tasks
+    await TaskCommands.updateTaskStatus(task1.response.taskId, "in-progress");
+    await TaskCommands.updateTaskStatus(task2.response.taskId, "in-progress");
+    await TaskCommands.updateTaskStatus(task2.response.taskId, "review");
+    await TaskCommands.completeTask(task2.response.taskId, 6);
+
+    // Reassign a task
+    await TaskCommands.reassignTask(task3.response.taskId, "dev-3");
+
+    // Simulate an overdue task
+    const overdueTask = await this.createOverdueTask();
+
+    return {
+      task1: task1.response.taskId,
+      task2: task2.response.taskId,
+      task3: task3.response.taskId,
+      overdueTask: overdueTask.id
+    };
+  }
+
+  private async createOverdueTask(): Promise&lt;Task&gt; {
+    const task = Task.create({
+      projectId: "project-1",
+      title: "Fix critical bug",
+      description: "Production issue needs immediate attention",
+      assigneeId: "dev-1",
+      dueDate: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000), // 2 days ago
+      priority: "high"
+    });
+
+    await aggregates.persist(task);
+
+    // Mark as overdue
+    task.markOverdue();
+    await aggregates.persist(task);
+
+    return task;
+  }
+
+  async demonstrateQueries() {
+    // Wait a bit for views to process events
+    await new Promise(resolve =&gt; setTimeout(resolve, 100));
+
+    console.log("\\n📊 Querying task data...");
+
+    // Get all tasks
+    const allTasks = await this.taskView.getTasksByProject("project-1");
+    console.log(`Project 1 has ${allTasks.length} tasks`);
+
+    // Get tasks by assignee
+    const dev1Tasks = await this.taskView.getTasksByAssignee("dev-1");
+    console.log(`Dev-1 has ${dev1Tasks.length} assigned tasks`);
+
+    // Get completed tasks
+    const completedTasks = await this.taskView.getTasksByStatus("done");
+    console.log(`${completedTasks.length} tasks completed`);
+
+    // Get overdue tasks
+    const overdueTasks = await this.taskView.getOverdueTasks();
+    console.log(`${overdueTasks.length} tasks are overdue`);
+
+    // Get project metrics
+    const project1Metrics = await this.metricsView.getProjectMetrics("project-1");
+    console.log("Project 1 metrics:", project1Metrics);
+
+    return {
+      totalTasks: allTasks.length,
+      completedTasks: completedTasks.length,
+      overdueTasks: overdueTasks.length,
+      project1Metrics
+    };
+  }
+
+  async run() {
+    console.log("🎯 Starting Task Manager Application\\n");
+
+    try {
+      const taskIds = await this.createSampleData();
+      const queryResults = await this.demonstrateQueries();
+
+      console.log("\\n✅ Application completed successfully!");
+      console.log("\\nSummary:");
+      console.log(`- Created ${Object.keys(taskIds).length} tasks`);
+      console.log(`- ${queryResults.completedTasks} tasks completed`);
+      console.log(`- ${queryResults.overdueTasks} tasks overdue`);
+      console.log(`- Project completion rate: ${queryResults.project1Metrics?.completionRate?.toFixed(1)}%`);
+
+    } catch (error) {
+      console.error("❌ Application error:", error);
+      throw error;
+    }
+  }
+}
+
+// Run the application
+const app = new TaskManagerApp();
+app.run().catch(console.error);</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_running_the_application"><a class="anchor" href="#_running_the_application"></a>Running the Application</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create a script in <code>package.json</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "scripts": {
+    "start": "ts-node src/app.ts",
+    "build": "tsc",
+    "test": "jest"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Run the application:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm start</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should see output like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">✅ Application configured successfully
+🚀 Creating sample tasks...
+📧 Notification to dev-2: You have been assigned a new task: task-uuid
+📧 Notification to dev-1: Great job completing task task-uuid!
+📧 Notification to dev-3: You have been assigned a new task: task-uuid
+📧 Notification to dev-1: Task task-uuid is 2 days overdue!
+
+📊 Querying task data...
+Project 1 has 3 tasks
+Dev-1 has 2 assigned tasks
+1 tasks completed
+1 tasks are overdue
+
+✅ Application completed successfully!
+
+Summary:
+- Created 4 tasks
+- 1 tasks completed
+- 1 tasks overdue
+- Project completion rate: 33.3%</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_weve_built"><a class="anchor" href="#_what_weve_built"></a>What We&#8217;ve Built</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This application demonstrates:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Event Sourcing</strong>: All changes are captured as events</p>
+</li>
+<li>
+<p><strong>CQRS</strong>: Separate read and write models</p>
+</li>
+<li>
+<p><strong>Business Logic</strong>: Encapsulated in aggregates with proper validation</p>
+</li>
+<li>
+<p><strong>Projections</strong>: Views provide optimized queries</p>
+</li>
+<li>
+<p><strong>Workflows</strong>: Sagas handle notifications and time-based operations</p>
+</li>
+<li>
+<p><strong>Type Safety</strong>: Full TypeScript integration</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_production_considerations"><a class="anchor" href="#_production_considerations"></a>Production Considerations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To make this production-ready:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Replace In-Memory Components</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Use Kafka for event streaming</p>
+</li>
+<li>
+<p>Use PostgreSQL for data storage</p>
+</li>
+<li>
+<p>Use Redis for distributed locking</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Add Error Handling</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Implement retry mechanisms</p>
+</li>
+<li>
+<p>Add circuit breakers</p>
+</li>
+<li>
+<p>Handle partial failures</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Add Monitoring</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Metrics collection</p>
+</li>
+<li>
+<p>Health checks</p>
+</li>
+<li>
+<p>Performance monitoring</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Add Security</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Authentication</p>
+</li>
+<li>
+<p>Authorization</p>
+</li>
+<li>
+<p>Input validation</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Add Testing</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Unit tests for aggregates</p>
+</li>
+<li>
+<p>Integration tests for commands</p>
+</li>
+<li>
+<p>End-to-end tests for workflows</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>Next Steps</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Learn about <a href="testing.html" class="xref page">Testing Patterns</a> for this application</p>
+</li>
+<li>
+<p>Explore <a href="#performance-optimization.adoc" class="xref unresolved">Performance Optimization</a></p>
+</li>
+<li>
+<p>Understand <a href="#deployment.adoc" class="xref unresolved">Deployment Strategies</a></p>
+</li>
+<li>
+<p>See <a href="observability.html" class="xref page">Monitoring and Observability</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

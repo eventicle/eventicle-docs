@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: Eventicle JS</title>
+    <title>Testing Event-Driven Code :: Eventicle JS</title>
     <link rel="canonical" href="https://book.eventicle.com/eventiclejs/book/testing.html">
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.1.14">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
   </head>
@@ -56,14 +56,35 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="installation.html">Installation &amp; Setup</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="quickstart.html">Quick Start Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="first-application.html">Your First Eventicle Application</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <span class="nav-text">Core Concepts</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="events-and-streams.html">Events and Event Streams</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="event-clients.html">Event Clients</a>
+  </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="aggregate-roots.html">Aggregate Roots</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="aggregate-root-xstate.html">XState Aggregate Root -  Formal State Machines</a>
+    <a class="nav-link" href="aggregate-root-xstate.html">XState Aggregate Root - Formal State Machines</a>
   </li>
 </ul>
   </li>
@@ -79,17 +100,101 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="datastore.html">The Datastore</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="event-encoding.html">Event Encoding &amp; Codecs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#multi-tenancy.adoc">Multi-Tenancy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">How To</span>
+    <span class="nav-text">How To Guides</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="observability.html">Observability</a>
+    <a class="nav-link" href="#building-aggregates.adoc">Building Aggregate Roots</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#implementing-commands.adoc">Implementing Commands</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#creating-views.adoc">Creating Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#building-sagas.adoc">Building Sagas for Workflows</a>
   </li>
   <li class="nav-item is-current-page" data-depth="3">
-    <a class="nav-link" href="testing.html">Testing</a>
+    <a class="nav-link" href="testing.html">Testing Event-Driven Code</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#handling-transactions.adoc">Handling Transactions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#outbox-pattern.adoc">Using the Outbox Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-versioning.adoc">Event Versioning &amp; Schema Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#performance-optimization.adoc">Performance Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#error-handling.adoc">Error Handling &amp; Resilience</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Advanced Topics</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="advanced-event-client.html">Advanced Event Client Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="raw-event-view.html">Raw Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="lockmanager.html">Lock Manager</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="scheduler.html">Scheduling &amp; Timers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-adapters.adoc">Event Adapters</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="observability.html">Observability &amp; Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#deployment.adoc">Deployment &amp; Scaling</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#troubleshooting.adoc">Troubleshooting Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Best Practices</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-design.adoc">Event Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#aggregate-design.adoc">Aggregate Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#saga-patterns.adoc">Saga Patterns &amp; Strategies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#production-considerations.adoc">Production Considerations</a>
   </li>
 </ul>
   </li>
@@ -200,8 +305,8 @@
   <ul>
     <li><a href="../index.html">EventicleJS</a></li>
     <li><a href="../index.html">The Book of Eventicle</a></li>
-    <li>How To</li>
-    <li><a href="testing.html">Testing</a></li>
+    <li>How To Guides</li>
+    <li><a href="testing.html">Testing Event-Driven Code</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/eventicle/eventiclejs/edit/master/docs/modules/book/pages/testing.adoc">Edit this Page</a></div>
@@ -211,56 +316,1106 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<div class="sect1">
-<h2 id="_testing_eventicle_components_and_systems"><a class="anchor" href="#_testing_eventicle_components_and_systems"></a>Testing Eventicle Components and Systems</h2>
+<h1 class="page">Testing Event-Driven Code</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Testing event systems is essential, as their interactions are asynchronous and oftentimes with an implicit, or "choreographed" behaviour.</p>
+<p>Testing event-driven applications requires different strategies than traditional synchronous code. This guide covers comprehensive testing approaches for aggregates, commands, sagas, views, and entire workflows.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_testing_philosophy"><a class="anchor" href="#_testing_philosophy"></a>Testing Philosophy</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Eventicle is designed to be easy to test, and each type of component has an idiomatic approach for testing it.</p>
+<p>Event-driven testing focuses on:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Behavior Verification</strong>: Testing what events are emitted, not internal state</p>
+</li>
+<li>
+<p><strong>Workflow Testing</strong>: Verifying complete business processes</p>
+</li>
+<li>
+<p><strong>Integration Testing</strong>: Ensuring components work together correctly</p>
+</li>
+<li>
+<p><strong>Isolation</strong>: Testing components independently when possible</p>
+</li>
+<li>
+<p><strong>Time Handling</strong>: Managing asynchronous operations and timers</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_test_environment_setup"><a class="anchor" href="#_test_environment_setup"></a>Test Environment Setup</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_basic_test_configuration"><a class="anchor" href="#_basic_test_configuration"></a>Basic Test Configuration</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import {
+  setEventClient,
+  eventClientInMemory,
+  setDataStore,
+  InMemoryDatastore,
+  setScheduler,
+  LocalScheduleJobRunner,
+  clearEventHistory,
+  consumeFullEventLog
+} from "@eventicle/eventiclejs";
+
+// Global test setup
+beforeEach(async () =&gt; {
+  // Use in-memory implementations
+  setEventClient(eventClientInMemory());
+  setDataStore(new InMemoryDatastore());
+  setScheduler(new LocalScheduleJobRunner());
+
+  // Clear any previous state
+  clearEventHistory();
+
+  // Clear all registered sagas/views if needed
+  await removeAllSagas();
+  await removeAllViews();
+});
+
+afterEach(async () =&gt; {
+  // Clean up after each test
+  await clearDataStores();
+});</code></pre>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_consumefulleventlog_check_event_stream_consistency"><a class="anchor" href="#_consumefulleventlog_check_event_stream_consistency"></a>consumeFullEventLog - Check event stream consistency</h3>
-<div class="paragraph">
-<p>A common requirement when building event log based systems is to ensure that once an operation or workflow has completed,
-that the log is in an expected consistent state.</p>
+<h3 id="_jest_configuration"><a class="anchor" href="#_jest_configuration"></a>Jest Configuration</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "setupFilesAfterEnv": ["&lt;rootDir&gt;/test/setup.ts"],
+  "testMatch": ["**/__tests__/**/*.test.ts"],
+  "collectCoverageFrom": [
+    "src/**/*.ts",
+    "!src/**/*.d.ts",
+    "!src/test/**"
+  ],
+  "coverageThreshold": {
+    "global": {
+      "branches": 80,
+      "functions": 80,
+      "lines": 80,
+      "statements": 80
+    }
+  }
+}</code></pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_testing_aggregates"><a class="anchor" href="#_testing_aggregates"></a>Testing Aggregates</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_unit_testing_aggregate_behavior"><a class="anchor" href="#_unit_testing_aggregate_behavior"></a>Unit Testing Aggregate Behavior</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { BankAccount } from "../src/aggregates/bank-account";
+
+describe("BankAccount Aggregate", () =&gt; {
+  describe("Account Creation", () =&gt; {
+    it("should create account with initial deposit", () =&gt; {
+      const account = BankAccount.open("acc-123", "customer-456", 1000, "checking");
+
+      expect(account.id).toBe("acc-123");
+      expect(account.balance).toBe(1000);
+      expect(account.status).toBe("active");
+
+      // Verify events
+      expect(account.newEvents).toHaveLength(1);
+      expect(account.newEvents[0].type).toBe("AccountOpened");
+      expect(account.newEvents[0].payload).toMatchObject({
+        accountId: "acc-123",
+        customerId: "customer-456",
+        initialDeposit: 1000,
+        accountType: "checking"
+      });
+    });
+
+    it("should reject negative initial deposit", () =&gt; {
+      expect(() =&gt; {
+        BankAccount.open("acc-123", "customer-456", -100, "checking");
+      }).toThrow("Initial deposit cannot be negative");
+    });
+  });
+
+  describe("Deposits", () =&gt; {
+    let account: BankAccount;
+
+    beforeEach(() =&gt; {
+      account = BankAccount.open("acc-123", "customer-456", 1000, "checking");
+      account.clearEvents(); // Clear creation events for focused testing
+    });
+
+    it("should allow valid deposits", () =&gt; {
+      account.deposit(500, "Salary deposit");
+
+      expect(account.balance).toBe(1500);
+      expect(account.newEvents).toHaveLength(1);
+      expect(account.newEvents[0].type).toBe("MoneyDeposited");
+      expect(account.newEvents[0].payload.amount).toBe(500);
+      expect(account.newEvents[0].payload.description).toBe("Salary deposit");
+    });
+
+    it("should reject zero or negative deposits", () =&gt; {
+      expect(() =&gt; account.deposit(0)).toThrow("Amount must be positive");
+      expect(() =&gt; account.deposit(-100)).toThrow("Amount must be positive");
+
+      // No events should be generated
+      expect(account.newEvents).toHaveLength(0);
+      expect(account.balance).toBe(1000); // Unchanged
+    });
+
+    it("should reject deposits to frozen account", () =&gt; {
+      account.freeze("Suspicious activity");
+      account.clearEvents();
+
+      expect(() =&gt; account.deposit(100)).toThrow("Cannot deposit to frozen account");
+      expect(account.newEvents).toHaveLength(0);
+    });
+  });
+
+  describe("Event Sourcing", () =&gt; {
+    it("should rebuild state from events", () =&gt; {
+      // Create and modify account
+      const originalAccount = BankAccount.open("acc-123", "customer-456", 1000, "checking");
+      originalAccount.deposit(500);
+      originalAccount.withdraw(200);
+
+      const events = originalAccount.newEvents;
+
+      // Rebuild from events
+      const rebuiltAccount = new BankAccount();
+      events.forEach(event =&gt; rebuiltAccount.applyEvent(event));
+
+      expect(rebuiltAccount.id).toBe(originalAccount.id);
+      expect(rebuiltAccount.balance).toBe(originalAccount.balance);
+      expect(rebuiltAccount.status).toBe(originalAccount.status);
+    });
+  });
+});</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_testing_complex_aggregate_workflows"><a class="anchor" href="#_testing_complex_aggregate_workflows"></a>Testing Complex Aggregate Workflows</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">describe("Order Aggregate Workflow", () =&gt; {
+  it("should handle complete order lifecycle", () =&gt; {
+    // Create order
+    const order = Order.create("customer-123", [
+      { productId: "prod-1", quantity: 2, price: 29.99 },
+      { productId: "prod-2", quantity: 1, price: 49.99 }
+    ]);
+
+    expect(order.status).toBe("created");
+    expect(order.total).toBe(109.97);
+
+    // Validate order
+    order.validate();
+    expect(order.status).toBe("validated");
+
+    // Process payment
+    order.recordPayment("payment-456", 109.97);
+    expect(order.status).toBe("paid");
+
+    // Ship order
+    order.ship("shipment-789");
+    expect(order.status).toBe("shipped");
+
+    // Verify event sequence
+    const eventTypes = order.newEvents.map(e =&gt; e.type);
+    expect(eventTypes).toEqual([
+      "OrderCreated",
+      "OrderValidated",
+      "PaymentRecorded",
+      "OrderShipped"
+    ]);
+  });
+});</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_testing_commands"><a class="anchor" href="#_testing_commands"></a>Testing Commands</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_command_success_scenarios"><a class="anchor" href="#_command_success_scenarios"></a>Command Success Scenarios</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { AccountCommands } from "../src/commands/account-commands";
+
+describe("AccountCommands", () =&gt; {
+  describe("openAccount", () =&gt; {
+    it("should successfully create new account", async () =&gt; {
+      const result = await AccountCommands.openAccount({
+        accountId: "acc-123",
+        customerId: "customer-456",
+        initialDeposit: 1000,
+        accountType: "checking"
+      });
+
+      // Verify response
+      expect(result.response).toMatchObject({
+        accountId: "acc-123",
+        balance: 1000,
+        status: "active"
+      });
+
+      // Verify events were emitted
+      expect(result.events).toHaveLength(1);
+      expect(result.events[0].type).toBe("AccountOpened");
+      expect(result.events[0].stream).toBe("accounts");
+    });
+
+    it("should reject duplicate account creation", async () =&gt; {
+      // Create first account
+      await AccountCommands.openAccount({
+        accountId: "acc-123",
+        customerId: "customer-456",
+        initialDeposit: 1000,
+        accountType: "checking"
+      });
+
+      // Wait for events to be processed
+      await consumeFullEventLog();
+
+      // Attempt duplicate creation
+      await expect(
+        AccountCommands.openAccount({
+          accountId: "acc-123", // Same ID
+          customerId: "customer-789",
+          initialDeposit: 500,
+          accountType: "savings"
+        })
+      ).rejects.toThrow("Account already exists");
+    });
+  });
+
+  describe("transfer", () =&gt; {
+    beforeEach(async () =&gt; {
+      // Set up test accounts
+      await AccountCommands.openAccount({
+        accountId: "acc-source",
+        customerId: "customer-1",
+        initialDeposit: 1000,
+        accountType: "checking"
+      });
+
+      await AccountCommands.openAccount({
+        accountId: "acc-dest",
+        customerId: "customer-2",
+        initialDeposit: 500,
+        accountType: "savings"
+      });
+
+      await consumeFullEventLog();
+    });
+
+    it("should transfer money between accounts", async () =&gt; {
+      const result = await AccountCommands.transfer({
+        fromAccountId: "acc-source",
+        toAccountId: "acc-dest",
+        amount: 200,
+        description: "Test transfer"
+      });
+
+      expect(result.response.fromAccountBalance).toBe(800);
+      expect(result.response.toAccountBalance).toBe(700);
+      expect(result.events).toHaveLength(2); // One for each account
+    });
+
+    it("should reject transfer with insufficient funds", async () =&gt; {
+      await expect(
+        AccountCommands.transfer({
+          fromAccountId: "acc-source",
+          toAccountId: "acc-dest",
+          amount: 2000 // More than available
+        })
+      ).rejects.toThrow("Insufficient funds");
+    });
+  });
+});</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_testing_command_validation"><a class="anchor" href="#_testing_command_validation"></a>Testing Command Validation</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">describe("Command Validation", () =&gt; {
+  it("should validate input parameters", async () =&gt; {
+    await expect(
+      AccountCommands.openAccount({
+        accountId: "",
+        customerId: "customer-456",
+        initialDeposit: 1000,
+        accountType: "checking"
+      })
+    ).rejects.toThrow("Account ID is required");
+
+    await expect(
+      AccountCommands.openAccount({
+        accountId: "acc-123",
+        customerId: "customer-456",
+        initialDeposit: -100,
+        accountType: "checking"
+      })
+    ).rejects.toThrow("Initial deposit cannot be negative");
+  });
+});</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_testing_sagas"><a class="anchor" href="#_testing_sagas"></a>Testing Sagas</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_basic_saga_testing"><a class="anchor" href="#_basic_saga_testing"></a>Basic Saga Testing</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { notificationSaga } from "../src/sagas/notification-saga";
+import { mockSagasExceptFor, allSagaInstances } from "@eventicle/eventiclejs";
+
+describe("NotificationSaga", () =&gt; {
+  beforeEach(async () =&gt; {
+    // Mock all sagas except the one being tested
+    await mockSagasExceptFor(["NotificationSaga"]);
+    registerSaga(notificationSaga());
+  });
+
+  it("should send notification on order creation", async () =&gt; {
+    const sendEmailSpy = jest.spyOn(emailService, 'sendEmail');
+
+    // Emit order created event
+    await eventClient().emit([{
+      type: "OrderCreated",
+      stream: "orders",
+      domainId: "order-123",
+      payload: {
+        orderId: "order-123",
+        customerId: "customer-456",
+        customerEmail: "test@example.com",
+        items: [{ productId: "prod-1", quantity: 2 }]
+      }
+    }]);
+
+    // Wait for saga processing
+    await consumeFullEventLog();
+
+    // Verify notification was sent
+    expect(sendEmailSpy).toHaveBeenCalledWith(
+      "test@example.com",
+      expect.objectContaining({
+        subject: "Order Confirmation",
+        template: "order-confirmation",
+        data: { orderId: "order-123" }
+      })
+    );
+  });
+});</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_testing_stateful_sagas"><a class="anchor" href="#_testing_stateful_sagas"></a>Testing Stateful Sagas</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">describe("PaymentProcessingSaga", () =&gt; {
+  beforeEach(async () =&gt; {
+    await mockSagasExceptFor(["PaymentProcessingSaga"]);
+    registerSaga(paymentProcessingSaga());
+  });
+
+  it("should handle complete payment workflow", async () =&gt; {
+    // Start payment process
+    await eventClient().emit([{
+      type: "OrderCreated",
+      stream: "orders",
+      domainId: "order-123",
+      payload: {
+        orderId: "order-123",
+        totalAmount: 100,
+        customerId: "customer-456",
+        paymentMethod: "credit-card"
+      }
+    }]);
+
+    await consumeFullEventLog();
+
+    // Verify saga instance created
+    const instances = await allSagaInstances();
+    const paymentSaga = instances.find(i =&gt;
+      i.sagaName === "PaymentProcessingSaga" &amp;&amp;
+      i.data.orderId === "order-123"
+    );
+
+    expect(paymentSaga).toBeDefined();
+    expect(paymentSaga.data.status).toBe("processing");
+
+    // Complete payment
+    await eventClient().emit([{
+      type: "PaymentSucceeded",
+      stream: "payments",
+      domainId: "order-123",
+      payload: {
+        orderId: "order-123",
+        transactionId: "txn-789"
+      }
+    }]);
+
+    await consumeFullEventLog();
+
+    // Verify saga completed
+    const updatedInstances = await allSagaInstances();
+    const completedSaga = updatedInstances.find(i =&gt;
+      i.sagaName === "PaymentProcessingSaga" &amp;&amp;
+      i.data.orderId === "order-123"
+    );
+
+    expect(completedSaga).toBeUndefined(); // Should be completed and removed
+  });
+
+  it("should retry failed payments", async () =&gt; {
+    // Start payment
+    await eventClient().emit([{
+      type: "OrderCreated",
+      stream: "orders",
+      domainId: "order-123",
+      payload: {
+        orderId: "order-123",
+        totalAmount: 100,
+        customerId: "customer-456",
+        paymentMethod: "credit-card"
+      }
+    }]);
+
+    await consumeFullEventLog();
+
+    // Fail payment
+    await eventClient().emit([{
+      type: "PaymentFailed",
+      stream: "payments",
+      domainId: "order-123",
+      payload: {
+        orderId: "order-123",
+        errorCode: "CARD_DECLINED"
+      }
+    }]);
+
+    await consumeFullEventLog();
+
+    // Check saga state
+    const instances = await allSagaInstances();
+    const paymentSaga = instances.find(i =&gt;
+      i.sagaName === "PaymentProcessingSaga" &amp;&amp;
+      i.data.orderId === "order-123"
+    );
+
+    expect(paymentSaga.data.attempts).toBe(1);
+    expect(paymentSaga.data.status).toBe("retrying");
+  });
+});</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_testing_saga_timers"><a class="anchor" href="#_testing_saga_timers"></a>Testing Saga Timers</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">describe("Saga Timers", () =&gt; {
+  let mockScheduler: jest.Mocked&lt;LocalScheduleJobRunner&gt;;
+
+  beforeEach(() =&gt; {
+    mockScheduler = {
+      schedule: jest.fn(),
+      cancel: jest.fn(),
+      startup: jest.fn(),
+      shutdown: jest.fn()
+    } as any;
+
+    setScheduler(mockScheduler);
+  });
+
+  it("should schedule timeout timer", async () =&gt; {
+    await eventClient().emit([{
+      type: "OrderCreated",
+      stream: "orders",
+      domainId: "order-123",
+      payload: { orderId: "order-123", totalAmount: 100 }
+    }]);
+
+    await consumeFullEventLog();
+
+    expect(mockScheduler.schedule).toHaveBeenCalledWith(
+      expect.objectContaining({
+        timerName: "paymentTimeout",
+        delay: 5 * 60 * 1000, // 5 minutes
+        sagaName: "PaymentProcessingSaga"
+      })
+    );
+  });
+
+  it("should handle timer execution", async () =&gt; {
+    const saga = paymentProcessingSaga();
+    const instance = new SagaInstance(saga, "instance-123");
+    instance.data = { orderId: "order-123", status: "processing" };
+
+    // Simulate timer firing
+    await saga.onTimer("paymentTimeout", instance);
+
+    expect(instance.data.status).toBe("failed");
+  });
+});</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_testing_event_views"><a class="anchor" href="#_testing_event_views"></a>Testing Event Views</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_basic_view_testing"><a class="anchor" href="#_basic_view_testing"></a>Basic View Testing</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { ProductCatalogView } from "../src/views/product-catalog-view";
+
+describe("ProductCatalogView", () =&gt; {
+  let view: ProductCatalogView;
+
+  beforeEach(() =&gt; {
+    view = new ProductCatalogView();
+  });
+
+  it("should create product on ProductCreated event", async () =&gt; {
+    const event = {
+      id: "event-1",
+      type: "ProductCreated",
+      stream: "products",
+      domainId: "product-123",
+      timestamp: Date.now(),
+      payload: {
+        productId: "product-123",
+        name: "Test Product",
+        price: 29.99,
+        category: "Electronics",
+        createdAt: new Date()
+      }
+    };
+
+    await view.handleEvent(event);
+
+    const product = await view.getProduct("product-123");
+    expect(product).toMatchObject({
+      productId: "product-123",
+      name: "Test Product",
+      price: 29.99,
+      category: "Electronics",
+      status: "active"
+    });
+  });
+
+  it("should update product price", async () =&gt; {
+    // First create product
+    await view.handleEvent({
+      id: "event-1",
+      type: "ProductCreated",
+      stream: "products",
+      domainId: "product-123",
+      timestamp: Date.now(),
+      payload: {
+        productId: "product-123",
+        name: "Test Product",
+        price: 29.99,
+        category: "Electronics"
+      }
+    });
+
+    // Then update price
+    await view.handleEvent({
+      id: "event-2",
+      type: "ProductPriceUpdated",
+      stream: "products",
+      domainId: "product-123",
+      timestamp: Date.now(),
+      payload: {
+        productId: "product-123",
+        newPrice: 24.99,
+        updatedAt: new Date()
+      }
+    });
+
+    const product = await view.getProduct("product-123");
+    expect(product.price).toBe(24.99);
+  });
+
+  it("should handle missing product gracefully", async () =&gt; {
+    await view.handleEvent({
+      id: "event-1",
+      type: "ProductPriceUpdated",
+      stream: "products",
+      domainId: "nonexistent-product",
+      timestamp: Date.now(),
+      payload: {
+        productId: "nonexistent-product",
+        newPrice: 24.99
+      }
+    });
+
+    // Should not throw error
+    const product = await view.getProduct("nonexistent-product");
+    expect(product).toBeNull();
+  });
+});</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_testing_view_queries"><a class="anchor" href="#_testing_view_queries"></a>Testing View Queries</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">describe("ProductCatalogView Queries", () =&gt; {
+  let view: ProductCatalogView;
+
+  beforeEach(async () =&gt; {
+    view = new ProductCatalogView();
+
+    // Set up test data
+    const products = [
+      { id: "prod-1", name: "Laptop", category: "Electronics", price: 999.99, stock: 5 },
+      { id: "prod-2", name: "Mouse", category: "Electronics", price: 29.99, stock: 0 },
+      { id: "prod-3", name: "Book", category: "Books", price: 19.99, stock: 10 }
+    ];
+
+    for (const product of products) {
+      await view.handleEvent({
+        id: `event-${product.id}`,
+        type: "ProductCreated",
+        stream: "products",
+        domainId: product.id,
+        timestamp: Date.now(),
+        payload: product
+      });
+    }
+  });
+
+  it("should filter products by category", async () =&gt; {
+    const electronics = await view.getProductsByCategory("Electronics");
+    expect(electronics).toHaveLength(2);
+    expect(electronics.map(p =&gt; p.name)).toEqual(["Laptop", "Mouse"]);
+  });
+
+  it("should find low stock products", async () =&gt; {
+    const lowStock = await view.getLowStockProducts(5);
+    expect(lowStock).toHaveLength(1);
+    expect(lowStock[0].name).toBe("Mouse");
+  });
+
+  it("should search products by name", async () =&gt; {
+    const laptops = await view.searchProducts("Laptop");
+    expect(laptops).toHaveLength(1);
+    expect(laptops[0].name).toBe("Laptop");
+  });
+});</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_event_stream_consistency_testing"><a class="anchor" href="#_event_stream_consistency_testing"></a>Event Stream Consistency Testing</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>This can be verified in testing using the <code>consumeFullEventLog</code> function.</p>
+<p>A common requirement is ensuring that once an operation or workflow has completed, the event log is in an expected consistent state.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// ... perform an operation/ workflow that emit events
-let events = await consumeFullEventLog("user")
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">describe("Event Stream Consistency", () =&gt; {
+  it("should have correct event sequence after user registration", async () =&gt; {
+    // Perform user registration workflow
+    await UserCommands.registerUser({
+      email: "test@example.com",
+      password: "password123"
+    });
 
-// verify that the event types we expect are in the log, in the right order, and there aren't any extra events
-// or duplicates present, here with Jest expectations. Insert assertion library of your choice.
+    await UserCommands.approveUser("user-123");
+    await UserCommands.lockAccount("user-123", "Suspicious activity");
 
-expect(events.map(value =&gt; value.type)).toStrictEqual([
-  "user.created",
-  "user.password_set",
-  "user.approved",
-  "user.account_locked",
-]);</code></pre>
+    // Check event stream consistency
+    const events = await consumeFullEventLog("users");
+
+    // Verify event types in correct order
+    expect(events.map(e =&gt; e.type)).toStrictEqual([
+      "UserRegistered",
+      "PasswordSet",
+      "UserApproved",
+      "AccountLocked"
+    ]);
+
+    // Verify no duplicate events
+    const userIds = events.map(e =&gt; e.domainId);
+    expect(new Set(userIds).size).toBe(userIds.length);
+  });
+});</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_integration_testing"><a class="anchor" href="#_integration_testing"></a>Integration Testing</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_end_to_end_workflow_testing"><a class="anchor" href="#_end_to_end_workflow_testing"></a>End-to-End Workflow Testing</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">describe("Order Processing Workflow", () =&gt; {
+  beforeEach(async () =&gt; {
+    // Register all components
+    registerView(new ProductCatalogView());
+    registerView(new OrderSummaryView());
+    registerSaga(notificationSaga());
+    registerSaga(paymentProcessingSaga());
+  });
+
+  it("should handle complete order workflow", async () =&gt; {
+    // 1. Create product
+    await ProductCommands.createProduct({
+      productId: "prod-123",
+      name: "Test Product",
+      price: 49.99,
+      category: "Electronics",
+      stock: 10
+    });
+
+    await consumeFullEventLog();
+
+    // 2. Create order
+    const orderResult = await OrderCommands.createOrder({
+      customerId: "customer-456",
+      items: [
+        { productId: "prod-123", quantity: 2, price: 49.99 }
+      ]
+    });
+
+    await consumeFullEventLog();
+
+    // 3. Verify order was created
+    const orderView = getView(OrderSummaryView);
+    const order = await orderView.getOrder(orderResult.response.orderId);
+
+    expect(order).toMatchObject({
+      customerId: "customer-456",
+      itemCount: 1,
+      totalAmount: 99.98,
+      status: "pending"
+    });
+
+    // 4. Verify payment saga started
+    const sagaInstances = await allSagaInstances();
+    const paymentSaga = sagaInstances.find(s =&gt;
+      s.sagaName === "PaymentProcessingSaga"
+    );
+    expect(paymentSaga).toBeDefined();
+
+    // 5. Complete payment
+    await eventClient().emit([{
+      type: "PaymentSucceeded",
+      stream: "payments",
+      domainId: orderResult.response.orderId,
+      payload: {
+        orderId: orderResult.response.orderId,
+        transactionId: "txn-789"
+      }
+    }]);
+
+    await consumeFullEventLog();
+
+    // 6. Verify order completed
+    const completedOrder = await orderView.getOrder(orderResult.response.orderId);
+    expect(completedOrder.status).toBe("completed");
+  });
+});</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_unit_tests_commands"><a class="anchor" href="#_unit_tests_commands"></a>Unit Tests: Commands</h3>
+<h3 id="_testing_with_external_dependencies"><a class="anchor" href="#_testing_with_external_dependencies"></a>Testing with External Dependencies</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">describe("Payment Integration", () =&gt; {
+  let mockPaymentGateway: jest.Mocked&lt;PaymentGateway&gt;;
 
+  beforeEach(() =&gt; {
+    mockPaymentGateway = {
+      processPayment: jest.fn(),
+      refundPayment: jest.fn()
+    };
+
+    // Inject mock
+    PaymentService.setGateway(mockPaymentGateway);
+  });
+
+  it("should handle successful payment", async () =&gt; {
+    mockPaymentGateway.processPayment.mockResolvedValue({
+      success: true,
+      transactionId: "txn-123"
+    });
+
+    const result = await PaymentCommands.processPayment({
+      orderId: "order-123",
+      amount: 100,
+      paymentMethod: "credit-card",
+      customerId: "customer-456"
+    });
+
+    expect(result.response.status).toBe("succeeded");
+    expect(mockPaymentGateway.processPayment).toHaveBeenCalledWith({
+      amount: 100,
+      paymentMethod: "credit-card"
+    });
+  });
+
+  it("should handle payment gateway failure", async () =&gt; {
+    mockPaymentGateway.processPayment.mockRejectedValue(
+      new Error("Gateway unavailable")
+    );
+
+    const result = await PaymentCommands.processPayment({
+      orderId: "order-123",
+      amount: 100,
+      paymentMethod: "credit-card",
+      customerId: "customer-456"
+    });
+
+    expect(result.response.status).toBe("failed");
+    expect(result.response.errorCode).toBe("GATEWAY_ERROR");
+  });
+});</code></pre>
 </div>
-<div class="sect2">
-<h3 id="_unit_tests_aggregate_roots"><a class="anchor" href="#_unit_tests_aggregate_roots"></a>Unit Tests: Aggregate Roots</h3>
-
 </div>
-<div class="sect2">
-<h3 id="_unit_tests_sagas"><a class="anchor" href="#_unit_tests_sagas"></a>Unit Tests: Sagas</h3>
-
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_performance_testing"><a class="anchor" href="#_performance_testing"></a>Performance Testing</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="_integration_tests"><a class="anchor" href="#_integration_tests"></a>Integration Tests</h3>
+<h3 id="_load_testing_event_processing"><a class="anchor" href="#_load_testing_event_processing"></a>Load Testing Event Processing</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">describe("Performance Tests", () =&gt; {
+  it("should handle high volume of events", async () =&gt; {
+    const startTime = Date.now();
+    const eventCount = 1000;
 
+    // Generate many events
+    const events = Array.from({ length: eventCount }, (_, i) =&gt; ({
+      type: "OrderCreated",
+      stream: "orders",
+      domainId: `order-${i}`,
+      timestamp: Date.now(),
+      payload: {
+        orderId: `order-${i}`,
+        customerId: `customer-${i % 100}`,
+        amount: Math.random() * 1000
+      }
+    }));
+
+    // Emit all events
+    await eventClient().emit(events);
+    await consumeFullEventLog();
+
+    const duration = Date.now() - startTime;
+    console.log(`Processed ${eventCount} events in ${duration}ms`);
+
+    // Verify all events were processed
+    const orderView = getView(OrderSummaryView);
+    const allOrders = await orderView.getAllOrders();
+    expect(allOrders).toHaveLength(eventCount);
+
+    // Performance assertion (adjust based on requirements)
+    expect(duration).toBeLessThan(5000); // Should complete in 5 seconds
+  });
+
+  it("should handle concurrent command execution", async () =&gt; {
+    const concurrentCommands = 50;
+
+    // Execute many commands concurrently
+    const promises = Array.from({ length: concurrentCommands }, (_, i) =&gt;
+      AccountCommands.openAccount({
+        accountId: `acc-${i}`,
+        customerId: `customer-${i}`,
+        initialDeposit: 1000,
+        accountType: "checking"
+      })
+    );
+
+    const results = await Promise.all(promises);
+
+    expect(results).toHaveLength(concurrentCommands);
+    results.forEach((result, i) =&gt; {
+      expect(result.response.accountId).toBe(`acc-${i}`);
+    });
+  });
+});</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_test_utilities"><a class="anchor" href="#_test_utilities"></a>Test Utilities</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_custom_test_helpers"><a class="anchor" href="#_custom_test_helpers"></a>Custom Test Helpers</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// test/helpers/event-helpers.ts
+export class EventTestHelpers {
+  static createOrderEvent(orderId: string, overrides: any = {}) {
+    return {
+      id: `event-${orderId}`,
+      type: "OrderCreated",
+      stream: "orders",
+      domainId: orderId,
+      timestamp: Date.now(),
+      payload: {
+        orderId,
+        customerId: "customer-123",
+        items: [{ productId: "prod-1", quantity: 1, price: 29.99 }],
+        ...overrides
+      }
+    };
+  }
+
+  static async waitForSagaCompletion(sagaName: string, instanceId: string, timeout = 5000) {
+    const start = Date.now();
+
+    while (Date.now() - start &lt; timeout) {
+      const instances = await allSagaInstances();
+      const saga = instances.find(s =&gt;
+        s.sagaName === sagaName &amp;&amp; s.instanceId === instanceId
+      );
+
+      if (!saga) {
+        return; // Saga completed
+      }
+
+      await new Promise(resolve =&gt; setTimeout(resolve, 100));
+    }
+
+    throw new Error(`Saga ${sagaName}:${instanceId} did not complete within ${timeout}ms`);
+  }
+
+  static async expectEventsEmitted(expectedEvents: string[]) {
+    await consumeFullEventLog();
+
+    const eventHistory = getEventHistory();
+    const emittedTypes = eventHistory.map(e =&gt; e.type);
+
+    expect(emittedTypes).toEqual(expect.arrayContaining(expectedEvents));
+  }
+}
+
+// test/helpers/aggregate-helpers.ts
+export class AggregateTestHelpers {
+  static createAccountWithHistory(transactions: any[]) {
+    const account = BankAccount.open("acc-123", "customer-456", 1000, "checking");
+
+    transactions.forEach(txn =&gt; {
+      if (txn.type === "deposit") {
+        account.deposit(txn.amount, txn.description);
+      } else if (txn.type === "withdraw") {
+        account.withdraw(txn.amount, txn.description);
+      }
+    });
+
+    return account;
+  }
+
+  static verifyEventSequence(aggregate: AggregateRoot, expectedTypes: string[]) {
+    const actualTypes = aggregate.newEvents.map(e =&gt; e.type);
+    expect(actualTypes).toEqual(expectedTypes);
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_testing_best_practices"><a class="anchor" href="#_testing_best_practices"></a>Testing Best Practices</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Test Behavior, Not Implementation</strong>: Focus on what events are emitted and how state changes</p>
+</li>
+<li>
+<p><strong>Use Deterministic Data</strong>: Avoid random values in tests; use fixed timestamps and IDs</p>
+</li>
+<li>
+<p><strong>Test Error Scenarios</strong>: Verify error handling and edge cases</p>
+</li>
+<li>
+<p><strong>Isolate Tests</strong>: Each test should be independent and not rely on others</p>
+</li>
+<li>
+<p><strong>Use Meaningful Assertions</strong>: Verify specific values, not just existence</p>
+</li>
+<li>
+<p><strong>Test at Multiple Levels</strong>: Unit tests for components, integration tests for workflows</p>
+</li>
+<li>
+<p><strong>Mock External Dependencies</strong>: Use mocks for payment gateways, email services, etc.</p>
+</li>
+<li>
+<p><strong>Performance Considerations</strong>: Include performance tests for high-volume scenarios</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>Next Steps</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Learn about <a href="observability.html" class="xref page">Observability and Monitoring</a> for production testing</p>
+</li>
+<li>
+<p>Explore <a href="#deployment.adoc" class="xref unresolved">Deployment Strategies</a> for testing in different environments</p>
+</li>
+<li>
+<p>Understand <a href="#performance-optimization.adoc" class="xref unresolved">Performance Optimization</a> techniques</p>
+</li>
+<li>
+<p>See <a href="#troubleshooting.adoc" class="xref unresolved">Troubleshooting</a> common testing issues</p>
+</li>
+</ul>
 </div>
 </div>
 </div>

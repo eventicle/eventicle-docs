@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: Eventicle JS</title>
-    <link rel="canonical" href="https://book.eventicle.com/eventiclejs/book/raw-event-view.html">
+    <title>Quick Start Tutorial :: Eventicle JS</title>
+    <link rel="canonical" href="https://book.eventicle.com/eventiclejs/book/quickstart.html">
     <meta name="generator" content="Antora 3.1.14">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
@@ -61,7 +61,7 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="installation.html">Installation &amp; Setup</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="quickstart.html">Quick Start Tutorial</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -151,7 +151,7 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="advanced-event-client.html">Advanced Event Client Configuration</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="3">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="raw-event-view.html">Raw Event Views</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -305,161 +305,453 @@
   <ul>
     <li><a href="../index.html">EventicleJS</a></li>
     <li><a href="../index.html">The Book of Eventicle</a></li>
-    <li>Advanced Topics</li>
-    <li><a href="raw-event-view.html">Raw Event Views</a></li>
+    <li>Getting Started</li>
+    <li><a href="quickstart.html">Quick Start Tutorial</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/eventicle/eventiclejs/edit/master/docs/modules/book/pages/raw-event-view.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eventicle/eventiclejs/edit/master/docs/modules/book/pages/quickstart.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<div class="sect1">
-<h2 id="_raw_events_and_event_encoding"><a class="anchor" href="#_raw_events_and_event_encoding"></a>Raw Events and Event Encoding</h2>
+<h1 class="page">Quick Start Tutorial</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The event client provides an abstraction over an event broker, for example, Kafka.</p>
+<p>This tutorial will walk you through the basics of Eventicle by building a simple order management system using event sourcing.</p>
 </div>
-<div class="paragraph">
-<p>The event broker does not understand the Eventicle format directly, and so it must be translated into its native format via an Eventicle <code>Codec</code>.</p>
 </div>
-<div class="sect2">
-<h3 id="_event_client_codec"><a class="anchor" href="#_event_client_codec"></a>Event Client Codec</h3>
+</div>
+<div class="sect1">
+<h2 id="_what_well_build"><a class="anchor" href="#_what_well_build"></a>What We&#8217;ll Build</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>The chosen <code>eventClient()</code> (eg, eventClientOnKafka, or eventClientOnDatastore) uses the codec to convert the EventicleEvent into a simpler <code>EncodedEvent</code> that is made
-up of a payload Buffer and message headers more suitable for putting onto a broker.</p>
+<p>We&#8217;ll create a basic order system that can:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create orders</p>
+</li>
+<li>
+<p>Add items to orders</p>
+</li>
+<li>
+<p>Complete orders</p>
+</li>
+<li>
+<p>Query order status</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_1_set_up_the_project"><a class="anchor" href="#_step_1_set_up_the_project"></a>Step 1: Set Up the Project</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir order-system
+cd order-system
+npm init -y
+npm install @eventicle/eventiclejs typescript @types/node
+npx tsc --init</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_2_configure_eventicle"><a class="anchor" href="#_step_2_configure_eventicle"></a>Step 2: Configure Eventicle</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create <code>src/config.ts</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export interface EventClientCodec {
-  encode: (event: EventicleEvent) =&gt; Promise&lt;EncodedEvent&gt;
-  decode: (encoded: EncodedEvent) =&gt; Promise&lt;EventicleEvent&gt;
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import {
+  setEventClient,
+  eventClientInMemory,
+  setDataStore,
+  InMemoryDatastore
+} from "@eventicle/eventiclejs";
+
+export function configureEventicle() {
+  // Use in-memory implementations for this tutorial
+  setDataStore(new InMemoryDatastore());
+  setEventClient(eventClientInMemory());
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>The default codec is <code>EventClientJsonCodec</code>. This uses binary encoded JSON as the transmission format, and has excellent portability.</p>
-</div>
-<div class="paragraph">
-<p>You may use the Codec system to use another encoding format, for example Avro or Thrift, or to implement a data Encryption scheme to protect data being persisted to an event broker.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_access_raw_events"><a class="anchor" href="#_access_raw_events"></a>Access Raw Events</h3>
+<div class="sect1">
+<h2 id="_step_3_define_event_types"><a class="anchor" href="#_step_3_define_event_types"></a>Step 3: Define Event Types</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Generally, higher level components, such as Views and Sagas, do not have access to the source <code>EncodedEvent</code>, and only see the EventicleEvent output by the current Codec.</p>
-</div>
-<div class="paragraph">
-<p>It is possible to access them, if you require, via the EventClient interface and also via a higher level <code>RawEventView</code> or <code>RawEventAdapter</code> (see below for an example)</p>
-</div>
-<div class="paragraph">
-<p>This is not a common use case, but may be useful in backup or data sync where the event payload doesn&#8217;t need to be
-decoded for transmission.</p>
+<p>Create <code>src/events/order-events.ts</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">eventClient().emit([{        <i class="conum" data-value="1"></i><b>(1)</b>
-    headers: {},             <i class="conum" data-value="2"></i><b>(2)</b>
-    timestamp: Date.now(),
-    buffer:                  <i class="conum" data-value="3"></i><b>(3)</b>
-  }], "my-cool-stream")</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export interface OrderCreated {
+  type: "OrderCreated";
+  payload: {
+    orderId: string;
+    customerId: string;
+    createdAt: Date;
+  };
+}
+
+export interface ItemAdded {
+  type: "ItemAdded";
+  payload: {
+    orderId: string;
+    itemId: string;
+    productName: string;
+    quantity: number;
+    price: number;
+  };
+}
+
+export interface OrderCompleted {
+  type: "OrderCompleted";
+  payload: {
+    orderId: string;
+    totalAmount: number;
+    completedAt: Date;
+  };
+}
+
+export type OrderEvent = OrderCreated | ItemAdded | OrderCompleted;</code></pre>
 </div>
 </div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Emit a raw EncodedEvent to the given stream</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>The headers should carry the event meta data normally set by the EventCodec</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Buffer containing a full EventicleEvent, encoded to binary <em>somehow</em></td>
-</tr>
-</table>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_step_4_create_the_order_aggregate"><a class="anchor" href="#_step_4_create_the_order_aggregate"></a>Step 4: Create the Order Aggregate</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>This bypasses the EventCodec completely.</p>
+<p>Create <code>src/aggregates/order.ts</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">eventClient().coldHotStream({
-    rawEvents: true,           <i class="conum" data-value="1"></i><b>(1)</b>
-    groupId: "my-group-id",
-    stream: "my-cool-stream",
-    onError: error =&gt; {},
-    handler: async (event: EncodedEvent) =&gt; {
-                               <i class="conum" data-value="2"></i><b>(2)</b>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { AggregateRoot } from "@eventicle/eventiclejs";
+import { OrderCreated, ItemAdded, OrderCompleted, OrderEvent } from "../events/order-events";
+
+interface OrderItem {
+  itemId: string;
+  productName: string;
+  quantity: number;
+  price: number;
+}
+
+export class Order extends AggregateRoot {
+  customerId: string = "";
+  items: OrderItem[] = [];
+  totalAmount: number = 0;
+  status: "pending" | "completed" = "pending";
+
+  constructor() {
+    super("orders", []);
+
+    // Define how events update the aggregate state
+    this.reducers = {
+      OrderCreated: (event: OrderCreated) =&gt; {
+        this.id = event.payload.orderId;
+        this.customerId = event.payload.customerId;
+      },
+
+      ItemAdded: (event: ItemAdded) =&gt; {
+        this.items.push({
+          itemId: event.payload.itemId,
+          productName: event.payload.productName,
+          quantity: event.payload.quantity,
+          price: event.payload.price
+        });
+        this.totalAmount += event.payload.quantity * event.payload.price;
+      },
+
+      OrderCompleted: (event: OrderCompleted) =&gt; {
+        this.status = "completed";
+      }
+    };
+  }
+
+  // Business methods that emit events
+  static create(orderId: string, customerId: string): Order {
+    const order = new Order();
+    order.raiseEvent({
+      type: "OrderCreated",
+      payload: {
+        orderId,
+        customerId,
+        createdAt: new Date()
+      }
+    });
+    return order;
+  }
+
+  addItem(itemId: string, productName: string, quantity: number, price: number) {
+    if (this.status === "completed") {
+      throw new Error("Cannot add items to completed order");
     }
-  })</code></pre>
+
+    this.raiseEvent({
+      type: "ItemAdded",
+      payload: {
+        orderId: this.id,
+        itemId,
+        productName,
+        quantity,
+        price
+      }
+    });
+  }
+
+  complete() {
+    if (this.status === "completed") {
+      throw new Error("Order already completed");
+    }
+
+    if (this.items.length === 0) {
+      throw new Error("Cannot complete empty order");
+    }
+
+    this.raiseEvent({
+      type: "OrderCompleted",
+      payload: {
+        orderId: this.id,
+        totalAmount: this.totalAmount,
+        completedAt: new Date()
+      }
+    });
+  }
+}</code></pre>
 </div>
 </div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Request raw events be passed to the handler</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Process the raw event somehow</td>
-</tr>
-</table>
 </div>
-<div class="sect3">
-<h4 id="_raw_event_example_event_backup"><a class="anchor" href="#_raw_event_example_event_backup"></a>Raw Event Example: Event Backup</h4>
+</div>
+<div class="sect1">
+<h2 id="_step_5_create_an_event_view"><a class="anchor" href="#_step_5_create_an_event_view"></a>Step 5: Create an Event View</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>You can pull the raw message buffers out of the EncodedEvent and persist them to some backup.</p>
+<p>Create <code>src/views/order-summary-view.ts</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">class BackupAdapter implements RawEventView {
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { EventView, EventicleEvent, dataStore } from "@eventicle/eventiclejs";
 
-  readonly consumerGroup: string
+interface OrderSummary {
+  orderId: string;
+  customerId: string;
+  itemCount: number;
+  totalAmount: number;
+  status: string;
+  createdAt: Date;
+  completedAt?: Date;
+}
 
-  constructor(readonly streamsToSubscribe: string[]) {
-    this.consumerGroup = 'backup-adapter-' + streamsToSubscribe[0]   <i class="conum" data-value="1"></i><b>(1)</b>
-  }
+export class OrderSummaryView implements EventView {
+  consumerGroup = "OrderSummaryView";
+  streamsToSubscribe = ["orders"];
 
-  async handleEvent(event: EncodedEvent): Promise&lt;void&gt; {     <i class="conum" data-value="2"></i><b>(2)</b>
-    try {
-      await dataStore().createEntity("system", "event-backup", {
-        stream: this.streamsToSubscribe[0],
-        headers: Object.keys(event.headers).map((value, index) =&gt; ),
-        eventId: event.headers.id.toString(), data: event.buffer.toString("base64")
-      })
-    } catch (e) {
-      logger.error("Unable to persist backup event", event.headers)
+  async handleEvent(event: EventicleEvent): Promise&lt;void&gt; {
+    const store = await dataStore();
+
+    switch (event.type) {
+      case "OrderCreated":
+        await store.save("order-summaries", event.payload.orderId, {
+          orderId: event.payload.orderId,
+          customerId: event.payload.customerId,
+          itemCount: 0,
+          totalAmount: 0,
+          status: "pending",
+          createdAt: event.payload.createdAt
+        });
+        break;
+
+      case "ItemAdded":
+        const order = await store.load("order-summaries", event.payload.orderId);
+        if (order) {
+          order.itemCount += 1;
+          order.totalAmount += event.payload.quantity * event.payload.price;
+          await store.save("order-summaries", event.payload.orderId, order);
+        }
+        break;
+
+      case "OrderCompleted":
+        const completedOrder = await store.load("order-summaries", event.payload.orderId);
+        if (completedOrder) {
+          completedOrder.status = "completed";
+          completedOrder.completedAt = event.payload.completedAt;
+          await store.save("order-summaries", event.payload.orderId, completedOrder);
+        }
+        break;
     }
   }
+
+  async findByCustomer(customerId: string): Promise&lt;OrderSummary[]&gt; {
+    const store = await dataStore();
+    const all = await store.scan("order-summaries");
+    return all.filter(order =&gt; order.customerId === customerId);
+  }
+
+  async getOrder(orderId: string): Promise&lt;OrderSummary | null&gt; {
+    const store = await dataStore();
+    return await store.load("order-summaries", orderId);
+  }
 }</code></pre>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_6_wire_everything_together"><a class="anchor" href="#_step_6_wire_everything_together"></a>Step 6: Wire Everything Together</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>The <code>RawEventAdapter</code> has the same semantics as an EventAdapter, and so will start playing events from the current head of the event stream, not the start as with a RawEventView</p>
+<p>Create <code>src/index.ts</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">class MonitorAdapter implements RawEventAdapter {
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { configureEventicle } from "./config";
+import { Order } from "./aggregates/order";
+import { OrderSummaryView } from "./views/order-summary-view";
+import { registerView, aggregates, eventClient } from "@eventicle/eventiclejs";
 
-  readonly consumerGroup: string
+async function main() {
+  // Configure Eventicle
+  configureEventicle();
 
-  constructor(readonly streamsToSubscribe: string[]) {
-    this.consumerGroup = 'backup-adapter-' + streamsToSubscribe[0]   <i class="conum" data-value="1"></i><b>(1)</b>
-  }
+  // Register the view
+  const orderView = new OrderSummaryView();
+  registerView(orderView);
 
-  async handleEvent(event: EncodedEvent): Promise&lt;void&gt; {     <i class="conum" data-value="2"></i><b>(2)</b>
-    // persist somewhere
-  }
+  // Create an order
+  const order = Order.create("order-123", "customer-456");
+
+  // Add some items
+  order.addItem("item-1", "Coffee", 2, 4.50);
+  order.addItem("item-2", "Sandwich", 1, 8.99);
+
+  // Complete the order
+  order.complete();
+
+  // Save the aggregate (this emits all events)
+  await aggregates.persist(order);
+
+  // Give the view time to process events
+  await new Promise(resolve =&gt; setTimeout(resolve, 100));
+
+  // Query the view
+  const summary = await orderView.getOrder("order-123");
+  console.log("Order Summary:", summary);
+
+  // Find all orders for a customer
+  const customerOrders = await orderView.findByCustomer("customer-456");
+  console.log("Customer Orders:", customerOrders);
+}
+
+main().catch(console.error);</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_7_run_the_application"><a class="anchor" href="#_step_7_run_the_application"></a>Step 7: Run the Application</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npx ts-node src/index.ts</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should see output like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">Order Summary: {
+  orderId: 'order-123',
+  customerId: 'customer-456',
+  itemCount: 2,
+  totalAmount: 17.99,
+  status: 'completed',
+  createdAt: 2024-01-20T10:30:00.000Z,
+  completedAt: 2024-01-20T10:30:00.100Z
 }</code></pre>
 </div>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_understanding_what_happened"><a class="anchor" href="#_understanding_what_happened"></a>Understanding What Happened</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Events as Facts</strong>: Each business action (create, add item, complete) generates an event that represents an immutable fact</p>
+</li>
+<li>
+<p><strong>Aggregate State</strong>: The Order aggregate rebuilds its state by replaying events through reducers</p>
+</li>
+<li>
+<p><strong>Projections</strong>: The OrderSummaryView creates a query-optimized representation of the data</p>
+</li>
+<li>
+<p><strong>Event Sourcing</strong>: The complete history of changes is preserved in the event stream</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>Next Steps</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that you understand the basics:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Learn about <a href="events-and-streams.html" class="xref page">Events and Event Streams</a> in detail</p>
+</li>
+<li>
+<p>Explore <a href="aggregate-roots.html" class="xref page">Aggregate Roots</a> patterns</p>
+</li>
+<li>
+<p>Understand <a href="commands.html" class="xref page">Commands</a> for handling user actions</p>
+</li>
+<li>
+<p>Discover <a href="sagas.html" class="xref page">Sagas</a> for complex workflows</p>
+</li>
+<li>
+<p>Build <a href="first-application.html" class="xref page">Your First Production Application</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_key_takeaways"><a class="anchor" href="#_key_takeaways"></a>Key Takeaways</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Eventicle makes event sourcing accessible with a simple, intuitive API</p>
+</li>
+<li>
+<p>Aggregates encapsulate business logic and emit events</p>
+</li>
+<li>
+<p>Views provide efficient querying of event-sourced data</p>
+</li>
+<li>
+<p>The in-memory implementation is perfect for development and testing</p>
+</li>
+<li>
+<p>The same code can run on Kafka or PostgreSQL for production</p>
+</li>
+</ul>
 </div>
 </div>
 </div>

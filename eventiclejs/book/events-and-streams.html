@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Events and Event Streams :: Eventicle JS</title>
+    <link rel="canonical" href="https://book.eventicle.com/eventiclejs/book/events-and-streams.html">
+    <meta name="generator" content="Antora 3.1.14">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js'; mermaid.initialize("{ startOnLoad: true }");</script><header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://book.eventicle.com">Eventicle JS</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Components</a>
+          <div class="navbar-dropdown">
+              <a class="navbar-item" href="../index.html">EventicleJS</a>
+              <a class="navbar-item" href="../../eventicle-utilities/main/index.html">EventicleJS Utilities</a>
+              <a class="navbar-item" href="../../datastore-postgres/main/index.html">Postgres Datastore</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://github.com/eventicle/eventiclejs">EventicleJS Repository</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="eventiclejs" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">EventicleJS</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">The Book of Eventicle</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="installation.html">Installation &amp; Setup</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="quickstart.html">Quick Start Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="first-application.html">Your First Eventicle Application</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Core Concepts</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="events-and-streams.html">Events and Event Streams</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="event-clients.html">Event Clients</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="aggregate-roots.html">Aggregate Roots</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="aggregate-root-xstate.html">XState Aggregate Root - Formal State Machines</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="commands.html">Commands</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="sagas.html">Event Sagas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="query.html">Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="datastore.html">The Datastore</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="event-encoding.html">Event Encoding &amp; Codecs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#multi-tenancy.adoc">Multi-Tenancy</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">How To Guides</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#building-aggregates.adoc">Building Aggregate Roots</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#implementing-commands.adoc">Implementing Commands</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#creating-views.adoc">Creating Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#building-sagas.adoc">Building Sagas for Workflows</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="testing.html">Testing Event-Driven Code</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#handling-transactions.adoc">Handling Transactions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#outbox-pattern.adoc">Using the Outbox Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-versioning.adoc">Event Versioning &amp; Schema Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#performance-optimization.adoc">Performance Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#error-handling.adoc">Error Handling &amp; Resilience</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Advanced Topics</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="advanced-event-client.html">Advanced Event Client Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="raw-event-view.html">Raw Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="lockmanager.html">Lock Manager</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="scheduler.html">Scheduling &amp; Timers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-adapters.adoc">Event Adapters</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="observability.html">Observability &amp; Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#deployment.adoc">Deployment &amp; Scaling</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#troubleshooting.adoc">Troubleshooting Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Best Practices</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-design.adoc">Event Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#aggregate-design.adoc">Aggregate Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#saga-patterns.adoc">Saga Patterns &amp; Strategies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#production-considerations.adoc">Production Considerations</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">API documentation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../api/eventicle_eventiclejs.html">@eventicle/eventiclejs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_AggregateRoot_class.html">AggregateRoot</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_Command_interface.html">Command</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_CommandIntent_interface.html">CommandIntent</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_CommandReturn_interface.html">CommandReturn</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EncodedEvent_interface.html">EncodedEvent</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventAdapter_interface.html">EventAdapter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventClient_interface.html">EventClient</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventClientCodec_interface.html">EventClientCodec</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventicleEvent_interface.html">EventicleEvent</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventView_interface.html">EventView</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_InMemoryDatastore_class.html">InMemoryDatastore</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_LocalScheduleJobRunner_class.html">LocalScheduleJobRunner</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_RawEventView_interface.html">RawEventView</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_Saga_class.html">Saga</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_SagaInstance_class.html">SagaInstance</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">EventicleJS</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">EventicleJS</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../eventicle-utilities/main/index.html">EventicleJS Utilities</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../eventicle-utilities/main/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../datastore-postgres/main/index.html">Postgres Datastore</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../datastore-postgres/main/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">EventicleJS</a></li>
+    <li><a href="../index.html">The Book of Eventicle</a></li>
+    <li>Core Concepts</li>
+    <li><a href="events-and-streams.html">Events and Event Streams</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/eventicle/eventiclejs/edit/master/docs/modules/book/pages/events-and-streams.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Events and Event Streams</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Events are the foundation of Eventicle. This guide explains what events are, how they&#8217;re structured, and how to work with event streams effectively.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_are_events"><a class="anchor" href="#_what_are_events"></a>What Are Events?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In Eventicle, an event represents something that has happened in your system. Events are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Immutable</strong>: Once created, events cannot be changed</p>
+</li>
+<li>
+<p><strong>Ordered</strong>: Events have a sequence within their stream</p>
+</li>
+<li>
+<p><strong>Timestamped</strong>: Every event records when it occurred</p>
+</li>
+<li>
+<p><strong>Causally Linked</strong>: Events can track what caused them</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_event_structure"><a class="anchor" href="#_event_structure"></a>Event Structure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Every event in Eventicle implements the <code>EventicleEvent</code> interface:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">interface EventicleEvent {
+  // Event metadata
+  id: string;              // Unique event ID
+  type: string;            // Event type name
+  domainId: string;        // ID of the aggregate/entity
+  stream: string;          // Stream name
+  streamId: string;        // Unique stream instance ID
+  timestamp: number;       // Unix timestamp
+  sequence?: number;       // Position in stream
+
+  // Causation tracking
+  causedById?: string;     // ID of event that caused this
+  causedByType?: string;   // Type of event that caused this
+
+  // Event data
+  payload?: any;           // Event-specific data
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_event_streams"><a class="anchor" href="#_event_streams"></a>Event Streams</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Event streams are ordered sequences of related events. They provide:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Logical Grouping</strong>: Related events belong to the same stream</p>
+</li>
+<li>
+<p><strong>Ordering Guarantee</strong>: Events are ordered within a stream</p>
+</li>
+<li>
+<p><strong>Replay Capability</strong>: Streams can be replayed from any point</p>
+</li>
+<li>
+<p><strong>Partitioning</strong>: Streams can be partitioned for scalability</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_stream_naming_conventions"><a class="anchor" href="#_stream_naming_conventions"></a>Stream Naming Conventions</h3>
+<div class="paragraph">
+<p>Choose meaningful stream names that reflect your domain:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// Good stream names
+"orders"                  // All order-related events
+"inventory"              // Inventory management events
+"user-accounts"          // User account events
+"payments"               // Payment processing events
+
+// Stream with namespace
+"shopping.orders"        // Orders in shopping context
+"admin.users"           // Admin user events</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_creating_events"><a class="anchor" href="#_creating_events"></a>Creating Events</h3>
+<div class="paragraph">
+<p>Events are typically created through aggregates, but can also be emitted directly:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { eventClient } from "@eventicle/eventiclejs";
+
+// Direct event emission
+await eventClient().emit([{
+  type: "UserRegistered",
+  stream: "users",
+  domainId: "user-123",
+  payload: {
+    email: "user@example.com",
+    registeredAt: new Date()
+  }
+}]);
+
+// Through an aggregate (recommended)
+class User extends AggregateRoot {
+  register(email: string) {
+    this.raiseEvent({
+      type: "UserRegistered",
+      payload: { email, registeredAt: new Date() }
+    });
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_event_types_and_payload"><a class="anchor" href="#_event_types_and_payload"></a>Event Types and Payload</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_defining_event_types"><a class="anchor" href="#_defining_event_types"></a>Defining Event Types</h3>
+<div class="paragraph">
+<p>Use TypeScript interfaces for type-safe events:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// Define event types
+interface ProductAdded {
+  type: "ProductAdded";
+  payload: {
+    productId: string;
+    name: string;
+    price: number;
+    stock: number;
+  };
+}
+
+interface PriceUpdated {
+  type: "PriceUpdated";
+  payload: {
+    productId: string;
+    oldPrice: number;
+    newPrice: number;
+    reason: string;
+  };
+}
+
+// Union type for all product events
+type ProductEvent = ProductAdded | PriceUpdated;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_event_naming_best_practices"><a class="anchor" href="#_event_naming_best_practices"></a>Event Naming Best Practices</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Use past tense: <code>OrderCreated</code>, not <code>CreateOrder</code></p>
+</li>
+<li>
+<p>Be specific: <code>PaymentProcessed</code>, not just <code>Processed</code></p>
+</li>
+<li>
+<p>Include context: <code>InventoryItemReserved</code>, not just <code>Reserved</code></p>
+</li>
+<li>
+<p>Avoid generic names: Use <code>OrderShipped</code>, not <code>StatusChanged</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_working_with_event_streams"><a class="anchor" href="#_working_with_event_streams"></a>Working with Event Streams</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_subscribing_to_streams"><a class="anchor" href="#_subscribing_to_streams"></a>Subscribing to Streams</h3>
+<div class="paragraph">
+<p>Subscribe to receive new events as they occur:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { eventClient } from "@eventicle/eventiclejs";
+
+// Subscribe to new events only
+eventClient().subscribe({
+  stream: "orders",
+  consumerGroup: "order-processor",
+  handler: async (event) =&gt; {
+    console.log("New event:", event.type, event.payload);
+  }
+});</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_replaying_streams"><a class="anchor" href="#_replaying_streams"></a>Replaying Streams</h3>
+<div class="paragraph">
+<p>Replay historical events for processing:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// Replay all events from the beginning
+await eventClient().coldReplay({
+  stream: "orders",
+  handler: async (event) =&gt; {
+    console.log("Historical event:", event.type);
+  }
+});
+
+// Replay and continue listening
+await eventClient().hotReplay({
+  stream: "orders",
+  consumerGroup: "order-analyzer",
+  handler: async (event) =&gt; {
+    console.log("Event:", event.type);
+  }
+});</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_stream_positions_and_checkpoints"><a class="anchor" href="#_stream_positions_and_checkpoints"></a>Stream Positions and Checkpoints</h3>
+<div class="paragraph">
+<p>Track processing position for reliable replay:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// Subscribe from a specific position
+eventClient().subscribe({
+  stream: "orders",
+  consumerGroup: "order-processor",
+  fromPosition: lastProcessedPosition,
+  handler: async (event) =&gt; {
+    await processEvent(event);
+    await savePosition(event.sequence);
+  }
+});</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_event_ordering_and_causation"><a class="anchor" href="#_event_ordering_and_causation"></a>Event Ordering and Causation</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_event_ordering"><a class="anchor" href="#_event_ordering"></a>Event Ordering</h3>
+<div class="paragraph">
+<p>Events are ordered within their stream:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// Events emitted together maintain order
+await eventClient().emit([
+  { type: "OrderCreated", stream: "orders", domainId: "order-1" },
+  { type: "ItemAdded", stream: "orders", domainId: "order-1" },
+  { type: "ItemAdded", stream: "orders", domainId: "order-1" }
+]);
+// These events will have sequential sequence numbers</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_causation_tracking"><a class="anchor" href="#_causation_tracking"></a>Causation Tracking</h3>
+<div class="paragraph">
+<p>Track which events caused others:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">class OrderSaga {
+  async handleOrderCreated(event: EventicleEvent) {
+    // Emit payment request with causation
+    await eventClient().emit([{
+      type: "PaymentRequested",
+      stream: "payments",
+      domainId: event.domainId,
+      causedById: event.id,        // Track what caused this
+      causedByType: event.type,
+      payload: { amount: 100 }
+    }]);
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_event_metadata"><a class="anchor" href="#_event_metadata"></a>Event Metadata</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_system_metadata"><a class="anchor" href="#_system_metadata"></a>System Metadata</h3>
+<div class="paragraph">
+<p>Eventicle automatically adds metadata to events:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>id</code>: Unique identifier (UUID)</p>
+</li>
+<li>
+<p><code>timestamp</code>: Unix timestamp of creation</p>
+</li>
+<li>
+<p><code>sequence</code>: Position in the stream</p>
+</li>
+<li>
+<p><code>stream</code>: Stream name from aggregate or explicit</p>
+</li>
+<li>
+<p><code>streamId</code>: Unique stream instance identifier</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_custom_metadata"><a class="anchor" href="#_custom_metadata"></a>Custom Metadata</h3>
+<div class="paragraph">
+<p>Add domain-specific metadata through the payload:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">this.raiseEvent({
+  type: "OrderPlaced",
+  payload: {
+    // Business data
+    items: orderItems,
+    total: calculateTotal(),
+
+    // Custom metadata
+    metadata: {
+      userId: currentUser.id,
+      source: "web",
+      version: "2.0",
+      region: "us-east"
+    }
+  }
+});</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_event_storage_and_retrieval"><a class="anchor" href="#_event_storage_and_retrieval"></a>Event Storage and Retrieval</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_event_persistence"><a class="anchor" href="#_event_persistence"></a>Event Persistence</h3>
+<div class="paragraph">
+<p>Events are persisted based on your event client configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>In-Memory</strong>: Events stored in memory (development/testing)</p>
+</li>
+<li>
+<p><strong>Kafka</strong>: Events stored in Kafka topics</p>
+</li>
+<li>
+<p><strong>PostgreSQL</strong>: Events stored in database tables</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_querying_events"><a class="anchor" href="#_querying_events"></a>Querying Events</h3>
+<div class="paragraph">
+<p>Query events directly when needed:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// Get all events for an aggregate
+const events = await eventClient().getEvents({
+  stream: "orders",
+  domainId: "order-123"
+});
+
+// Get events by type
+const createdEvents = events.filter(e =&gt; e.type === "OrderCreated");</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_best_practices"><a class="anchor" href="#_best_practices"></a>Best Practices</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_event_design"><a class="anchor" href="#_event_design"></a>Event Design</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Keep Events Small</strong>: Include only necessary data</p>
+</li>
+<li>
+<p><strong>Make Events Self-Contained</strong>: Include all data needed to understand the event</p>
+</li>
+<li>
+<p><strong>Version Events</strong>: Plan for schema evolution</p>
+</li>
+<li>
+<p><strong>Use Domain Language</strong>: Event names should reflect business terminology</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_stream_design"><a class="anchor" href="#_stream_design"></a>Stream Design</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>One Stream per Aggregate Type</strong>: Keep related events together</p>
+</li>
+<li>
+<p><strong>Consider Partitioning</strong>: For high-volume streams</p>
+</li>
+<li>
+<p><strong>Plan for Replay</strong>: Design with reprocessing in mind</p>
+</li>
+<li>
+<p><strong>Monitor Stream Growth</strong>: Plan retention and archival</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_well_designed_events"><a class="anchor" href="#_example_well_designed_events"></a>Example: Well-Designed Events</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// Good: Specific, self-contained, business-focused
+interface InvoiceGenerated {
+  type: "InvoiceGenerated";
+  payload: {
+    invoiceId: string;
+    orderId: string;
+    customerId: string;
+    items: Array&lt;{
+      description: string;
+      quantity: number;
+      unitPrice: number;
+    }&gt;;
+    totalAmount: number;
+    dueDate: Date;
+    generatedAt: Date;
+  };
+}
+
+// Avoid: Generic, missing context
+interface Updated {
+  type: "Updated";
+  payload: {
+    id: string;
+    changes: any;
+  };
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>Next Steps</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Learn about <a href="event-clients.html" class="xref page">Event Clients</a> for different storage backends</p>
+</li>
+<li>
+<p>Understand <a href="aggregate-roots.html" class="xref page">Aggregate Roots</a> for event generation</p>
+</li>
+<li>
+<p>Explore <a href="query.html" class="xref page">Event Views</a> for querying event data</p>
+</li>
+<li>
+<p>Discover <a href="event-encoding.html" class="xref page">Event Encoding</a> for serialization options</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

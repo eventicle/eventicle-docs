@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Event Clients :: Eventicle JS</title>
+    <link rel="canonical" href="https://book.eventicle.com/eventiclejs/book/event-clients.html">
+    <meta name="generator" content="Antora 3.1.14">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js'; mermaid.initialize("{ startOnLoad: true }");</script><header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://book.eventicle.com">Eventicle JS</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Components</a>
+          <div class="navbar-dropdown">
+              <a class="navbar-item" href="../index.html">EventicleJS</a>
+              <a class="navbar-item" href="../../eventicle-utilities/main/index.html">EventicleJS Utilities</a>
+              <a class="navbar-item" href="../../datastore-postgres/main/index.html">Postgres Datastore</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://github.com/eventicle/eventiclejs">EventicleJS Repository</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="eventiclejs" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">EventicleJS</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">The Book of Eventicle</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="installation.html">Installation &amp; Setup</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="quickstart.html">Quick Start Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="first-application.html">Your First Eventicle Application</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Core Concepts</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="events-and-streams.html">Events and Event Streams</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="event-clients.html">Event Clients</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="aggregate-roots.html">Aggregate Roots</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="aggregate-root-xstate.html">XState Aggregate Root - Formal State Machines</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="commands.html">Commands</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="sagas.html">Event Sagas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="query.html">Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="datastore.html">The Datastore</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="event-encoding.html">Event Encoding &amp; Codecs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#multi-tenancy.adoc">Multi-Tenancy</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">How To Guides</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#building-aggregates.adoc">Building Aggregate Roots</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#implementing-commands.adoc">Implementing Commands</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#creating-views.adoc">Creating Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#building-sagas.adoc">Building Sagas for Workflows</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="testing.html">Testing Event-Driven Code</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#handling-transactions.adoc">Handling Transactions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#outbox-pattern.adoc">Using the Outbox Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-versioning.adoc">Event Versioning &amp; Schema Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#performance-optimization.adoc">Performance Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#error-handling.adoc">Error Handling &amp; Resilience</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Advanced Topics</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="advanced-event-client.html">Advanced Event Client Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="raw-event-view.html">Raw Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="lockmanager.html">Lock Manager</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="scheduler.html">Scheduling &amp; Timers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-adapters.adoc">Event Adapters</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="observability.html">Observability &amp; Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#deployment.adoc">Deployment &amp; Scaling</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#troubleshooting.adoc">Troubleshooting Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Best Practices</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-design.adoc">Event Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#aggregate-design.adoc">Aggregate Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#saga-patterns.adoc">Saga Patterns &amp; Strategies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#production-considerations.adoc">Production Considerations</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">API documentation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../api/eventicle_eventiclejs.html">@eventicle/eventiclejs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_AggregateRoot_class.html">AggregateRoot</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_Command_interface.html">Command</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_CommandIntent_interface.html">CommandIntent</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_CommandReturn_interface.html">CommandReturn</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EncodedEvent_interface.html">EncodedEvent</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventAdapter_interface.html">EventAdapter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventClient_interface.html">EventClient</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventClientCodec_interface.html">EventClientCodec</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventicleEvent_interface.html">EventicleEvent</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_EventView_interface.html">EventView</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_InMemoryDatastore_class.html">InMemoryDatastore</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_LocalScheduleJobRunner_class.html">LocalScheduleJobRunner</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_RawEventView_interface.html">RawEventView</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_Saga_class.html">Saga</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api/eventicle_eventiclejs_SagaInstance_class.html">SagaInstance</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">EventicleJS</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">EventicleJS</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../eventicle-utilities/main/index.html">EventicleJS Utilities</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../eventicle-utilities/main/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../datastore-postgres/main/index.html">Postgres Datastore</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../datastore-postgres/main/index.html">main</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">EventicleJS</a></li>
+    <li><a href="../index.html">The Book of Eventicle</a></li>
+    <li>Core Concepts</li>
+    <li><a href="event-clients.html">Event Clients</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/eventicle/eventiclejs/edit/master/docs/modules/book/pages/event-clients.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Event Clients</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Event clients are the core abstraction in Eventicle for storing and retrieving events. This guide covers the different types of event clients and how to configure them for your needs.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An EventClient provides the interface for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Emitting events to streams</p>
+</li>
+<li>
+<p>Subscribing to event streams</p>
+</li>
+<li>
+<p>Replaying historical events</p>
+</li>
+<li>
+<p>Managing consumer groups</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Eventicle provides several implementations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>In-Memory</strong>: For development and testing</p>
+</li>
+<li>
+<p><strong>Kafka</strong>: For production event streaming</p>
+</li>
+<li>
+<p><strong>Datastore</strong>: For PostgreSQL-backed event storage</p>
+</li>
+<li>
+<p><strong>Transactional</strong>: For coordinating events with database transactions</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_eventclient_interface"><a class="anchor" href="#_the_eventclient_interface"></a>The EventClient Interface</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All event clients implement this core interface:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">interface EventClient {
+  // Emit events
+  emit(events: EventicleEvent[]): Promise&lt;void&gt;;
+
+  // Subscribe to new events
+  subscribe(options: {
+    stream: string;
+    consumerGroup: string;
+    handler: (event: EventicleEvent) =&gt; Promise&lt;void&gt;;
+    parallelEventCount?: number;
+  }): void;
+
+  // Replay events from beginning
+  coldReplay(options: {
+    stream: string;
+    handler: (event: EventicleEvent) =&gt; Promise&lt;void&gt;;
+  }): Promise&lt;void&gt;;
+
+  // Replay then continue subscribing
+  hotReplay(options: {
+    stream: string;
+    consumerGroup: string;
+    handler: (event: EventicleEvent) =&gt; Promise&lt;void&gt;;
+  }): Promise&lt;void&gt;;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_in_memory_event_client"><a class="anchor" href="#_in_memory_event_client"></a>In-Memory Event Client</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Perfect for development and testing:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { setEventClient, eventClientInMemory } from "@eventicle/eventiclejs";
+
+// Basic setup
+setEventClient(eventClientInMemory());
+
+// With custom configuration
+setEventClient(eventClientInMemory({
+  maxEventsPerStream: 10000,  // Limit stream size
+  logger: customLogger         // Custom logging
+}));</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_features"><a class="anchor" href="#_features"></a>Features</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Zero external dependencies</p>
+</li>
+<li>
+<p>Fast performance for tests</p>
+</li>
+<li>
+<p>Full API compatibility</p>
+</li>
+<li>
+<p>Automatic event ordering</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_limitations"><a class="anchor" href="#_limitations"></a>Limitations</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Data lost on restart</p>
+</li>
+<li>
+<p>No persistence</p>
+</li>
+<li>
+<p>Single process only</p>
+</li>
+<li>
+<p>Limited by available memory</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_kafka_event_client"><a class="anchor" href="#_kafka_event_client"></a>Kafka Event Client</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The recommended choice for production:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { setEventClient, eventClientOnKafka } from "@eventicle/eventiclejs";
+
+setEventClient(eventClientOnKafka({
+  brokers: ["kafka1:9092", "kafka2:9092"],
+  clientId: "my-service",
+
+  // Consumer configuration
+  consumerConfig: {
+    groupId: "my-service-group",
+    sessionTimeout: 30000,
+    heartbeatInterval: 3000,
+    maxBytesPerPartition: 1048576,
+    maxWaitTimeInMs: 100
+  },
+
+  // Producer configuration
+  producerConfig: {
+    allowAutoTopicCreation: true,
+    transactionTimeout: 60000,
+    compression: CompressionTypes.GZIP
+  },
+
+  // Batching configuration
+  batching: {
+    size: 100,              // Batch size
+    lingerMs: 10            // Max wait time
+  }
+}));</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_advanced_kafka_configuration"><a class="anchor" href="#_advanced_kafka_configuration"></a>Advanced Kafka Configuration</h3>
+<div class="sect3">
+<h4 id="_topic_management"><a class="anchor" href="#_topic_management"></a>Topic Management</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// Automatic topic creation with configuration
+setEventClient(eventClientOnKafka({
+  brokers: ["localhost:9092"],
+  topicConfig: {
+    numPartitions: 6,
+    replicationFactor: 3,
+    configEntries: [
+      { name: "retention.ms", value: "604800000" },      // 7 days
+      { name: "compression.type", value: "gzip" },
+      { name: "min.insync.replicas", value: "2" }
+    ]
+  }
+}));</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_consumer_group_management"><a class="anchor" href="#_consumer_group_management"></a>Consumer Group Management</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// Multiple consumer groups for same stream
+const client = eventClientOnKafka({
+  brokers: ["localhost:9092"],
+  groupId: "default-group"
+});
+
+// Analytics consumer
+client.subscribe({
+  stream: "orders",
+  consumerGroup: "analytics",
+  handler: analyticsHandler
+});
+
+// Notification consumer
+client.subscribe({
+  stream: "orders",
+  consumerGroup: "notifications",
+  handler: notificationHandler
+});</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_throttling_and_backpressure"><a class="anchor" href="#_throttling_and_backpressure"></a>Throttling and Backpressure</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { KafkaThrottle } from "@eventicle/eventiclejs";
+
+// Configure throttling
+const throttle = new KafkaThrottle({
+  maxConcurrent: 10,      // Max concurrent messages
+  maxPerSecond: 1000      // Rate limit
+});
+
+// Apply to subscriptions
+client.subscribe({
+  stream: "high-volume",
+  consumerGroup: "processor",
+  parallelEventCount: 10,
+  throttle: throttle,
+  handler: async (event) =&gt; {
+    await processEvent(event);
+  }
+});</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_postgresql_datastore_event_client"><a class="anchor" href="#_postgresql_datastore_event_client"></a>PostgreSQL Datastore Event Client</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For SQL-based event storage:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import {
+  setEventClient,
+  eventClientOnDatastore,
+  setDataStore
+} from "@eventicle/eventiclejs";
+
+// Configure PostgreSQL connection
+const pgDatastore = new PostgresDatastore({
+  host: process.env.DB_HOST,
+  port: 5432,
+  database: process.env.DB_NAME,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+
+  // Connection pool settings
+  max: 20,
+  idleTimeoutMillis: 30000,
+  connectionTimeoutMillis: 2000
+});
+
+setDataStore(pgDatastore);
+setEventClient(eventClientOnDatastore());</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_schema_setup"><a class="anchor" href="#_schema_setup"></a>Schema Setup</h3>
+<div class="paragraph">
+<p>The datastore client requires these tables:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">-- Events table
+CREATE TABLE events (
+  id UUID PRIMARY KEY,
+  stream VARCHAR(255) NOT NULL,
+  domain_id VARCHAR(255) NOT NULL,
+  type VARCHAR(255) NOT NULL,
+  sequence BIGSERIAL,
+  timestamp BIGINT NOT NULL,
+  payload JSONB,
+  metadata JSONB,
+  caused_by_id UUID,
+  caused_by_type VARCHAR(255),
+  INDEX idx_stream_sequence (stream, sequence),
+  INDEX idx_domain_id (domain_id),
+  INDEX idx_timestamp (timestamp)
+);
+
+-- Consumer positions
+CREATE TABLE consumer_positions (
+  consumer_group VARCHAR(255),
+  stream VARCHAR(255),
+  position BIGINT,
+  updated_at TIMESTAMP DEFAULT NOW(),
+  PRIMARY KEY (consumer_group, stream)
+);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_features_2"><a class="anchor" href="#_features_2"></a>Features</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>ACID compliance</p>
+</li>
+<li>
+<p>SQL query capabilities</p>
+</li>
+<li>
+<p>Integrated with existing databases</p>
+</li>
+<li>
+<p>Transaction support</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_transactional_event_client"><a class="anchor" href="#_transactional_event_client"></a>Transactional Event Client</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Coordinate events with database transactions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { TransactionalEventClient } from "@eventicle/eventiclejs";
+
+const txClient = new TransactionalEventClient({
+  baseClient: eventClientOnDatastore(),
+  datastore: pgDatastore
+});
+
+// Use within a transaction
+await datastore.transaction(async (tx) =&gt; {
+  // Database operations
+  await tx.query("INSERT INTO users ...");
+
+  // Events are only emitted if transaction succeeds
+  await txClient.emit([{
+    type: "UserCreated",
+    stream: "users",
+    domainId: userId
+  }]);
+});</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_idempotent_event_client"><a class="anchor" href="#_idempotent_event_client"></a>Idempotent Event Client</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Prevent duplicate event processing:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { IdempotentEventClient } from "@eventicle/eventiclejs";
+
+const idempotentClient = new IdempotentEventClient({
+  client: eventClientOnKafka({ /* config */ }),
+
+  // Deduplication window
+  deduplicationWindow: 3600000, // 1 hour
+
+  // Storage for processed events
+  storage: new RedisStorage({
+    host: "localhost",
+    port: 6379
+  })
+});
+
+setEventClient(idempotentClient);</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_clean_starting_proxy_client"><a class="anchor" href="#_clean_starting_proxy_client"></a>Clean Starting Proxy Client</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ensure clean startup by removing incomplete events:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { cleanStartingProxyEventClient } from "@eventicle/eventiclejs";
+
+const cleanClient = cleanStartingProxyEventClient({
+  eventClient: eventClientOnKafka({ /* config */ }),
+  eventSourceName: "my-service",
+
+  // Remove events from last 5 minutes on startup
+  cleanupWindow: 300000
+});
+
+setEventClient(cleanClient);</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_choosing_an_event_client"><a class="anchor" href="#_choosing_an_event_client"></a>Choosing an Event Client</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_development_and_testing"><a class="anchor" href="#_development_and_testing"></a>Development and Testing</h3>
+<div class="paragraph">
+<p>Use the in-memory client:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fast test execution</p>
+</li>
+<li>
+<p>No infrastructure needed</p>
+</li>
+<li>
+<p>Deterministic behavior</p>
+</li>
+<li>
+<p>Easy debugging</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_production_high_throughput"><a class="anchor" href="#_production_high_throughput"></a>Production - High Throughput</h3>
+<div class="paragraph">
+<p>Use Kafka for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>High message volumes</p>
+</li>
+<li>
+<p>Multiple consumers</p>
+</li>
+<li>
+<p>Stream processing</p>
+</li>
+<li>
+<p>Horizontal scaling</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_production_transactional"><a class="anchor" href="#_production_transactional"></a>Production - Transactional</h3>
+<div class="paragraph">
+<p>Use PostgreSQL for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ACID requirements</p>
+</li>
+<li>
+<p>Smaller event volumes</p>
+</li>
+<li>
+<p>Existing PostgreSQL infrastructure</p>
+</li>
+<li>
+<p>SQL query needs</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_event_client_middleware"><a class="anchor" href="#_event_client_middleware"></a>Event Client Middleware</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create custom event client behavior:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">class LoggingEventClient implements EventClient {
+  constructor(private wrapped: EventClient) {}
+
+  async emit(events: EventicleEvent[]): Promise&lt;void&gt; {
+    console.log(`Emitting ${events.length} events`);
+    await this.wrapped.emit(events);
+  }
+
+  subscribe(options: SubscribeOptions): void {
+    const wrappedHandler = async (event: EventicleEvent) =&gt; {
+      console.log(`Processing: ${event.type}`);
+      await options.handler(event);
+    };
+
+    this.wrapped.subscribe({
+      ...options,
+      handler: wrappedHandler
+    });
+  }
+
+  // Implement other methods...
+}
+
+// Use the middleware
+const baseClient = eventClientOnKafka({ /* config */ });
+const loggingClient = new LoggingEventClient(baseClient);
+setEventClient(loggingClient);</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_monitoring_and_observability"><a class="anchor" href="#_monitoring_and_observability"></a>Monitoring and Observability</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_metrics"><a class="anchor" href="#_metrics"></a>Metrics</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { metrics } from "@eventicle/eventiclejs";
+
+// Enable metrics collection
+metrics.enable({
+  eventEmitted: true,
+  eventProcessed: true,
+  processingDuration: true,
+  consumerLag: true
+});
+
+// Access metrics
+const stats = metrics.getStats();
+console.log("Events processed:", stats.eventsProcessed);
+console.log("Average duration:", stats.avgProcessingTime);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_health_checks"><a class="anchor" href="#_health_checks"></a>Health Checks</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// Kafka health check
+async function checkKafkaHealth(): Promise&lt;boolean&gt; {
+  try {
+    const admin = kafka.admin();
+    await admin.listTopics();
+    await admin.disconnect();
+    return true;
+  } catch (error) {
+    console.error("Kafka health check failed:", error);
+    return false;
+  }
+}
+
+// Datastore health check
+async function checkDatastoreHealth(): Promise&lt;boolean&gt; {
+  try {
+    await datastore.query("SELECT 1");
+    return true;
+  } catch (error) {
+    console.error("Datastore health check failed:", error);
+    return false;
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_best_practices"><a class="anchor" href="#_best_practices"></a>Best Practices</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Choose the Right Client</strong>: Match the client to your requirements</p>
+</li>
+<li>
+<p><strong>Configure Appropriately</strong>: Tune settings for your workload</p>
+</li>
+<li>
+<p><strong>Monitor Performance</strong>: Track metrics and lag</p>
+</li>
+<li>
+<p><strong>Handle Errors</strong>: Implement proper error handling</p>
+</li>
+<li>
+<p><strong>Test Thoroughly</strong>: Use in-memory client for tests</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>Next Steps</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Learn about <a href="aggregate-roots.html" class="xref page">Aggregate Roots</a> for event generation</p>
+</li>
+<li>
+<p>Explore <a href="query.html" class="xref page">Event Views</a> for consuming events</p>
+</li>
+<li>
+<p>Understand <a href="#handling-transactions.adoc" class="xref unresolved">Transaction Handling</a></p>
+</li>
+<li>
+<p>See <a href="#performance-optimization.adoc" class="xref unresolved">Performance Optimization</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: Eventicle JS</title>
-    <link rel="canonical" href="https://book.eventicle.com/eventiclejs/book/advanced-event-client.html">
+    <title>Installation &amp; Setup :: Eventicle JS</title>
+    <link rel="canonical" href="https://book.eventicle.com/eventiclejs/book/installation.html">
     <meta name="generator" content="Antora 3.1.14">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
@@ -58,7 +58,7 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Getting Started</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="installation.html">Installation &amp; Setup</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -148,7 +148,7 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Advanced Topics</span>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="3">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="advanced-event-client.html">Advanced Event Client Configuration</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -305,86 +305,341 @@
   <ul>
     <li><a href="../index.html">EventicleJS</a></li>
     <li><a href="../index.html">The Book of Eventicle</a></li>
-    <li>Advanced Topics</li>
-    <li><a href="advanced-event-client.html">Advanced Event Client Configuration</a></li>
+    <li>Getting Started</li>
+    <li><a href="installation.html">Installation &amp; Setup</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/eventicle/eventiclejs/edit/master/docs/modules/book/pages/advanced-event-client.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/eventicle/eventiclejs/edit/master/docs/modules/book/pages/installation.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
+<h1 class="page">Installation &amp; Setup</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This guide will help you get started with Eventicle by setting up your development environment and installing the necessary dependencies.</p>
+</div>
+</div>
+</div>
 <div class="sect1">
-<h2 id="_advanced_event_client"><a class="anchor" href="#_advanced_event_client"></a>Advanced Event Client</h2>
+<h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before installing Eventicle, ensure you have:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Node.js 14+ and npm/yarn installed</p>
+</li>
+<li>
+<p>TypeScript 4.0+ (for TypeScript projects)</p>
+</li>
+<li>
+<p>For production use, one of:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Apache Kafka 2.0+ (recommended for production)</p>
+</li>
+<li>
+<p>PostgreSQL 12+ (for datastore-backed event client)</p>
+</li>
+<li>
+<p>Redis 6+ (for distributed locking and BullMQ scheduling)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installation"><a class="anchor" href="#_installation"></a>Installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Install Eventicle using your preferred package manager:</p>
+</div>
+<div class="listingblock">
+<div class="title">npm</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm install @eventicle/eventiclejs</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">yarn</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">yarn add @eventicle/eventiclejs</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">pnpm</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pnpm add @eventicle/eventiclejs</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_typescript_configuration"><a class="anchor" href="#_typescript_configuration"></a>TypeScript Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Eventicle is written in TypeScript and provides full type definitions. For TypeScript projects, ensure your <code>tsconfig.json</code> includes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "lib": ["ES2020"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "outDir": "./dist",
+    "rootDir": "./src"
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_basic_project_structure"><a class="anchor" href="#_basic_project_structure"></a>Basic Project Structure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A typical Eventicle project structure:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">my-eventicle-app/
+├── src/
+│   ├── aggregates/       # Aggregate root implementations
+│   ├── commands/         # Command handlers
+│   ├── events/          # Event type definitions
+│   ├── sagas/           # Saga workflows
+│   ├── views/           # Event views/projections
+│   ├── config/          # Configuration files
+│   └── index.ts         # Application entry point
+├── test/                # Test files
+├── package.json
+├── tsconfig.json
+└── README.md</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_environment_setup"><a class="anchor" href="#_environment_setup"></a>Environment Setup</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_clean_starting_event_client_proxy"><a class="anchor" href="#_clean_starting_event_client_proxy"></a>Clean Starting Event Client Proxy</h3>
+<h3 id="_development_environment"><a class="anchor" href="#_development_environment"></a>Development Environment</h3>
 <div class="paragraph">
-<p>EventClient setup will generally fail if the underlying transport is not available.</p>
-</div>
-<div class="paragraph">
-<p><code>cleanStartingProxyEventClient</code> exists to allow your application to start up even if the underlying event client fails.</p>
-</div>
-<div class="paragraph">
-<p>If replaces the event client with a no-op proxy that will fail all <code>emit</code> calls, but otherwise setup Views, Adapters and Sagas correctly.</p>
-</div>
-<div class="paragraph">
-<p>It will then periodically attempt to recreate the event client until it succeeds. Once that occurs, all the pending subscriptions are attached to it and the system will become live.</p>
+<p>For development, you can use the in-memory event client which requires no external dependencies:</p>
 </div>
 <div class="listingblock">
-<div class="title">Wrap eventClientOnKafka with cleanStartingProxyEventClient to permit broker connection failure during startup</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import {setEventClient, eventClientOnKafka} from "@eventicle/eventiclejs";
-import {cleanStartingProxyEventClient} from "@eventicle/eventiclejs/dist/events/core/cleanStartingProxyEventClient";
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { setEventClient, eventClientInMemory } from "@eventicle/eventiclejs";
 
-// .. other setups
-
-setEventClient(await cleanStartingProxyEventClient(() =&gt; eventClientOnKafka(kafkaConfig)));</code></pre>
+// Configure in-memory event client for development
+setEventClient(eventClientInMemory());</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_kill_switches_disconnect_event_client"><a class="anchor" href="#_kill_switches_disconnect_event_client"></a>Kill Switches/ Disconnect Event Client</h3>
+<h3 id="_kafka_setup"><a class="anchor" href="#_kafka_setup"></a>Kafka Setup</h3>
 <div class="paragraph">
-<p>In some cases, you may need to forcefully disconnect your application from the event infrastructure, while leaving it running. For example, during Kafka broker recreation.</p>
+<p>For production or integration testing with Kafka:</p>
 </div>
-<div class="paragraph">
-<p>This is supported by calling <code>eventClient().shutdown()</code></p>
-</div>
-<div class="paragraph">
-<p>Once the kill switch has been activated, it is not currently possible to reconnect without full recreation of the eventClient.  Shutdown/ recreate is not a behaviour that is well tested, and so it is recommended to restart your application in this case.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Install Kafka locally or use a cloud provider</p>
+</li>
+<li>
+<p>Configure the Kafka event client:</p>
+</li>
+</ol>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import {setEventClient, eventClientOnKafka} from "@eventicle/eventiclejs";
-import {cleanStartingProxyEventClient} from "@eventicle/eventiclejs/dist/events/core/cleanStartingProxyEventClient";
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { setEventClient, eventClientOnKafka } from "@eventicle/eventiclejs";
 
-// .. other setups
-
-setEventClient(await cleanStartingProxyEventClient(() =&gt; eventClientOnKafka(kafkaConfig)));
-
-// app runs
-
-await eventClient().shutdown()
-
-let health: KafkaClientHealth = getKafkaClientHealth()
-
-health.healthy === false
-health.producer.status === "disconnected"
-
-await eventClient().emit( ... ) <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+setEventClient(eventClientOnKafka({
+  brokers: ["localhost:9092"],
+  clientId: "my-app",
+  groupId: "my-app-group"
+}));</code></pre>
 </div>
 </div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>This will now always throw an error - "Kill Switch Thrown"</td>
-</tr>
-</table>
 </div>
+<div class="sect2">
+<h3 id="_postgresql_setup"><a class="anchor" href="#_postgresql_setup"></a>PostgreSQL Setup</h3>
+<div class="paragraph">
+<p>For PostgreSQL-backed event storage:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Install PostgreSQL 12+</p>
+</li>
+<li>
+<p>Create a database for your application</p>
+</li>
+<li>
+<p>Configure the datastore event client:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { setEventClient, eventClientOnDatastore, setDataStore } from "@eventicle/eventiclejs";
+import { PostgresDatastore } from "./datastore/postgres";
+
+// Configure PostgreSQL datastore
+const datastore = new PostgresDatastore({
+  host: "localhost",
+  port: 5432,
+  database: "myapp",
+  user: "myuser",
+  password: "mypassword"
+});
+
+setDataStore(datastore);
+setEventClient(eventClientOnDatastore());</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_optional_dependencies"><a class="anchor" href="#_optional_dependencies"></a>Optional Dependencies</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_redis_for_distributed_locking"><a class="anchor" href="#_redis_for_distributed_locking"></a>Redis (for distributed locking)</h3>
+<div class="paragraph">
+<p>If using distributed sagas or aggregates:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm install ioredis</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bullmq_for_scheduled_jobs"><a class="anchor" href="#_bullmq_for_scheduled_jobs"></a>BullMQ (for scheduled jobs)</h3>
+<div class="paragraph">
+<p>If using scheduled sagas or timers:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm install bullmq</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_monitoring"><a class="anchor" href="#_monitoring"></a>Monitoring</h3>
+<div class="paragraph">
+<p>For APM integration:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm install elastic-apm-node  # For Elastic APM
+# or
+npm install @opentelemetry/api @opentelemetry/sdk-node  # For OpenTelemetry</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_verifying_installation"><a class="anchor" href="#_verifying_installation"></a>Verifying Installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create a simple test file to verify your installation:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// test-installation.ts
+import {
+  setEventClient,
+  eventClientInMemory,
+  eventClient,
+  AggregateRoot
+} from "@eventicle/eventiclejs";
+
+// Configure in-memory client
+setEventClient(eventClientInMemory());
+
+// Create a simple aggregate
+class Counter extends AggregateRoot {
+  count: number = 0;
+
+  constructor() {
+    super("counter", []);
+
+    this.reducers = {
+      incremented: (event) =&gt; {
+        this.count += 1;
+      }
+    };
+  }
+
+  increment() {
+    this.raiseEvent({
+      type: "incremented",
+      payload: { timestamp: new Date() }
+    });
+  }
+}
+
+// Test the setup
+async function test() {
+  const counter = new Counter();
+  counter.increment();
+
+  console.log("Counter value:", counter.count);
+  console.log("Installation verified! ✓");
+}
+
+test().catch(console.error);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Run the test:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npx ts-node test-installation.ts</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you see "Installation verified! ✓", your setup is complete!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>Next Steps</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Continue with the <a href="quickstart.html" class="xref page">Quick Start Tutorial</a></p>
+</li>
+<li>
+<p>Learn about <a href="events-and-streams.html" class="xref page">Events and Event Streams</a></p>
+</li>
+<li>
+<p>Build <a href="first-application.html" class="xref page">Your First Eventicle Application</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>

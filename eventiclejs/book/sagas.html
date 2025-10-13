@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: Eventicle JS</title>
+    <title>Event Sagas :: Eventicle JS</title>
     <link rel="canonical" href="https://book.eventicle.com/eventiclejs/book/sagas.html">
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.1.14">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
   </head>
@@ -56,14 +56,35 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="installation.html">Installation &amp; Setup</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="quickstart.html">Quick Start Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="first-application.html">Your First Eventicle Application</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <span class="nav-text">Core Concepts</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="events-and-streams.html">Events and Event Streams</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="event-clients.html">Event Clients</a>
+  </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="aggregate-roots.html">Aggregate Roots</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="aggregate-root-xstate.html">XState Aggregate Root -  Formal State Machines</a>
+    <a class="nav-link" href="aggregate-root-xstate.html">XState Aggregate Root - Formal State Machines</a>
   </li>
 </ul>
   </li>
@@ -79,17 +100,101 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="datastore.html">The Datastore</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="event-encoding.html">Event Encoding &amp; Codecs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#multi-tenancy.adoc">Multi-Tenancy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">How To</span>
+    <span class="nav-text">How To Guides</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="observability.html">Observability</a>
+    <a class="nav-link" href="#building-aggregates.adoc">Building Aggregate Roots</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="testing.html">Testing</a>
+    <a class="nav-link" href="#implementing-commands.adoc">Implementing Commands</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#creating-views.adoc">Creating Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#building-sagas.adoc">Building Sagas for Workflows</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="testing.html">Testing Event-Driven Code</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#handling-transactions.adoc">Handling Transactions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#outbox-pattern.adoc">Using the Outbox Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-versioning.adoc">Event Versioning &amp; Schema Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#performance-optimization.adoc">Performance Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#error-handling.adoc">Error Handling &amp; Resilience</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Advanced Topics</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="advanced-event-client.html">Advanced Event Client Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="raw-event-view.html">Raw Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="lockmanager.html">Lock Manager</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="scheduler.html">Scheduling &amp; Timers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-adapters.adoc">Event Adapters</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="observability.html">Observability &amp; Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#deployment.adoc">Deployment &amp; Scaling</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#troubleshooting.adoc">Troubleshooting Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Best Practices</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-design.adoc">Event Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#aggregate-design.adoc">Aggregate Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#saga-patterns.adoc">Saga Patterns &amp; Strategies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#production-considerations.adoc">Production Considerations</a>
   </li>
 </ul>
   </li>
@@ -211,19 +316,656 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<div class="sect1">
-<h2 id="_sagas_and_workflows"><a class="anchor" href="#_sagas_and_workflows"></a>Sagas and Workflows</h2>
+<h1 class="page">Event Sagas</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>A Saga is a component that receives event notifications and then interacts with other components in the system in order to create [COmmands Commands]</p>
+<p>Sagas are long-running business processes that coordinate activities across multiple aggregates, external services, and time-based operations. They implement the Saga pattern for managing distributed transactions and complex workflows in event-driven systems.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_are_sagas"><a class="anchor" href="#_what_are_sagas"></a>What Are Sagas?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sagas provide:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Workflow Orchestration</strong>: Coordinate complex business processes</p>
+</li>
+<li>
+<p><strong>Cross-Aggregate Operations</strong>: Handle operations spanning multiple aggregates</p>
+</li>
+<li>
+<p><strong>Time-Based Processing</strong>: Handle timeouts, delays, and scheduled operations</p>
+</li>
+<li>
+<p><strong>Error Handling</strong>: Implement compensation and retry logic</p>
+</li>
+<li>
+<p><strong>State Management</strong>: Maintain workflow state across multiple events</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_saga_types"><a class="anchor" href="#_saga_types"></a>Saga Types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Eventicle supports two types of sagas:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Stateless Sagas</strong>: Simple event handlers without persistent state</p>
+</li>
+<li>
+<p><strong>Stateful Sagas</strong>: Complex workflows with persistent state and timers</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_stateless_sagas"><a class="anchor" href="#_stateless_sagas"></a>Stateless Sagas</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Stateless sagas react to events without maintaining state:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { saga } from "@eventicle/eventiclejs";
+
+export function notificationSaga() {
+  return saga("NotificationSaga")
+    .subscribeStreams(["orders", "users"])
+    .on(
+      "OrderCreated",
+      async (instance, event) =&gt; {
+        await sendEmail(event.payload.customerEmail, {
+          subject: "Order Confirmation",
+          template: "order-confirmation",
+          data: { orderId: event.payload.orderId }
+        });
+      }
+    )
+    .on(
+      "UserRegistered",
+      async (instance, event) =&gt; {
+        await sendWelcomeEmail(event.payload.email);
+        await addToMailingList(event.payload.email);
+      }
+    );
+}
+
+async function sendEmail(email: string, options: any) {
+  console.log(`📧 Sending email to ${email}: ${options.subject}`);
+  // Integrate with email service
+}
+
+async function sendWelcomeEmail(email: string) {
+  await sendEmail(email, {
+    subject: "Welcome to our platform!",
+    template: "welcome"
+  });
+}
+
+async function addToMailingList(email: string) {
+  console.log(`📮 Adding ${email} to mailing list`);
+  // Integrate with mailing service
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_stateful_sagas"><a class="anchor" href="#_stateful_sagas"></a>Stateful Sagas</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Stateful sagas maintain state and can handle complex workflows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { saga, SagaInstance } from "@eventicle/eventiclejs";
+
+interface PaymentProcessingData {
+  orderId: string;
+  amount: number;
+  customerId: string;
+  paymentMethod: string;
+  attempts: number;
+  status: "pending" | "processing" | "completed" | "failed";
+}
+
+type PaymentTimers = "paymentTimeout" | "retryPayment";
+
+export function paymentProcessingSaga() {
+  return saga&lt;PaymentTimers, PaymentProcessingData&gt;("PaymentProcessingSaga")
+    .subscribeStreams(["orders", "payments"])
+    .parallelEvents(5)
+    .startOn(
+      "OrderCreated",
+      {
+        withLock: (instance, event) =&gt; `payment-${event.payload.orderId}`
+      },
+      async (instance, event) =&gt; {
+        // Initialize saga state
+        instance.data = {
+          orderId: event.payload.orderId,
+          amount: event.payload.totalAmount,
+          customerId: event.payload.customerId,
+          paymentMethod: event.payload.paymentMethod,
+          attempts: 0,
+          status: "pending"
+        };
+
+        // Start payment processing
+        await processPayment(instance);
+
+        // Set timeout for payment processing
+        instance.scheduleTimer("paymentTimeout", 5 * 60 * 1000); // 5 minutes
+      }
+    )
+    .on(
+      "PaymentSucceeded",
+      {
+        matchInstance: (event) =&gt; ({
+          instanceProperty: "orderId",
+          value: event.payload.orderId
+        })
+      },
+      async (instance, event) =&gt; {
+        instance.data.status = "completed";
+
+        // Cancel timeout since payment succeeded
+        instance.cancelTimer("paymentTimeout");
+
+        // Complete the order
+        await completeOrder(instance.data.orderId);
+
+        // End the saga
+        instance.complete();
+      }
+    )
+    .on(
+      "PaymentFailed",
+      {
+        matchInstance: (event) =&gt; ({
+          instanceProperty: "orderId",
+          value: event.payload.orderId
+        })
+      },
+      async (instance, event) =&gt; {
+        instance.data.attempts++;
+
+        if (instance.data.attempts &lt; 3) {
+          // Retry payment after delay
+          instance.scheduleTimer("retryPayment", 30 * 1000); // 30 seconds
+        } else {
+          // Max attempts reached, fail the order
+          instance.data.status = "failed";
+          await failOrder(instance.data.orderId, "Payment processing failed");
+          instance.complete();
+        }
+      }
+    )
+    .onTimer("paymentTimeout", async (instance) =&gt; {
+      console.log(`⏰ Payment timeout for order ${instance.data.orderId}`);
+
+      instance.data.status = "failed";
+      await failOrder(instance.data.orderId, "Payment processing timeout");
+      instance.complete();
+    })
+    .onTimer("retryPayment", async (instance) =&gt; {
+      console.log(`🔄 Retrying payment for order ${instance.data.orderId}`);
+      await processPayment(instance);
+    });
+}
+
+async function processPayment(instance: SagaInstance&lt;any, PaymentProcessingData&gt;) {
+  instance.data.status = "processing";
+
+  // Simulate payment processing
+  console.log(`💳 Processing payment for order ${instance.data.orderId}`);
+
+  // In a real system, this would integrate with payment gateway
+  // await paymentGateway.processPayment({
+  //   amount: instance.data.amount,
+  //   paymentMethod: instance.data.paymentMethod,
+  //   orderId: instance.data.orderId
+  // });
+}
+
+async function completeOrder(orderId: string) {
+  console.log(`✅ Completing order ${orderId}`);
+  // Emit OrderCompleted event
+}
+
+async function failOrder(orderId: string, reason: string) {
+  console.log(`❌ Failing order ${orderId}: ${reason}`);
+  // Emit OrderFailed event
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_saga_configuration"><a class="anchor" href="#_saga_configuration"></a>Saga Configuration</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_event_subscriptions"><a class="anchor" href="#_event_subscriptions"></a>Event Subscriptions</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// Subscribe to multiple streams
+saga("MultiStreamSaga")
+  .subscribeStreams(["orders", "inventory", "shipping"])
+
+// Configure parallel processing
+saga("HighVolumeSaga")
+  .subscribeStreams(["transactions"])
+  .parallelEvents(20) // Process up to 20 events in parallel</code></pre>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_create_a_saga"><a class="anchor" href="#_create_a_saga"></a>Create a Saga</h3>
+<h3 id="_instance_matching"><a class="anchor" href="#_instance_matching"></a>Instance Matching</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// Match by aggregate ID
+.on("OrderUpdated", {
+  matchInstance: (event) =&gt; ({
+    instanceProperty: "orderId",
+    value: event.payload.orderId
+  })
+}, handler)
 
+// Match by correlation ID
+.on("PaymentProcessed", {
+  matchInstance: (event) =&gt; ({
+    instanceProperty: "correlationId",
+    value: event.payload.correlationId
+  })
+}, handler)
+
+// Custom matching logic
+.on("CustomerAction", {
+  matchInstance: (event) =&gt; {
+    // Complex matching logic
+    if (event.payload.actionType === "purchase") {
+      return {
+        instanceProperty: "customerId",
+        value: event.payload.customerId
+      };
+    }
+    return null; // Don't match
+  }
+}, handler)</code></pre>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_executing_a_saga_step_on_a_timer"><a class="anchor" href="#_executing_a_saga_step_on_a_timer"></a>Executing a Saga Step on a Timer</h3>
+<h3 id="_locking"><a class="anchor" href="#_locking"></a>Locking</h3>
+<div class="paragraph">
+<p>Prevent concurrent processing of related events:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">.startOn("OrderCreated", {
+  withLock: (instance, event) =&gt; `order-processing-${event.payload.orderId}`
+}, handler)
 
+.on("PaymentReceived", {
+  matchInstance: (event) =&gt; ({ instanceProperty: "orderId", value: event.payload.orderId }),
+  withLock: (instance, event) =&gt; `payment-${event.payload.orderId}`
+}, handler)</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_timer_operations"><a class="anchor" href="#_timer_operations"></a>Timer Operations</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_scheduling_timers"><a class="anchor" href="#_scheduling_timers"></a>Scheduling Timers</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// Schedule a one-time timer
+instance.scheduleTimer("reminderTimer", 24 * 60 * 60 * 1000); // 24 hours
+
+// Schedule recurring timer (if needed in timer handler)
+instance.scheduleTimer("recurringCheck", 60 * 1000); // 1 minute</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_handling_timers"><a class="anchor" href="#_handling_timers"></a>Handling Timers</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">.onTimer("reminderTimer", async (instance) =&gt; {
+  if (instance.data.status === "pending") {
+    await sendReminder(instance.data.customerId);
+
+    // Schedule another reminder
+    instance.scheduleTimer("reminderTimer", 24 * 60 * 60 * 1000);
+  }
+})
+
+.onTimer("healthCheck", async (instance) =&gt; {
+  const isHealthy = await checkExternalService();
+
+  if (!isHealthy) {
+    await handleServiceFailure(instance);
+  }
+
+  // Continue health checks
+  instance.scheduleTimer("healthCheck", 5 * 60 * 1000); // 5 minutes
+})</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_canceling_timers"><a class="anchor" href="#_canceling_timers"></a>Canceling Timers</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">.on("ProcessCompleted", { /* matching */ }, async (instance, event) =&gt; {
+  // Cancel any pending timers
+  instance.cancelTimer("timeoutTimer");
+  instance.cancelTimer("reminderTimer");
+
+  instance.complete();
+})</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_advanced_saga_patterns"><a class="anchor" href="#_advanced_saga_patterns"></a>Advanced Saga Patterns</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_process_manager_pattern"><a class="anchor" href="#_process_manager_pattern"></a>Process Manager Pattern</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">interface OrderFulfillmentData {
+  orderId: string;
+  items: OrderItem[];
+  reservationIds: string[];
+  shipmentId?: string;
+  status: "started" | "reserved" | "shipped" | "delivered" | "failed";
+}
+
+export function orderFulfillmentSaga() {
+  return saga&lt;any, OrderFulfillmentData&gt;("OrderFulfillmentSaga")
+    .subscribeStreams(["orders", "inventory", "shipping"])
+    .startOn("OrderPlaced", { /* config */ }, async (instance, event) =&gt; {
+      instance.data = {
+        orderId: event.payload.orderId,
+        items: event.payload.items,
+        reservationIds: [],
+        status: "started"
+      };
+
+      // Start inventory reservation for each item
+      for (const item of instance.data.items) {
+        await reserveInventory(item.productId, item.quantity, instance.data.orderId);
+      }
+    })
+    .on("InventoryReserved", { /* matching */ }, async (instance, event) =&gt; {
+      instance.data.reservationIds.push(event.payload.reservationId);
+
+      // Check if all items are reserved
+      if (instance.data.reservationIds.length === instance.data.items.length) {
+        instance.data.status = "reserved";
+        await createShipment(instance.data.orderId, instance.data.items);
+      }
+    })
+    .on("InventoryReservationFailed", { /* matching */ }, async (instance, event) =&gt; {
+      // Compensate: release any existing reservations
+      for (const reservationId of instance.data.reservationIds) {
+        await releaseReservation(reservationId);
+      }
+
+      instance.data.status = "failed";
+      await failOrder(instance.data.orderId, "Insufficient inventory");
+      instance.complete();
+    })
+    .on("ShipmentCreated", { /* matching */ }, async (instance, event) =&gt; {
+      instance.data.shipmentId = event.payload.shipmentId;
+      instance.data.status = "shipped";
+
+      // Start tracking delivery
+      instance.scheduleTimer("deliveryCheck", 24 * 60 * 60 * 1000); // Check daily
+    })
+    .onTimer("deliveryCheck", async (instance) =&gt; {
+      const deliveryStatus = await checkDeliveryStatus(instance.data.shipmentId!);
+
+      if (deliveryStatus === "delivered") {
+        instance.data.status = "delivered";
+        await completeOrder(instance.data.orderId);
+        instance.complete();
+      } else {
+        // Continue checking
+        instance.scheduleTimer("deliveryCheck", 24 * 60 * 60 * 1000);
+      }
+    });
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_compensation_pattern"><a class="anchor" href="#_compensation_pattern"></a>Compensation Pattern</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export function paymentWithCompensationSaga() {
+  return saga&lt;any, PaymentData&gt;("PaymentCompensationSaga")
+    .startOn("PaymentRequested", {}, async (instance, event) =&gt; {
+      try {
+        // Step 1: Reserve funds
+        await reserveFunds(event.payload.accountId, event.payload.amount);
+        instance.data.fundsReserved = true;
+
+        // Step 2: Process payment
+        await processPayment(event.payload);
+        instance.data.paymentProcessed = true;
+
+        // Step 3: Confirm transaction
+        await confirmTransaction(event.payload.transactionId);
+
+        instance.complete();
+
+      } catch (error) {
+        // Compensation: undo completed steps
+        await compensatePayment(instance);
+        throw error;
+      }
+    });
+}
+
+async function compensatePayment(instance: SagaInstance&lt;any, PaymentData&gt;) {
+  if (instance.data.paymentProcessed) {
+    await reversePayment(instance.data.transactionId);
+  }
+
+  if (instance.data.fundsReserved) {
+    await releaseFunds(instance.data.accountId, instance.data.amount);
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_saga_registration_and_management"><a class="anchor" href="#_saga_registration_and_management"></a>Saga Registration and Management</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_registering_sagas"><a class="anchor" href="#_registering_sagas"></a>Registering Sagas</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { registerSaga } from "@eventicle/eventiclejs";
+
+// Register sagas at application startup
+registerSaga(notificationSaga());
+registerSaga(paymentProcessingSaga());
+registerSaga(orderFulfillmentSaga());</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_saga_introspection"><a class="anchor" href="#_saga_introspection"></a>Saga Introspection</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { allSagas, allSagaInstances, removeAllSagas } from "@eventicle/eventiclejs";
+
+// Get all registered sagas
+const sagas = allSagas();
+console.log("Registered sagas:", sagas.map(s =&gt; s.name));
+
+// Get all running saga instances
+const instances = await allSagaInstances();
+console.log(`${instances.length} saga instances running`);
+
+// Remove all sagas (useful for testing)
+await removeAllSagas();</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_error_handling_in_sagas"><a class="anchor" href="#_error_handling_in_sagas"></a>Error Handling in Sagas</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export function robustSaga() {
+  return saga&lt;any, any&gt;("RobustSaga")
+    .on("SomeEvent", {}, async (instance, event) =&gt; {
+      try {
+        await riskyOperation(event.payload);
+
+      } catch (error) {
+        console.error("Saga error:", error);
+
+        // Increment retry count
+        instance.data.retryCount = (instance.data.retryCount || 0) + 1;
+
+        if (instance.data.retryCount &lt; 3) {
+          // Retry with exponential backoff
+          const delay = Math.pow(2, instance.data.retryCount) * 1000;
+          instance.scheduleTimer("retryOperation", delay);
+        } else {
+          // Max retries reached, handle failure
+          await handleFailure(instance, error);
+          instance.complete();
+        }
+      }
+    })
+    .onTimer("retryOperation", async (instance) =&gt; {
+      // Retry the operation
+      await riskyOperation(instance.data.originalPayload);
+    });
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_testing_sagas"><a class="anchor" href="#_testing_sagas"></a>Testing Sagas</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import {
+  mockSagasExceptFor,
+  allSagaInstances,
+  consumeFullEventLog
+} from "@eventicle/eventiclejs";
+
+describe("PaymentProcessingSaga", () =&gt; {
+  beforeEach(async () =&gt; {
+    await mockSagasExceptFor(["PaymentProcessingSaga"]);
+  });
+
+  it("should complete payment successfully", async () =&gt; {
+    // Emit events
+    await eventClient().emit([{
+      type: "OrderCreated",
+      stream: "orders",
+      domainId: "order-123",
+      payload: {
+        orderId: "order-123",
+        totalAmount: 100,
+        customerId: "customer-456",
+        paymentMethod: "credit-card"
+      }
+    }]);
+
+    // Wait for saga processing
+    await consumeFullEventLog();
+
+    // Check saga state
+    const instances = await allSagaInstances();
+    const paymentSaga = instances.find(i =&gt; i.sagaName === "PaymentProcessingSaga");
+
+    expect(paymentSaga.data.status).toBe("processing");
+    expect(paymentSaga.data.orderId).toBe("order-123");
+  });
+});</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_best_practices"><a class="anchor" href="#_best_practices"></a>Best Practices</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Keep Sagas Focused</strong>: Each saga should handle one business process</p>
+</li>
+<li>
+<p><strong>Handle Failures</strong>: Always implement error handling and compensation</p>
+</li>
+<li>
+<p><strong>Use Timeouts</strong>: Set reasonable timeouts for external operations</p>
+</li>
+<li>
+<p><strong>Minimize State</strong>: Keep saga state as small as possible</p>
+</li>
+<li>
+<p><strong>Idempotency</strong>: Make saga operations idempotent</p>
+</li>
+<li>
+<p><strong>Testing</strong>: Test both happy path and failure scenarios</p>
+</li>
+<li>
+<p><strong>Monitoring</strong>: Add logging and metrics for saga operations</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>Next Steps</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Learn about <a href="#building-sagas.adoc" class="xref unresolved">Building Sagas for Workflows</a></p>
+</li>
+<li>
+<p>Explore <a href="testing.html" class="xref page">Testing Sagas</a> thoroughly</p>
+</li>
+<li>
+<p>Understand <a href="scheduler.html" class="xref page">Scheduling and Timers</a></p>
+</li>
+<li>
+<p>See <a href="#error-handling.adoc" class="xref unresolved">Error Handling Patterns</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>

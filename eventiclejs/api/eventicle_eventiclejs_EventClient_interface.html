@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>interface EventClient :: Eventicle JS</title>
     <link rel="canonical" href="https://book.eventicle.com/eventiclejs/api/eventicle_eventiclejs_EventClient_interface.html">
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.1.14">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
   </head>
@@ -56,14 +56,35 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/installation.html">Installation &amp; Setup</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/quickstart.html">Quick Start Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/first-application.html">Your First Eventicle Application</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <span class="nav-text">Core Concepts</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/events-and-streams.html">Events and Event Streams</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/event-clients.html">Event Clients</a>
+  </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../book/aggregate-roots.html">Aggregate Roots</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../book/aggregate-root-xstate.html">XState Aggregate Root -  Formal State Machines</a>
+    <a class="nav-link" href="../book/aggregate-root-xstate.html">XState Aggregate Root - Formal State Machines</a>
   </li>
 </ul>
   </li>
@@ -79,17 +100,101 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../book/datastore.html">The Datastore</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/event-encoding.html">Event Encoding &amp; Codecs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#multi-tenancy.adoc">Multi-Tenancy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">How To</span>
+    <span class="nav-text">How To Guides</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../book/observability.html">Observability</a>
+    <a class="nav-link" href="#building-aggregates.adoc">Building Aggregate Roots</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../book/testing.html">Testing</a>
+    <a class="nav-link" href="#implementing-commands.adoc">Implementing Commands</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#creating-views.adoc">Creating Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#building-sagas.adoc">Building Sagas for Workflows</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/testing.html">Testing Event-Driven Code</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#handling-transactions.adoc">Handling Transactions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#outbox-pattern.adoc">Using the Outbox Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-versioning.adoc">Event Versioning &amp; Schema Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#performance-optimization.adoc">Performance Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#error-handling.adoc">Error Handling &amp; Resilience</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Advanced Topics</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/advanced-event-client.html">Advanced Event Client Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/raw-event-view.html">Raw Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/lockmanager.html">Lock Manager</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/scheduler.html">Scheduling &amp; Timers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-adapters.adoc">Event Adapters</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/observability.html">Observability &amp; Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#deployment.adoc">Deployment &amp; Scaling</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#troubleshooting.adoc">Troubleshooting Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Best Practices</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-design.adoc">Event Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#aggregate-design.adoc">Aggregate Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#saga-patterns.adoc">Saga Patterns &amp; Strategies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#production-considerations.adoc">Production Considerations</a>
   </li>
 </ul>
   </li>
@@ -212,6 +317,19 @@
 </aside>
 <article class="doc">
 <h1 class="page">interface EventClient</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Core interface for event streaming clients in Eventicle.</p>
+</div>
+<div class="paragraph">
+<p>EventClient provides the fundamental operations for working with event streams: publishing events, subscribing to streams, and replaying historical events. Different implementations support various backends like Kafka, Redis, or in-memory storage for development and testing.</p>
+</div>
+<div class="paragraph">
+<p>Stream Types: - *\*Hot Streams\**: Only new events (live subscription) - \**Cold Streams\**: Historical events from the beginning - \**Cold-Hot Streams\*\*: Historical events followed by live subscription</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_properties"><a class="anchor" href="#_properties"></a>Properties</h2>
 <div class="sectionbody">
@@ -256,13 +374,17 @@
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>Play from persisted storage</p>
+<p>Replays historical events from the beginning of a stream.</p>
+</div>
+<div class="paragraph">
+<p>Cold streams process all existing events in the stream from the start, then complete. This is useful for building projections, migrating data, or analyzing historical event patterns.</p>
 </div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">coldStream: (config: {
         stream: string;
+        parallelEventCount?: number;
         handler: (event: EventicleEvent) =&gt; Promise&lt;void&gt;;
         onError: (error: any) =&gt; void;
         onDone: () =&gt; void;
@@ -276,6 +398,12 @@
 <h3 id="eventicle_eventiclejs_EventClient_emit_member"><a class="anchor" href="#eventicle_eventiclejs_EventClient_emit_member"></a>emit</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Publishes events to the specified stream.</p>
+</div>
+<div class="paragraph">
+<p>Events are processed atomically and will be available to subscribers after successful emission. The method supports both domain events (EventicleEvent) and pre-encoded events (EncodedEvent).</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -312,7 +440,10 @@
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>Only play hot data.</p>
+<p>Subscribes to live events from one or more streams.</p>
+</div>
+<div class="paragraph">
+<p>Hot streams only receive new events published after the subscription is established. Multiple subscribers with the same groupId will share the event processing load (consumer group pattern).</p>
 </div>
 <div class="listingblock">
 <div class="title">Signature</div>

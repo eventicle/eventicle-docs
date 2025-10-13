@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>interface EventicleEvent :: Eventicle JS</title>
     <link rel="canonical" href="https://book.eventicle.com/eventiclejs/api/eventicle_eventiclejs_EventicleEvent_interface.html">
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.1.14">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
   </head>
@@ -56,14 +56,35 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/installation.html">Installation &amp; Setup</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/quickstart.html">Quick Start Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/first-application.html">Your First Eventicle Application</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <span class="nav-text">Core Concepts</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/events-and-streams.html">Events and Event Streams</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/event-clients.html">Event Clients</a>
+  </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../book/aggregate-roots.html">Aggregate Roots</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../book/aggregate-root-xstate.html">XState Aggregate Root -  Formal State Machines</a>
+    <a class="nav-link" href="../book/aggregate-root-xstate.html">XState Aggregate Root - Formal State Machines</a>
   </li>
 </ul>
   </li>
@@ -79,17 +100,101 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../book/datastore.html">The Datastore</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/event-encoding.html">Event Encoding &amp; Codecs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#multi-tenancy.adoc">Multi-Tenancy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">How To</span>
+    <span class="nav-text">How To Guides</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../book/observability.html">Observability</a>
+    <a class="nav-link" href="#building-aggregates.adoc">Building Aggregate Roots</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../book/testing.html">Testing</a>
+    <a class="nav-link" href="#implementing-commands.adoc">Implementing Commands</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#creating-views.adoc">Creating Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#building-sagas.adoc">Building Sagas for Workflows</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/testing.html">Testing Event-Driven Code</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#handling-transactions.adoc">Handling Transactions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#outbox-pattern.adoc">Using the Outbox Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-versioning.adoc">Event Versioning &amp; Schema Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#performance-optimization.adoc">Performance Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#error-handling.adoc">Error Handling &amp; Resilience</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Advanced Topics</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/advanced-event-client.html">Advanced Event Client Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/raw-event-view.html">Raw Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/lockmanager.html">Lock Manager</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/scheduler.html">Scheduling &amp; Timers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-adapters.adoc">Event Adapters</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/observability.html">Observability &amp; Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#deployment.adoc">Deployment &amp; Scaling</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#troubleshooting.adoc">Troubleshooting Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Best Practices</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-design.adoc">Event Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#aggregate-design.adoc">Aggregate Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#saga-patterns.adoc">Saga Patterns &amp; Strategies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#production-considerations.adoc">Production Considerations</a>
   </li>
 </ul>
   </li>
@@ -212,6 +317,21 @@
 </aside>
 <article class="doc">
 <h1 class="page">interface EventicleEvent</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Core event interface representing something that happened in the system.</p>
+</div>
+<div class="paragraph">
+<p>EventicleEvent is the fundamental building block of event-driven architectures in Eventicle. Events are immutable facts about state changes that occurred, providing the foundation for event sourcing, CQRS, and saga coordination.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>T - The type of the event payload data</pre>
+</div>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_properties"><a class="anchor" href="#_properties"></a>Properties</h2>
 <div class="sectionbody">
@@ -219,6 +339,9 @@
 <h3 id="eventicle_eventiclejs_EventicleEvent_causedById_member"><a class="anchor" href="#eventicle_eventiclejs_EventicleEvent_causedById_member"></a>causedById</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>ID of the event that caused this event (for causation tracking)</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -232,6 +355,9 @@
 <h3 id="eventicle_eventiclejs_EventicleEvent_causedByType_member"><a class="anchor" href="#eventicle_eventiclejs_EventicleEvent_causedByType_member"></a>causedByType</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Type of the event that caused this event</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -245,6 +371,9 @@
 <h3 id="eventicle_eventiclejs_EventicleEvent_createdAt_member"><a class="anchor" href="#eventicle_eventiclejs_EventicleEvent_createdAt_member"></a>createdAt</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Event creation timestamp in milliseconds (auto-generated if not provided)</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -258,6 +387,9 @@
 <h3 id="eventicle_eventiclejs_EventicleEvent_data_member"><a class="anchor" href="#eventicle_eventiclejs_EventicleEvent_data_member"></a>data</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>The event payload containing the actual event data</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -271,6 +403,9 @@
 <h3 id="eventicle_eventiclejs_EventicleEvent_domainId_member"><a class="anchor" href="#eventicle_eventiclejs_EventicleEvent_domainId_member"></a>domainId</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Domain entity ID this event relates to</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -284,6 +419,9 @@
 <h3 id="eventicle_eventiclejs_EventicleEvent_id_member"><a class="anchor" href="#eventicle_eventiclejs_EventicleEvent_id_member"></a>id</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Unique identifier for this event (auto-generated if not provided)</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -297,6 +435,9 @@
 <h3 id="eventicle_eventiclejs_EventicleEvent_source_member"><a class="anchor" href="#eventicle_eventiclejs_EventicleEvent_source_member"></a>source</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Source system or service that generated this event</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -310,6 +451,9 @@
 <h3 id="eventicle_eventiclejs_EventicleEvent_stream_member"><a class="anchor" href="#eventicle_eventiclejs_EventicleEvent_stream_member"></a>stream</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Event stream name (often matches aggregate type)</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -323,6 +467,9 @@
 <h3 id="eventicle_eventiclejs_EventicleEvent_type_member"><a class="anchor" href="#eventicle_eventiclejs_EventicleEvent_type_member"></a>type</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Event type name (e.g., 'UserCreated', 'OrderShipped')</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">

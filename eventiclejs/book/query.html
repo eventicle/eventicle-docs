@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: Eventicle JS</title>
+    <title>Event Views and Querying :: Eventicle JS</title>
     <link rel="canonical" href="https://book.eventicle.com/eventiclejs/book/query.html">
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.1.14">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
   </head>
@@ -56,14 +56,35 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="installation.html">Installation &amp; Setup</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="quickstart.html">Quick Start Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="first-application.html">Your First Eventicle Application</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <span class="nav-text">Core Concepts</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="events-and-streams.html">Events and Event Streams</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="event-clients.html">Event Clients</a>
+  </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="aggregate-roots.html">Aggregate Roots</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="aggregate-root-xstate.html">XState Aggregate Root -  Formal State Machines</a>
+    <a class="nav-link" href="aggregate-root-xstate.html">XState Aggregate Root - Formal State Machines</a>
   </li>
 </ul>
   </li>
@@ -79,17 +100,101 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="datastore.html">The Datastore</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="event-encoding.html">Event Encoding &amp; Codecs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#multi-tenancy.adoc">Multi-Tenancy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">How To</span>
+    <span class="nav-text">How To Guides</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="observability.html">Observability</a>
+    <a class="nav-link" href="#building-aggregates.adoc">Building Aggregate Roots</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="testing.html">Testing</a>
+    <a class="nav-link" href="#implementing-commands.adoc">Implementing Commands</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#creating-views.adoc">Creating Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#building-sagas.adoc">Building Sagas for Workflows</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="testing.html">Testing Event-Driven Code</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#handling-transactions.adoc">Handling Transactions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#outbox-pattern.adoc">Using the Outbox Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-versioning.adoc">Event Versioning &amp; Schema Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#performance-optimization.adoc">Performance Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#error-handling.adoc">Error Handling &amp; Resilience</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Advanced Topics</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="advanced-event-client.html">Advanced Event Client Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="raw-event-view.html">Raw Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="lockmanager.html">Lock Manager</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="scheduler.html">Scheduling &amp; Timers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-adapters.adoc">Event Adapters</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="observability.html">Observability &amp; Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#deployment.adoc">Deployment &amp; Scaling</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#troubleshooting.adoc">Troubleshooting Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Best Practices</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-design.adoc">Event Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#aggregate-design.adoc">Aggregate Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#saga-patterns.adoc">Saga Patterns &amp; Strategies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#production-considerations.adoc">Production Considerations</a>
   </li>
 </ul>
   </li>
@@ -211,213 +316,692 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<div class="sect1">
-<h2 id="_querying_data_views"><a class="anchor" href="#_querying_data_views"></a>Querying Data: Views</h2>
+<h1 class="page">Event Views and Querying</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>An event View is a component that observes event streams and applies a <em>Reducer</em> function to them to generate a data structure
-that is suitable for querying.</p>
+<p>Event Views provide the query side of CQRS by consuming events and projecting them into optimized data structures for reading. They enable efficient querying of event-sourced data without impacting the write side performance.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_are_event_views"><a class="anchor" href="#_what_are_event_views"></a>What Are Event Views?</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<div class="title">An example View: Users</div>
-<p>Create a list of users from <code>user.created</code> events and provider operations for users.</p>
+<p>Event Views:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Transform Events</strong>: Convert events into query-optimized structures</p>
+</li>
+<li>
+<p><strong>Provide Read Models</strong>: Create dedicated models for different query patterns</p>
+</li>
+<li>
+<p><strong>Enable CQRS</strong>: Separate read and write concerns</p>
+</li>
+<li>
+<p><strong>Support Multiple Projections</strong>: Multiple views can process the same events differently</p>
+</li>
+<li>
+<p><strong>Handle Eventually Consistent Data</strong>: Process events asynchronously</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_event_view_types"><a class="anchor" href="#_event_view_types"></a>Event View Types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Eventicle provides two types of event views:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Standard Event Views</strong>: Process events exactly once with ordering guarantees</p>
+</li>
+<li>
+<p><strong>Raw Event Views</strong>: Lightweight views that receive all events without guarantees</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_standard_event_views"><a class="anchor" href="#_standard_event_views"></a>Standard Event Views</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Standard Event Views provide reliable, ordered event processing:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import {
-  setEventSourceName,
-  eventClientOnDatastore,
-  InMemoryDatastore,
-  setDataStore,
-  setEventClient, eventClient, EventicleEvent, EventView, dataStore, registerView
-} from '@eventicle/eventiclejs';
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { EventView, EventicleEvent, dataStore } from "@eventicle/eventiclejs";
 
-class UserLoginView implements EventView {
+interface ProductSummary {
+  productId: string;
+  name: string;
+  price: number;
+  category: string;
+  stock: number;
+  status: "active" | "discontinued";
+  createdAt: Date;
+  updatedAt: Date;
+}
 
-  consumerGroup: string = "user_login_view"  <i class="conum" data-value="1"></i><b>(1)</b>
-  streamsToSubscribe: string[] = ["app.users"]    <i class="conum" data-value="2"></i><b>(2)</b>
+export class ProductCatalogView implements EventView {
+  // View configuration
+  consumerGroup = "ProductCatalogView";
+  streamsToSubscribe = ["products", "inventory"];
+  parallelEventCount = 15;
 
-  /**
-   * View reducer function.
-   */
   async handleEvent(event: EventicleEvent): Promise&lt;void&gt; {
+    const store = await dataStore();
 
-    switch(event.type) {  <i class="conum" data-value="3"></i><b>(3)</b>
-      case "user.register":
-        // Insert into some data store.  Here using the built in datastore abstraction so we can do InMem during testing
-        await dataStore().createEntity("example", "user-view-record", {
-          username: event.data.username,
-          password: event.data.password
-        })
+    try {
+      switch (event.type) {
+        case "ProductCreated":
+          await store.save("product-catalog", event.payload.productId, {
+            productId: event.payload.productId,
+            name: event.payload.name,
+            price: event.payload.price,
+            category: event.payload.category,
+            stock: 0,
+            status: "active",
+            createdAt: event.payload.createdAt,
+            updatedAt: event.payload.createdAt
+          });
+          break;
 
-        break;
+        case "ProductPriceUpdated":
+          const product = await store.load("product-catalog", event.payload.productId);
+          if (product) {
+            product.price = event.payload.newPrice;
+            product.updatedAt = event.payload.updatedAt;
+            await store.save("product-catalog", event.payload.productId, product);
+          }
+          break;
 
-      default:
-        console.log("UserLoginView ignoring event type " + event.type)
-    }
-  }
+        case "InventoryAdjusted":
+          const productForInventory = await store.load("product-catalog", event.payload.productId);
+          if (productForInventory) {
+            productForInventory.stock = event.payload.newStock;
+            productForInventory.updatedAt = event.payload.adjustedAt;
+            await store.save("product-catalog", event.payload.productId, productForInventory);
+          }
+          break;
 
-  /*
-   * An operation on the view. These will most commonly be API driven, and can any for of query.
-   * They should only read the data, not attempt to mutate it
-   */
-  async checkPassword(username: string, password: string) {  <i class="conum" data-value="4"></i><b>(4)</b>
-    // do a hash/ password comparison
-  }
-
-  async allUsers() {  <i class="conum" data-value="5"></i><b>(5)</b>
-    (await dataStore().findEntity("example", "user-view-record", {})).map(value =&gt; {
-      return value.content
-    })
-  }
-}
-
-async function execute() {
-  setEventSourceName('my-cool-service');
-  setDataStore(new InMemoryDatastore());
-  setEventClient(eventClientOnDatastore());
-
-  let view = new UserLoginView()
-  await registerView(view) <i class="conum" data-value="6"></i><b>(6)</b>
-
-  await eventClient().emit([
-    {
-      type: "user.created",
-      data: {
-        userName: "Personal Person"
+        case "ProductDiscontinued":
+          const discontinuedProduct = await store.load("product-catalog", event.payload.productId);
+          if (discontinuedProduct) {
+            discontinuedProduct.status = "discontinued";
+            discontinuedProduct.updatedAt = event.payload.discontinuedAt;
+            await store.save("product-catalog", event.payload.productId, discontinuedProduct);
+          }
+          break;
       }
+    } catch (error) {
+      console.error("Error processing event in ProductCatalogView:", error);
+      throw error; // Re-throw to trigger retry
     }
-  ], "app.users")
+  }
 
-  console.log(await view.allUsers())   <i class="conum" data-value="7"></i><b>(7)</b>
+  // Query methods
+  async getProduct(productId: string): Promise&lt;ProductSummary | null&gt; {
+    const store = await dataStore();
+    return await store.load("product-catalog", productId);
+  }
 
+  async getProductsByCategory(category: string): Promise&lt;ProductSummary[]&gt; {
+    const store = await dataStore();
+    const allProducts = await store.scan("product-catalog");
+    return allProducts.filter(p =&gt; p.category === category &amp;&amp; p.status === "active");
+  }
 
-}
+  async getActiveProducts(): Promise&lt;ProductSummary[]&gt; {
+    const store = await dataStore();
+    const allProducts = await store.scan("product-catalog");
+    return allProducts.filter(p =&gt; p.status === "active");
+  }
 
-execute()</code></pre>
+  async getLowStockProducts(threshold: number = 10): Promise&lt;ProductSummary[]&gt; {
+    const store = await dataStore();
+    const allProducts = await store.scan("product-catalog");
+    return allProducts.filter(p =&gt; p.stock &lt;= threshold &amp;&amp; p.status === "active");
+  }
+
+  async searchProducts(query: string): Promise&lt;ProductSummary[]&gt; {
+    const store = await dataStore();
+    const allProducts = await store.scan("product-catalog");
+    const lowerQuery = query.toLowerCase();
+    return allProducts.filter(p =&gt;
+      p.status === "active" &amp;&amp; (
+        p.name.toLowerCase().includes(lowerQuery) ||
+        p.category.toLowerCase().includes(lowerQuery)
+      )
+    );
+  }
+}</code></pre>
 </div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The consumer group is the same as for Redis Streams/ Kafka. Multiple view instances across processes will share processing.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>1..n streams to subscribe to.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>View must handle all the potential event types in the stream. Normally this is done by picking out the required types and ignoring any others.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>An operation on a view does not have to be a simple query, it can be more advanced, as with a login check. It does though, always have to be read only to preserve the 1 way data flow semantics of the system</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>A simple select all query on the view data structure.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>Register the view with Eventicle for it to attach the streams to the view.  Maintain a reference to it for your use to query the view data.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="7"></i><b>7</b></td>
-<td>View will have the user record when this event has been async processed.</td>
-</tr>
-</table>
 </div>
 <div class="sect2">
-<h3 id="_in_memory_views"><a class="anchor" href="#_in_memory_views"></a>In Memory Views</h3>
-<div class="paragraph">
-<p>The persisted nature of event streams means that you can use the event stream as the system persistence Then have your views
-be purely in memory. This means that they will rebuild each time the application starts, but will require no external data storage.</p>
+<h3 id="_key_features_of_standard_views"><a class="anchor" href="#_key_features_of_standard_views"></a>Key Features of Standard Views</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Exactly-Once Processing</strong>: Each event is processed only once</p>
+</li>
+<li>
+<p><strong>Ordered Processing</strong>: Events from each stream are processed in order</p>
+</li>
+<li>
+<p><strong>Position Tracking</strong>: Eventicle tracks which events have been processed</p>
+</li>
+<li>
+<p><strong>Error Handling</strong>: Failed events can be retried</p>
+</li>
+<li>
+<p><strong>Consumer Groups</strong>: Multiple instances can share the load</p>
+</li>
+</ul>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_complex_event_views"><a class="anchor" href="#_complex_event_views"></a>Complex Event Views</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<div class="title">An example View: Count of Users</div>
-<p>Count the user registrations.</p>
+<p>Views can handle complex projections across multiple event types:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import {
-  setEventSourceName,
-  eventClientOnDatastore,
-  InMemoryDatastore,
-  setDataStore,
-  setEventClient, eventClient, EventicleEvent, EventView, dataStore, registerView
-} from '@eventicle/eventiclejs';
-import * as uuid from "uuid";
-import {pause} from "@eventicle/eventiclejs/dist/util";
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">interface OrderAnalytics {
+  customerId: string;
+  totalOrders: number;
+  totalSpent: number;
+  averageOrderValue: number;
+  lastOrderDate: Date;
+  favoriteCategory: string;
+  ordersByMonth: Record&lt;string, number&gt;;
+}
 
-class UserLoginView implements EventView {
-
-  consumerGroup: string = "user_count_view" + uuid.v4()  <i class="conum" data-value="1"></i><b>(1)</b>
-  streamsToSubscribe: string[] = ["app.users"]
-
-  userRegistrations:number = 0; <i class="conum" data-value="2"></i><b>(2)</b>
+export class CustomerAnalyticsView implements EventView {
+  consumerGroup = "CustomerAnalyticsView";
+  streamsToSubscribe = ["orders", "payments"];
 
   async handleEvent(event: EventicleEvent): Promise&lt;void&gt; {
-    switch(event.type) {
-      case "user.register":
-        this.userRegistrations++;  <i class="conum" data-value="3"></i><b>(3)</b>
+    const store = await dataStore();
+
+    switch (event.type) {
+      case "OrderCreated":
+        await this.updateCustomerAnalytics(
+          event.payload.customerId,
+          {
+            newOrder: true,
+            orderDate: event.payload.createdAt,
+            items: event.payload.items
+          }
+        );
+        break;
+
+      case "PaymentCompleted":
+        await this.updateCustomerAnalytics(
+          event.payload.customerId,
+          {
+            payment: true,
+            amount: event.payload.amount,
+            paymentDate: event.payload.completedAt
+          }
+        );
         break;
     }
   }
+
+  private async updateCustomerAnalytics(
+    customerId: string,
+    update: any
+  ): Promise&lt;void&gt; {
+    const store = await dataStore();
+
+    let analytics = await store.load("customer-analytics", customerId) || {
+      customerId,
+      totalOrders: 0,
+      totalSpent: 0,
+      averageOrderValue: 0,
+      lastOrderDate: new Date(0),
+      favoriteCategory: "",
+      ordersByMonth: {}
+    };
+
+    if (update.newOrder) {
+      analytics.totalOrders++;
+      analytics.lastOrderDate = update.orderDate;
+
+      // Update monthly statistics
+      const monthKey = update.orderDate.toISOString().slice(0, 7); // YYYY-MM
+      analytics.ordersByMonth[monthKey] = (analytics.ordersByMonth[monthKey] || 0) + 1;
+
+      // Update favorite category
+      await this.updateFavoriteCategory(analytics, update.items);
+    }
+
+    if (update.payment) {
+      analytics.totalSpent += update.amount;
+      analytics.averageOrderValue = analytics.totalOrders &gt; 0
+        ? analytics.totalSpent / analytics.totalOrders
+        : 0;
+    }
+
+    await store.save("customer-analytics", customerId, analytics);
+  }
+
+  private async updateFavoriteCategory(analytics: any, items: any[]) {
+    const categoryCount: Record&lt;string, number&gt; = {};
+
+    items.forEach(item =&gt; {
+      categoryCount[item.category] = (categoryCount[item.category] || 0) + 1;
+    });
+
+    let maxCount = 0;
+    let favoriteCategory = "";
+
+    Object.entries(categoryCount).forEach(([category, count]) =&gt; {
+      if (count &gt; maxCount) {
+        maxCount = count;
+        favoriteCategory = category;
+      }
+    });
+
+    analytics.favoriteCategory = favoriteCategory;
+  }
+
+  // Query methods
+  async getCustomerAnalytics(customerId: string): Promise&lt;OrderAnalytics | null&gt; {
+    const store = await dataStore();
+    return await store.load("customer-analytics", customerId);
+  }
+
+  async getTopCustomers(limit: number = 10): Promise&lt;OrderAnalytics[]&gt; {
+    const store = await dataStore();
+    const allAnalytics = await store.scan("customer-analytics");
+    return allAnalytics
+      .sort((a, b) =&gt; b.totalSpent - a.totalSpent)
+      .slice(0, limit);
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_raw_event_views"><a class="anchor" href="#_raw_event_views"></a>Raw Event Views</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Raw Event Views receive all events without processing guarantees:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { RawEventView, EventicleEvent } from "@eventicle/eventiclejs";
+
+export class AuditLogView implements RawEventView {
+  streamsToSubscribe = ["*"]; // Subscribe to all streams
+
+  async handleEvent(event: EventicleEvent): Promise&lt;void&gt; {
+    // Log all events for auditing
+    console.log("AUDIT:", {
+      timestamp: new Date(),
+      eventId: event.id,
+      eventType: event.type,
+      stream: event.stream,
+      domainId: event.domainId,
+      payload: event.payload
+    });
+
+    // Could also send to external audit system
+    await this.sendToAuditSystem(event);
+  }
+
+  private async sendToAuditSystem(event: EventicleEvent) {
+    // Integration with external audit/logging system
+    // await auditService.logEvent(event);
+  }
 }
 
-async function execute() {
-  setEventSourceName('my-cool-service');
-  setDataStore(new InMemoryDatastore());
-  setEventClient(eventClientOnDatastore());
+export class MetricsView implements RawEventView {
+  streamsToSubscribe = ["orders", "payments", "users"];
 
-  await eventClient().emit([
-    {
-      type: "user.created",
-      data: {
-        userName: "Personal Person"
+  async handleEvent(event: EventicleEvent): Promise&lt;void&gt; {
+    // Send metrics to monitoring system
+    await this.recordMetric(`event.${event.type}`, 1, {
+      stream: event.stream,
+      timestamp: event.timestamp
+    });
+
+    // Record business metrics
+    if (event.type === "OrderCreated") {
+      await this.recordMetric("business.order.created", 1);
+      await this.recordMetric("business.order.value", event.payload.totalAmount);
+    }
+  }
+
+  private async recordMetric(name: string, value: number, tags?: any) {
+    // Integration with metrics system (Prometheus, StatsD, etc.)
+    console.log(`METRIC: ${name} = ${value}`, tags);
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_view_registration_and_hydration"><a class="anchor" href="#_view_registration_and_hydration"></a>View Registration and Hydration</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_registering_views"><a class="anchor" href="#_registering_views"></a>Registering Views</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { registerView, registerRawView } from "@eventicle/eventiclejs";
+
+// Register standard views
+registerView(new ProductCatalogView());
+registerView(new CustomerAnalyticsView());
+
+// Register raw views
+registerRawView(new AuditLogView());
+registerRawView(new MetricsView());</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_view_hydration"><a class="anchor" href="#_view_hydration"></a>View Hydration</h3>
+<div class="paragraph">
+<p>Hydrate views with historical data:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { viewHydrator, eventClient } from "@eventicle/eventiclejs";
+
+// Hydrate a single view
+const productView = new ProductCatalogView();
+await viewHydrator(productView, "products").replay();
+
+// Hydrate multiple streams
+await viewHydrator(productView, ["products", "inventory"]).replay();
+
+// Hydrate with custom range
+await viewHydrator(productView, "products").replayFromPosition(1000);
+
+// Hydrate and continue processing
+await viewHydrator(productView, "products").replayAndContinue();</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_view_performance_optimization"><a class="anchor" href="#_view_performance_optimization"></a>View Performance Optimization</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_parallel_processing"><a class="anchor" href="#_parallel_processing"></a>Parallel Processing</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export class HighVolumeView implements EventView {
+  consumerGroup = "HighVolumeView";
+  streamsToSubscribe = ["transactions"];
+  parallelEventCount = 50; // Process up to 50 events concurrently
+
+  async handleEvent(event: EventicleEvent): Promise&lt;void&gt; {
+    // High-throughput event processing
+    await this.processEventEfficiently(event);
+  }
+
+  private async processEventEfficiently(event: EventicleEvent) {
+    // Batch operations, use connection pooling, etc.
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_batch_processing"><a class="anchor" href="#_batch_processing"></a>Batch Processing</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export class BatchProcessingView implements EventView {
+  consumerGroup = "BatchProcessingView";
+  streamsToSubscribe = ["orders"];
+
+  private eventBatch: EventicleEvent[] = [];
+  private batchSize = 100;
+  private batchTimeout = 5000; // 5 seconds
+
+  async handleEvent(event: EventicleEvent): Promise&lt;void&gt; {
+    this.eventBatch.push(event);
+
+    if (this.eventBatch.length &gt;= this.batchSize) {
+      await this.processBatch();
+    } else {
+      // Set timeout to process partial batch
+      setTimeout(() =&gt; this.processBatch(), this.batchTimeout);
+    }
+  }
+
+  private async processBatch() {
+    if (this.eventBatch.length === 0) return;
+
+    const batch = [...this.eventBatch];
+    this.eventBatch = [];
+
+    // Process batch efficiently
+    await this.bulkInsert(batch);
+  }
+
+  private async bulkInsert(events: EventicleEvent[]) {
+    // Efficient bulk operations
+    const store = await dataStore();
+    // await store.bulkSave(events.map(e =&gt; ({ key: e.domainId, value: e })));
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_error_handling_in_views"><a class="anchor" href="#_error_handling_in_views"></a>Error Handling in Views</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export class RobustView implements EventView {
+  consumerGroup = "RobustView";
+  streamsToSubscribe = ["orders"];
+
+  async handleEvent(event: EventicleEvent): Promise&lt;void&gt; {
+    const maxRetries = 3;
+    let attempt = 0;
+
+    while (attempt &lt; maxRetries) {
+      try {
+        await this.processEvent(event);
+        return; // Success
+
+      } catch (error) {
+        attempt++;
+        console.error(`View processing error (attempt ${attempt}):`, error);
+
+        if (attempt &gt;= maxRetries) {
+          // Send to dead letter queue or alert
+          await this.handleFailedEvent(event, error);
+          throw error;
+        }
+
+        // Exponential backoff
+        await this.delay(Math.pow(2, attempt) * 1000);
       }
     }
-  ], "app.users")
+  }
 
-  let view = new UserLoginView()
-  await registerView(view)  <i class="conum" data-value="5"></i><b>(5)</b>
+  private async processEvent(event: EventicleEvent) {
+    // Main processing logic
+  }
 
-  await pause(2000) // let the view come up to date
+  private async handleFailedEvent(event: EventicleEvent, error: any) {
+    // Log to monitoring system
+    console.error("Failed to process event after retries:", {
+      eventId: event.id,
+      eventType: event.type,
+      error: error.message
+    });
 
-  console.log(await view.userRegistrations)   <i class="conum" data-value="4"></i><b>(4)</b>
+    // Could send to dead letter queue
+    // await deadLetterQueue.send(event);
+  }
 
-
-}
-
-execute()</code></pre>
+  private delay(ms: number): Promise&lt;void&gt; {
+    return new Promise(resolve =&gt; setTimeout(resolve, ms));
+  }
+}</code></pre>
 </div>
 </div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Set the consumer group to be random. This means this instance will fully replay every time it connects to the event stream, and will receive all events, not share with other instances.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>The view state, in this case as simple integer count.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Implement eventual consistency of the user counter via the event stream reducer in this view.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>Will output <code>1</code>, showing that the view observed the event that was emitted before it was connected, due to the full replay of the stream.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>Eventicle will connect the view to the requested event streams.</td>
-</tr>
-</table>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_view_testing"><a class="anchor" href="#_view_testing"></a>View Testing</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import {
+  eventClientInMemory,
+  setEventClient,
+  InMemoryDatastore,
+  setDataStore
+} from "@eventicle/eventiclejs";
+
+describe("ProductCatalogView", () =&gt; {
+  let view: ProductCatalogView;
+
+  beforeEach(() =&gt; {
+    // Set up test environment
+    setEventClient(eventClientInMemory());
+    setDataStore(new InMemoryDatastore());
+    view = new ProductCatalogView();
+  });
+
+  it("should create product on ProductCreated event", async () =&gt; {
+    const event = {
+      id: "event-1",
+      type: "ProductCreated",
+      stream: "products",
+      domainId: "product-123",
+      timestamp: Date.now(),
+      payload: {
+        productId: "product-123",
+        name: "Test Product",
+        price: 29.99,
+        category: "Electronics",
+        createdAt: new Date()
+      }
+    };
+
+    await view.handleEvent(event);
+
+    const product = await view.getProduct("product-123");
+    expect(product).toBeDefined();
+    expect(product.name).toBe("Test Product");
+    expect(product.price).toBe(29.99);
+  });
+
+  it("should update product price on ProductPriceUpdated event", async () =&gt; {
+    // First create a product
+    await view.handleEvent({
+      id: "event-1",
+      type: "ProductCreated",
+      stream: "products",
+      domainId: "product-123",
+      timestamp: Date.now(),
+      payload: {
+        productId: "product-123",
+        name: "Test Product",
+        price: 29.99,
+        category: "Electronics",
+        createdAt: new Date()
+      }
+    });
+
+    // Then update the price
+    await view.handleEvent({
+      id: "event-2",
+      type: "ProductPriceUpdated",
+      stream: "products",
+      domainId: "product-123",
+      timestamp: Date.now(),
+      payload: {
+        productId: "product-123",
+        newPrice: 24.99,
+        updatedAt: new Date()
+      }
+    });
+
+    const product = await view.getProduct("product-123");
+    expect(product.price).toBe(24.99);
+  });
+});</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_best_practices"><a class="anchor" href="#_best_practices"></a>Best Practices</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Design for Queries</strong>: Structure views based on how data will be queried</p>
+</li>
+<li>
+<p><strong>Handle Missing Data</strong>: Always check if related data exists before updating</p>
+</li>
+<li>
+<p><strong>Implement Idempotency</strong>: Views should handle duplicate events gracefully</p>
+</li>
+<li>
+<p><strong>Use Appropriate View Type</strong>: Standard views for consistency, raw views for metrics</p>
+</li>
+<li>
+<p><strong>Optimize for Read Performance</strong>: Denormalize data for efficient queries</p>
+</li>
+<li>
+<p><strong>Handle Errors Gracefully</strong>: Implement retry logic and error reporting</p>
+</li>
+<li>
+<p><strong>Monitor View Lag</strong>: Track how far behind views are from the event stream</p>
+</li>
+<li>
+<p><strong>Version Views</strong>: Plan for view schema evolution</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>Next Steps</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Learn about <a href="#creating-views.adoc" class="xref unresolved">Creating Event Views</a> in detail</p>
+</li>
+<li>
+<p>Explore <a href="#performance-optimization.adoc" class="xref unresolved">Performance Optimization</a> for views</p>
+</li>
+<li>
+<p>Understand <a href="raw-event-view.html" class="xref page">Raw Event Views</a> use cases</p>
+</li>
+<li>
+<p>See <a href="testing.html" class="xref page">Testing Event Views</a> patterns</p>
+</li>
+</ul>
 </div>
 </div>
 </div>

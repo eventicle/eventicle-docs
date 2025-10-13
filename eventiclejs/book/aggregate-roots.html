@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: Eventicle JS</title>
+    <title>Aggregate Roots :: Eventicle JS</title>
     <link rel="canonical" href="https://book.eventicle.com/eventiclejs/book/aggregate-roots.html">
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.1.14">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
   </head>
@@ -56,14 +56,35 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="installation.html">Installation &amp; Setup</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="quickstart.html">Quick Start Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="first-application.html">Your First Eventicle Application</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <span class="nav-text">Core Concepts</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="events-and-streams.html">Events and Event Streams</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="event-clients.html">Event Clients</a>
+  </li>
   <li class="nav-item is-current-page" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="aggregate-roots.html">Aggregate Roots</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="aggregate-root-xstate.html">XState Aggregate Root -  Formal State Machines</a>
+    <a class="nav-link" href="aggregate-root-xstate.html">XState Aggregate Root - Formal State Machines</a>
   </li>
 </ul>
   </li>
@@ -79,17 +100,101 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="datastore.html">The Datastore</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="event-encoding.html">Event Encoding &amp; Codecs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#multi-tenancy.adoc">Multi-Tenancy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">How To</span>
+    <span class="nav-text">How To Guides</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="observability.html">Observability</a>
+    <a class="nav-link" href="#building-aggregates.adoc">Building Aggregate Roots</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="testing.html">Testing</a>
+    <a class="nav-link" href="#implementing-commands.adoc">Implementing Commands</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#creating-views.adoc">Creating Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#building-sagas.adoc">Building Sagas for Workflows</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="testing.html">Testing Event-Driven Code</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#handling-transactions.adoc">Handling Transactions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#outbox-pattern.adoc">Using the Outbox Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-versioning.adoc">Event Versioning &amp; Schema Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#performance-optimization.adoc">Performance Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#error-handling.adoc">Error Handling &amp; Resilience</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Advanced Topics</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="advanced-event-client.html">Advanced Event Client Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="raw-event-view.html">Raw Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="lockmanager.html">Lock Manager</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="scheduler.html">Scheduling &amp; Timers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-adapters.adoc">Event Adapters</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="observability.html">Observability &amp; Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#deployment.adoc">Deployment &amp; Scaling</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#troubleshooting.adoc">Troubleshooting Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Best Practices</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-design.adoc">Event Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#aggregate-design.adoc">Aggregate Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#saga-patterns.adoc">Saga Patterns &amp; Strategies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#production-considerations.adoc">Production Considerations</a>
   </li>
 </ul>
   </li>
@@ -211,119 +316,597 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<div class="sect1">
-<h2 id="_aggregate_roots_event_driven_domain_entities"><a class="anchor" href="#_aggregate_roots_event_driven_domain_entities"></a>Aggregate Roots: Event Driven Domain Entities</h2>
+<h1 class="page">Aggregate Roots</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>A DDD aggregate is a related set of domain entities that can be loaded and interacted with as a single
-unit.</p>
+<p>Aggregate Roots are the heart of domain-driven design and event sourcing in Eventicle. They encapsulate business logic, maintain consistency boundaries, and generate events that represent state changes.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_are_aggregate_roots"><a class="anchor" href="#_what_are_aggregate_roots"></a>What Are Aggregate Roots?</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>An Eventicle Aggregate Roots [AR] implement the <a href="https://www.eventstore.com/blog/what-is-event-sourcing">Event Sourcing</a> pattern.</p>
-</div>
-<div class="paragraph">
-<p>Each Aggregate Root includes a full event history that created it.  Each time the AR is loaded it is fully re-created from it&#8217;s event history via a set of stateless functional reducers.</p>
-</div>
-<div class="sect2">
-<h3 id="_a_simple_aggregate_root"><a class="anchor" href="#_a_simple_aggregate_root"></a>A Simple Aggregate Root</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export class SystemUser extends AggregateRoot {
-
-  private _name: string  <i class="conum" data-value="1"></i><b>(1)</b>
-
-  constructor() {
-    super("SystemUser");   <i class="conum" data-value="2"></i><b>(2)</b>
-
-    this.reducers = []
-    this.reducers["user.created"] = (event: EventicleEvent) =&gt; {   <i class="conum" data-value="3"></i><b>(3)</b>
-      this.id = event.domainId;          <i class="conum" data-value="4"></i><b>(4)</b>
-      this._name = event.data.username;  <i class="conum" data-value="5"></i><b>(5)</b>
-    }
-  }
-
-  set name(name: string) {
-
-    this.raiseEvent({    <i class="conum" data-value="6"></i><b>(6)</b>
-      type: "user.created",
-      data: {
-        name
-      }
-    })
-  }
-}</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Internal property. This will be managed via the event reducers, and never anywhere else.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Configure the aggregate root. This defines the event stream that Commands will emit events to.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>An Event Reducer function. This takes the given event and applies the content to <code>this</code>. It should use the current state of the aggregate when calculating what changes to make, but should never be async or call outside services.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>The first event in the Aggregate Root must initialise the <code>id</code> property from the events <code>domainId</code> property to give a consistent <code>domainId</code> on all subsequent events that the AR generates.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>Reducers can take any (or no) state from the event and generate a view of it to represent the current state of the Aggregate Root as at the event just applied.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>Any mutation to the Aggregate Root must be done by raising events on it.</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Aggregate Roots can become very complex, with multiple sub objects and resolver hierarchies.</p>
-</div>
-<div class="paragraph">
-<p>You may wish to consider using the <a href="https://xstate.js.org/">XState</a> support in Eventicle for building <a href="aggregate-root-xstate.html" class="xref page">event driven State Machines</a>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_aggregate_root_reducers"><a class="anchor" href="#_aggregate_root_reducers"></a>Aggregate Root Reducers</h3>
-<div class="paragraph">
-<p>An event sourced Aggregate Root is rebuild every time it is loaded. This is done via the Event Reducers that you see in the example above.</p>
-</div>
-<div class="paragraph">
-<p>Reducers must :</p>
+<p>An Aggregate Root is an entity that:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Be synchronous</p>
+<p><strong>Controls Access</strong>: Acts as the single entry point for modifying aggregate state</p>
 </li>
 <li>
-<p>use the current state of the aggregate and the incoming event to calculate changes to the aggregate.</p>
+<p><strong>Ensures Consistency</strong>: Enforces business rules and invariants</p>
 </li>
 <li>
-<p>Be deterministic.</p>
+<p><strong>Generates Events</strong>: Emits events when state changes occur</p>
+</li>
+<li>
+<p><strong>Rebuilds State</strong>: Reconstructs current state from historical events</p>
+</li>
+<li>
+<p><strong>Provides Identity</strong>: Has a unique identifier within its bounded context</p>
 </li>
 </ul>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_basic_aggregate_structure"><a class="anchor" href="#_basic_aggregate_structure"></a>Basic Aggregate Structure</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { AggregateRoot } from "@eventicle/eventiclejs";
+
+class BankAccount extends AggregateRoot {
+  balance: number = 0;
+  status: "active" | "frozen" | "closed" = "active";
+
+  constructor() {
+    super("bank-accounts", []);
+
+    // Define event reducers
+    this.reducers = {
+      AccountOpened: (event) =&gt; {
+        this.id = event.payload.accountId;
+        this.balance = event.payload.initialDeposit;
+        this.status = "active";
+      },
+
+      MoneyDeposited: (event) =&gt; {
+        this.balance += event.payload.amount;
+      },
+
+      MoneyWithdrawn: (event) =&gt; {
+        this.balance -= event.payload.amount;
+      },
+
+      AccountFrozen: (event) =&gt; {
+        this.status = "frozen";
+      }
+    };
+  }
+
+  // Business methods
+  static open(accountId: string, initialDeposit: number): BankAccount {
+    const account = new BankAccount();
+    account.raiseEvent({
+      type: "AccountOpened",
+      payload: { accountId, initialDeposit }
+    });
+    return account;
+  }
+
+  deposit(amount: number) {
+    if (this.status !== "active") {
+      throw new Error("Cannot deposit to inactive account");
+    }
+
+    this.raiseEvent({
+      type: "MoneyDeposited",
+      payload: { amount, timestamp: new Date() }
+    });
+  }
+
+  withdraw(amount: number) {
+    if (this.status !== "active") {
+      throw new Error("Cannot withdraw from inactive account");
+    }
+
+    if (this.balance &lt; amount) {
+      throw new Error("Insufficient funds");
+    }
+
+    this.raiseEvent({
+      type: "MoneyWithdrawn",
+      payload: { amount, timestamp: new Date() }
+    });
+  }
+
+  freeze() {
+    if (this.status === "active") {
+      this.raiseEvent({
+        type: "AccountFrozen",
+        payload: { reason: "Manual freeze", timestamp: new Date() }
+      });
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_aggregate_root_lifecycle"><a class="anchor" href="#_aggregate_root_lifecycle"></a>Aggregate Root Lifecycle</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="_loading_saving_aggregates"><a class="anchor" href="#_loading_saving_aggregates"></a>Loading/ Saving Aggregates</h3>
+<h3 id="_1_creation"><a class="anchor" href="#_1_creation"></a>1. Creation</h3>
 <div class="paragraph">
-<p>Aggregate Roots instances</p>
+<p>Aggregates are typically created through static factory methods:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// Create new aggregate
+const account = BankAccount.open("acc-123", 1000);
+
+// At this point, the aggregate has:
+// - Generated an "AccountOpened" event
+// - Applied the event to set initial state
+// - Event is pending (not yet persisted)</code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_using_commands_with_aggregate_roots"><a class="anchor" href="#_using_commands_with_aggregate_roots"></a>Using Commands With Aggregate Roots</h3>
+<h3 id="_2_loading_from_events"><a class="anchor" href="#_2_loading_from_events"></a>2. Loading from Events</h3>
+<div class="paragraph">
+<p>Existing aggregates are reconstructed from their event history:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { aggregates } from "@eventicle/eventiclejs";
 
+// Load aggregate by ID
+const account = await aggregates.load(BankAccount, "acc-123");
+
+// The aggregate is rebuilt by:
+// 1. Loading all events for the aggregate
+// 2. Applying each event through reducers
+// 3. Resulting in current state</code></pre>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_checkpoints_and_directly_querying_aggregate_roots_in_the_datastore"><a class="anchor" href="#_checkpoints_and_directly_querying_aggregate_roots_in_the_datastore"></a>Checkpoints and Directly Querying Aggregate Roots in the Datastore</h3>
+<h3 id="_3_modification"><a class="anchor" href="#_3_modification"></a>3. Modification</h3>
+<div class="paragraph">
+<p>Business operations modify state through event generation:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// Load existing aggregate
+const account = await aggregates.load(BankAccount, "acc-123");
 
+// Perform business operations
+account.deposit(500);
+account.withdraw(200);
+
+// Events are raised but not yet persisted
+console.log(account.newEvents.length); // 2</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_persistence"><a class="anchor" href="#_4_persistence"></a>4. Persistence</h3>
+<div class="paragraph">
+<p>Changes are persisted by saving the aggregate:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// Save the aggregate (emits all pending events)
+const emittedEvents = await aggregates.persist(account);
+
+// After persistence:
+// - Events are emitted to the event stream
+// - newEvents array is cleared
+// - Other components can react to the events</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_event_reducers"><a class="anchor" href="#_event_reducers"></a>Event Reducers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Reducers are pure functions that apply events to aggregate state:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">class Order extends AggregateRoot {
+  items: OrderItem[] = [];
+  status: string = "draft";
+  total: number = 0;
+
+  constructor() {
+    super("orders", []);
+
+    this.reducers = {
+      // Simple state assignment
+      OrderCreated: (event) =&gt; {
+        this.id = event.payload.orderId;
+        this.status = "created";
+      },
+
+      // Complex state calculation
+      ItemAdded: (event) =&gt; {
+        this.items.push(event.payload.item);
+        this.total = this.items.reduce((sum, item) =&gt;
+          sum + (item.price * item.quantity), 0
+        );
+      },
+
+      // Conditional state changes
+      PaymentReceived: (event) =&gt; {
+        if (event.payload.amount &gt;= this.total) {
+          this.status = "paid";
+        }
+      }
+    };
+  }
+}</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_reducer_best_practices"><a class="anchor" href="#_reducer_best_practices"></a>Reducer Best Practices</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Keep Pure</strong>: Reducers should not have side effects</p>
+</li>
+<li>
+<p><strong>Be Idempotent</strong>: Applying the same event multiple times should be safe</p>
+</li>
+<li>
+<p><strong>Handle All Events</strong>: Include reducers for all events your aggregate can generate</p>
+</li>
+<li>
+<p><strong>Validate State</strong>: Ensure resulting state is consistent</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_business_logic_and_invariants"><a class="anchor" href="#_business_logic_and_invariants"></a>Business Logic and Invariants</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Aggregates enforce business rules before generating events:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">class ShoppingCart extends AggregateRoot {
+  items: CartItem[] = [];
+  customerId: string = "";
+  maxItems: number = 10;
+
+  addItem(productId: string, quantity: number, price: number) {
+    // Validate business rules
+    if (this.items.length &gt;= this.maxItems) {
+      throw new Error("Cart is full");
+    }
+
+    if (quantity &lt;= 0) {
+      throw new Error("Quantity must be positive");
+    }
+
+    if (price &lt; 0) {
+      throw new Error("Price cannot be negative");
+    }
+
+    // Check if item already exists
+    const existingItem = this.items.find(i =&gt; i.productId === productId);
+    if (existingItem) {
+      throw new Error("Item already in cart");
+    }
+
+    // Business rule passed, raise event
+    this.raiseEvent({
+      type: "ItemAddedToCart",
+      payload: { productId, quantity, price }
+    });
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_loading_and_saving_aggregates"><a class="anchor" href="#_loading_and_saving_aggregates"></a>Loading and Saving Aggregates</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_basic_operations"><a class="anchor" href="#_basic_operations"></a>Basic Operations</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { aggregates } from "@eventicle/eventiclejs";
+
+// Create and save new aggregate
+const newOrder = Order.create("order-123", "customer-456");
+await aggregates.persist(newOrder);
+
+// Load existing aggregate
+const existingOrder = await aggregates.load(Order, "order-123");
+
+// Modify and save
+existingOrder.addItem("product-1", 2, 29.99);
+await aggregates.persist(existingOrder);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bulk_operations"><a class="anchor" href="#_bulk_operations"></a>Bulk Operations</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// Save multiple aggregates
+const orders = [order1, order2, order3];
+const allEvents = await aggregates.persistAll(orders);
+
+// Load multiple aggregates
+const orderIds = ["order-1", "order-2", "order-3"];
+const loadedOrders = await aggregates.loadAll(Order, orderIds);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_querying_aggregates"><a class="anchor" href="#_querying_aggregates"></a>Querying Aggregates</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// Query aggregates by criteria
+const activeOrders = await aggregates.query(Order, {
+  where: { status: "active" },
+  limit: 100
+});
+
+// Count aggregates
+const orderCount = await aggregates.count(Order, {
+  where: { customerId: "customer-123" }
+});</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_checkpoints_and_performance"><a class="anchor" href="#_checkpoints_and_performance"></a>Checkpoints and Performance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For aggregates with many events, use checkpoints to improve loading performance:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">class HighVolumeAggregate extends AggregateRoot {
+  constructor() {
+    super("high-volume", [], {
+      checkpointFrequency: 100  // Create checkpoint every 100 events
+    });
+  }
+
+  // Get current checkpoint data
+  currentCheckpoint() {
+    return {
+      balance: this.balance,
+      transactionCount: this.transactionCount,
+      lastActivity: this.lastActivity
+    };
+  }
+
+  // Restore from checkpoint
+  fromCheckpoint(data: any) {
+    this.balance = data.balance;
+    this.transactionCount = data.transactionCount;
+    this.lastActivity = data.lastActivity;
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_multi_tenant_aggregates"><a class="anchor" href="#_multi_tenant_aggregates"></a>Multi-Tenant Aggregates</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For multi-tenant systems, use <code>TenantAggregateRoot</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { TenantAggregateRoot } from "@eventicle/eventiclejs";
+
+class TenantOrder extends TenantAggregateRoot {
+  constructor() {
+    super("tenant-orders", []);
+
+    this.reducers = {
+      OrderCreated: (event) =&gt; {
+        this.id = event.payload.orderId;
+        this.tenantId = event.payload.tenantId;
+      }
+    };
+  }
+
+  static create(orderId: string, tenantId: string): TenantOrder {
+    const order = new TenantOrder();
+    order.raiseEvent({
+      type: "OrderCreated",
+      payload: { orderId, tenantId }
+    });
+    return order;
+  }
+}
+
+// Load tenant-specific aggregate
+const tenantOrder = await aggregates.loadTenant(TenantOrder, "order-123", "tenant-abc");</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_automatically_raised_events"><a class="anchor" href="#_automatically_raised_events"></a>Automatically Raised Events</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some events are automatically generated by the framework:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Snapshot Events</strong>: When checkpoints are created</p>
+</li>
+<li>
+<p><strong>Lifecycle Events</strong>: For aggregate creation/deletion</p>
+</li>
+<li>
+<p><strong>Causation Events</strong>: Tracking event relationships</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// These events are automatically added:
+// - AggregateCreated when first events are raised
+// - AggregateSnapshot when checkpoints occur
+// - CausationTracking for event relationships</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_commands_with_aggregate_roots"><a class="anchor" href="#_using_commands_with_aggregate_roots"></a>Using Commands with Aggregate Roots</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Combine aggregates with commands for clean separation:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { dispatchDirectCommand } from "@eventicle/eventiclejs";
+
+export class AccountCommands {
+  static async openAccount(accountId: string, initialDeposit: number) {
+    return dispatchDirectCommand(async () =&gt; {
+      const account = BankAccount.open(accountId, initialDeposit);
+
+      return {
+        response: account.id,
+        events: await aggregates.persist(account)
+      };
+    }, "bank-accounts");
+  }
+
+  static async deposit(accountId: string, amount: number) {
+    return dispatchDirectCommand(async () =&gt; {
+      const account = await aggregates.load(BankAccount, accountId);
+      account.deposit(amount);
+
+      return {
+        response: { newBalance: account.balance },
+        events: await aggregates.persist(account)
+      };
+    }, "bank-accounts");
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_error_handling"><a class="anchor" href="#_error_handling"></a>Error Handling</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">class RobustAggregate extends AggregateRoot {
+  performOperation(data: any) {
+    try {
+      // Validate input
+      this.validateInput(data);
+
+      // Check business rules
+      this.enforceBusinessRules(data);
+
+      // Generate event
+      this.raiseEvent({
+        type: "OperationPerformed",
+        payload: data
+      });
+
+    } catch (error) {
+      // Log error but don't raise event
+      console.error("Operation failed:", error.message);
+      throw error;
+    }
+  }
+
+  private validateInput(data: any) {
+    if (!data || typeof data !== 'object') {
+      throw new Error("Invalid input data");
+    }
+  }
+
+  private enforceBusinessRules(data: any) {
+    // Business rule validation
+    if (this.someBusinessCondition(data)) {
+      throw new Error("Business rule violation");
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_best_practices"><a class="anchor" href="#_best_practices"></a>Best Practices</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Single Responsibility</strong>: Each aggregate should have one clear purpose</p>
+</li>
+<li>
+<p><strong>Small Boundaries</strong>: Keep aggregates focused and avoid large object graphs</p>
+</li>
+<li>
+<p><strong>Immutable Events</strong>: Never modify events after they&#8217;re created</p>
+</li>
+<li>
+<p><strong>Validate Early</strong>: Check business rules before raising events</p>
+</li>
+<li>
+<p><strong>Handle Errors</strong>: Provide clear error messages for business rule violations</p>
+</li>
+<li>
+<p><strong>Use Checkpoints</strong>: For aggregates with many events</p>
+</li>
+<li>
+<p><strong>Test Thoroughly</strong>: Test both happy path and error scenarios</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>Next Steps</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Learn about <a href="aggregate-root-xstate.html" class="xref page">XState Aggregate Roots</a> for complex state machines</p>
+</li>
+<li>
+<p>Explore <a href="commands.html" class="xref page">Commands</a> for handling user actions</p>
+</li>
+<li>
+<p>Understand <a href="testing.html" class="xref page">Testing Aggregates</a> thoroughly</p>
+</li>
+<li>
+<p>See <a href="#performance-optimization.adoc" class="xref unresolved">Performance Optimization</a> for large aggregates</p>
+</li>
+</ul>
 </div>
 </div>
 </div>

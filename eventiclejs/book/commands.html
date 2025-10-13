@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: Eventicle JS</title>
+    <title>Commands :: Eventicle JS</title>
     <link rel="canonical" href="https://book.eventicle.com/eventiclejs/book/commands.html">
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.1.14">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
   </head>
@@ -56,14 +56,35 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="installation.html">Installation &amp; Setup</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="quickstart.html">Quick Start Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="first-application.html">Your First Eventicle Application</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <span class="nav-text">Core Concepts</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="events-and-streams.html">Events and Event Streams</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="event-clients.html">Event Clients</a>
+  </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="aggregate-roots.html">Aggregate Roots</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="aggregate-root-xstate.html">XState Aggregate Root -  Formal State Machines</a>
+    <a class="nav-link" href="aggregate-root-xstate.html">XState Aggregate Root - Formal State Machines</a>
   </li>
 </ul>
   </li>
@@ -79,17 +100,101 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="datastore.html">The Datastore</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="event-encoding.html">Event Encoding &amp; Codecs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#multi-tenancy.adoc">Multi-Tenancy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">How To</span>
+    <span class="nav-text">How To Guides</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="observability.html">Observability</a>
+    <a class="nav-link" href="#building-aggregates.adoc">Building Aggregate Roots</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="testing.html">Testing</a>
+    <a class="nav-link" href="#implementing-commands.adoc">Implementing Commands</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#creating-views.adoc">Creating Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#building-sagas.adoc">Building Sagas for Workflows</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="testing.html">Testing Event-Driven Code</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#handling-transactions.adoc">Handling Transactions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#outbox-pattern.adoc">Using the Outbox Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-versioning.adoc">Event Versioning &amp; Schema Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#performance-optimization.adoc">Performance Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#error-handling.adoc">Error Handling &amp; Resilience</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Advanced Topics</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="advanced-event-client.html">Advanced Event Client Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="raw-event-view.html">Raw Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="lockmanager.html">Lock Manager</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="scheduler.html">Scheduling &amp; Timers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-adapters.adoc">Event Adapters</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="observability.html">Observability &amp; Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#deployment.adoc">Deployment &amp; Scaling</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#troubleshooting.adoc">Troubleshooting Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Best Practices</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-design.adoc">Event Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#aggregate-design.adoc">Aggregate Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#saga-patterns.adoc">Saga Patterns &amp; Strategies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#production-considerations.adoc">Production Considerations</a>
   </li>
 </ul>
   </li>
@@ -211,12 +316,803 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<div class="sect1">
-<h2 id="_changing_global_state_commands"><a class="anchor" href="#_changing_global_state_commands"></a>Changing Global State: Commands</h2>
+<h1 class="page">Commands</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>An Eventicle command is responsible for mutating state and notifying the rest of the system about the state change via
-one or more events on the shared event streams.</p>
+<p>Commands represent user intentions to change the system state. They encapsulate business operations and coordinate the execution of domain logic through aggregates, ensuring that business rules are enforced before events are emitted.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_are_commands"><a class="anchor" href="#_what_are_commands"></a>What Are Commands?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Commands:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Represent Intentions</strong>: Express what the user wants to do</p>
+</li>
+<li>
+<p><strong>Validate Input</strong>: Ensure data is correct before processing</p>
+</li>
+<li>
+<p><strong>Enforce Business Rules</strong>: Check constraints and invariants</p>
+</li>
+<li>
+<p><strong>Coordinate Operations</strong>: Orchestrate aggregate interactions</p>
+</li>
+<li>
+<p><strong>Handle Errors</strong>: Provide meaningful error responses</p>
+</li>
+<li>
+<p><strong>Return Results</strong>: Give feedback on the operation outcome</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_command_structure"><a class="anchor" href="#_command_structure"></a>Command Structure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Commands in Eventicle follow a consistent pattern:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { dispatchDirectCommand, aggregates } from "@eventicle/eventiclejs";
+import { BankAccount } from "../aggregates/bank-account";
+
+export class AccountCommands {
+  static async openAccount(request: {
+    accountId: string;
+    customerId: string;
+    initialDeposit: number;
+    accountType: "checking" | "savings";
+  }) {
+    return dispatchDirectCommand(async () =&gt; {
+      // 1. Validate input
+      if (request.initialDeposit &lt; 0) {
+        throw new Error("Initial deposit cannot be negative");
+      }
+
+      if (request.initialDeposit &lt; 25) {
+        throw new Error("Minimum initial deposit is $25");
+      }
+
+      // 2. Check business rules
+      const existingAccount = await aggregates.load(BankAccount, request.accountId);
+      if (existingAccount &amp;&amp; existingAccount.id) {
+        throw new Error("Account already exists");
+      }
+
+      // 3. Execute domain logic
+      const account = BankAccount.open(
+        request.accountId,
+        request.customerId,
+        request.initialDeposit,
+        request.accountType
+      );
+
+      // 4. Persist changes and emit events
+      const events = await aggregates.persist(account);
+
+      // 5. Return result
+      return {
+        response: {
+          accountId: account.id,
+          balance: account.balance,
+          status: account.status
+        },
+        events
+      };
+    }, "accounts"); // Stream name
+  }
+
+  static async deposit(request: {
+    accountId: string;
+    amount: number;
+    description?: string;
+  }) {
+    return dispatchDirectCommand(async () =&gt; {
+      // Validate input
+      if (request.amount &lt;= 0) {
+        throw new Error("Deposit amount must be positive");
+      }
+
+      if (request.amount &gt; 10000) {
+        throw new Error("Deposit amount exceeds daily limit");
+      }
+
+      // Load aggregate
+      const account = await aggregates.load(BankAccount, request.accountId);
+      if (!account || !account.id) {
+        throw new Error("Account not found");
+      }
+
+      // Execute business logic
+      account.deposit(request.amount, request.description);
+
+      // Persist and return
+      const events = await aggregates.persist(account);
+
+      return {
+        response: {
+          accountId: account.id,
+          newBalance: account.balance,
+          transactionId: events[events.length - 1]?.id
+        },
+        events
+      };
+    }, "accounts");
+  }
+
+  static async transfer(request: {
+    fromAccountId: string;
+    toAccountId: string;
+    amount: number;
+    description?: string;
+  }) {
+    return dispatchDirectCommand(async () =&gt; {
+      // Validate input
+      if (request.amount &lt;= 0) {
+        throw new Error("Transfer amount must be positive");
+      }
+
+      if (request.fromAccountId === request.toAccountId) {
+        throw new Error("Cannot transfer to the same account");
+      }
+
+      // Load both accounts
+      const [fromAccount, toAccount] = await Promise.all([
+        aggregates.load(BankAccount, request.fromAccountId),
+        aggregates.load(BankAccount, request.toAccountId)
+      ]);
+
+      if (!fromAccount?.id) {
+        throw new Error("Source account not found");
+      }
+
+      if (!toAccount?.id) {
+        throw new Error("Destination account not found");
+      }
+
+      // Execute transfer
+      fromAccount.withdraw(request.amount, `Transfer to ${request.toAccountId}`);
+      toAccount.deposit(request.amount, `Transfer from ${request.fromAccountId}`);
+
+      // Persist both accounts
+      const allEvents = await aggregates.persistAll([fromAccount, toAccount]);
+
+      return {
+        response: {
+          transferId: allEvents[0]?.id,
+          fromAccountBalance: fromAccount.balance,
+          toAccountBalance: toAccount.balance
+        },
+        events: allEvents
+      };
+    }, "accounts");
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_command_patterns"><a class="anchor" href="#_command_patterns"></a>Command Patterns</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_simple_command_pattern"><a class="anchor" href="#_simple_command_pattern"></a>Simple Command Pattern</h3>
+<div class="paragraph">
+<p>For straightforward operations on a single aggregate:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export class OrderCommands {
+  static async createOrder(customerId: string, items: OrderItem[]) {
+    return dispatchDirectCommand(async () =&gt; {
+      // Validation
+      if (!items || items.length === 0) {
+        throw new Error("Order must contain at least one item");
+      }
+
+      // Create aggregate
+      const order = Order.create(customerId, items);
+
+      // Persist
+      const events = await aggregates.persist(order);
+
+      return {
+        response: { orderId: order.id },
+        events
+      };
+    }, "orders");
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_multi_aggregate_command_pattern"><a class="anchor" href="#_multi_aggregate_command_pattern"></a>Multi-Aggregate Command Pattern</h3>
+<div class="paragraph">
+<p>For operations that span multiple aggregates:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export class InventoryCommands {
+  static async reserveInventory(orderId: string, items: OrderItem[]) {
+    return dispatchDirectCommand(async () =&gt; {
+      const inventoryUpdates: Product[] = [];
+
+      // Load all required products
+      for (const item of items) {
+        const product = await aggregates.load(Product, item.productId);
+        if (!product?.id) {
+          throw new Error(`Product ${item.productId} not found`);
+        }
+
+        // Check availability
+        if (product.availableStock &lt; item.quantity) {
+          throw new Error(`Insufficient stock for ${product.name}`);
+        }
+
+        // Reserve inventory
+        product.reserveStock(item.quantity, orderId);
+        inventoryUpdates.push(product);
+      }
+
+      // Persist all changes
+      const events = await aggregates.persistAll(inventoryUpdates);
+
+      return {
+        response: {
+          reservationId: `reservation-${orderId}`,
+          reservedItems: items.length
+        },
+        events
+      };
+    }, "inventory");
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_saga_triggered_command_pattern"><a class="anchor" href="#_saga_triggered_command_pattern"></a>Saga-Triggered Command Pattern</h3>
+<div class="paragraph">
+<p>For commands initiated by sagas:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export class PaymentCommands {
+  static async processPayment(request: {
+    orderId: string;
+    amount: number;
+    paymentMethod: string;
+    customerId: string;
+  }) {
+    return dispatchDirectCommand(async () =&gt; {
+      // Create payment aggregate
+      const payment = Payment.create(
+        request.orderId,
+        request.amount,
+        request.paymentMethod,
+        request.customerId
+      );
+
+      try {
+        // Integrate with payment gateway
+        const paymentResult = await processWithGateway({
+          amount: request.amount,
+          paymentMethod: request.paymentMethod
+        });
+
+        if (paymentResult.success) {
+          payment.markSuccessful(paymentResult.transactionId);
+        } else {
+          payment.markFailed(paymentResult.errorCode, paymentResult.errorMessage);
+        }
+
+      } catch (error) {
+        payment.markFailed("GATEWAY_ERROR", error.message);
+      }
+
+      const events = await aggregates.persist(payment);
+
+      return {
+        response: {
+          paymentId: payment.id,
+          status: payment.status,
+          transactionId: payment.transactionId
+        },
+        events
+      };
+    }, "payments");
+  }
+}
+
+async function processWithGateway(request: any) {
+  // Mock payment gateway integration
+  // In real implementation, integrate with Stripe, PayPal, etc.
+  return {
+    success: Math.random() &gt; 0.1, // 90% success rate
+    transactionId: `txn_${Date.now()}`,
+    errorCode: "CARD_DECLINED",
+    errorMessage: "Insufficient funds"
+  };
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_input_validation"><a class="anchor" href="#_input_validation"></a>Input Validation</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_basic_validation"><a class="anchor" href="#_basic_validation"></a>Basic Validation</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">function validateCreateUserRequest(request: any) {
+  const errors: string[] = [];
+
+  if (!request.email || typeof request.email !== 'string') {
+    errors.push("Email is required and must be a string");
+  }
+
+  if (!request.email.includes('@')) {
+    errors.push("Email must be a valid email address");
+  }
+
+  if (!request.password || request.password.length &lt; 8) {
+    errors.push("Password must be at least 8 characters long");
+  }
+
+  if (errors.length &gt; 0) {
+    throw new Error(`Validation failed: ${errors.join(', ')}`);
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_schema_based_validation"><a class="anchor" href="#_schema_based_validation"></a>Schema-Based Validation</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import Joi from 'joi';
+
+const createOrderSchema = Joi.object({
+  customerId: Joi.string().uuid().required(),
+  items: Joi.array().items(
+    Joi.object({
+      productId: Joi.string().uuid().required(),
+      quantity: Joi.number().integer().min(1).required(),
+      price: Joi.number().positive().required()
+    })
+  ).min(1).required(),
+  shippingAddress: Joi.object({
+    street: Joi.string().required(),
+    city: Joi.string().required(),
+    zipCode: Joi.string().required(),
+    country: Joi.string().required()
+  }).required()
+});
+
+export class OrderCommands {
+  static async createOrder(request: any) {
+    return dispatchDirectCommand(async () =&gt; {
+      // Validate with schema
+      const { error, value } = createOrderSchema.validate(request);
+      if (error) {
+        throw new Error(`Validation error: ${error.details[0].message}`);
+      }
+
+      // Proceed with validated data
+      const order = Order.create(value.customerId, value.items, value.shippingAddress);
+
+      const events = await aggregates.persist(order);
+
+      return {
+        response: { orderId: order.id },
+        events
+      };
+    }, "orders");
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_error_handling"><a class="anchor" href="#_error_handling"></a>Error Handling</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_business_logic_errors"><a class="anchor" href="#_business_logic_errors"></a>Business Logic Errors</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export class BusinessError extends Error {
+  constructor(
+    message: string,
+    public readonly code: string,
+    public readonly details?: any
+  ) {
+    super(message);
+    this.name = 'BusinessError';
+  }
+}
+
+export class ProductCommands {
+  static async updatePrice(productId: string, newPrice: number) {
+    return dispatchDirectCommand(async () =&gt; {
+      const product = await aggregates.load(Product, productId);
+
+      if (!product?.id) {
+        throw new BusinessError(
+          "Product not found",
+          "PRODUCT_NOT_FOUND",
+          { productId }
+        );
+      }
+
+      if (product.status === "discontinued") {
+        throw new BusinessError(
+          "Cannot update price of discontinued product",
+          "PRODUCT_DISCONTINUED",
+          { productId, status: product.status }
+        );
+      }
+
+      if (newPrice &lt;= 0) {
+        throw new BusinessError(
+          "Price must be positive",
+          "INVALID_PRICE",
+          { newPrice }
+        );
+      }
+
+      product.updatePrice(newPrice);
+
+      const events = await aggregates.persist(product);
+
+      return {
+        response: {
+          productId: product.id,
+          oldPrice: product.previousPrice,
+          newPrice: product.price
+        },
+        events
+      };
+    }, "products");
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_retry_logic"><a class="anchor" href="#_retry_logic"></a>Retry Logic</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export class RobustCommands {
+  static async processWithRetry&lt;T&gt;(
+    operation: () =&gt; Promise&lt;T&gt;,
+    maxRetries: number = 3
+  ): Promise&lt;T&gt; {
+    let lastError: Error;
+
+    for (let attempt = 1; attempt &lt;= maxRetries; attempt++) {
+      try {
+        return await operation();
+      } catch (error) {
+        lastError = error;
+
+        // Don't retry business logic errors
+        if (error instanceof BusinessError) {
+          throw error;
+        }
+
+        if (attempt === maxRetries) {
+          throw lastError;
+        }
+
+        // Exponential backoff
+        const delay = Math.pow(2, attempt) * 1000;
+        await new Promise(resolve =&gt; setTimeout(resolve, delay));
+      }
+    }
+
+    throw lastError!;
+  }
+
+  static async reliableOperation(data: any) {
+    return this.processWithRetry(async () =&gt; {
+      return dispatchDirectCommand(async () =&gt; {
+        // Operation that might fail due to infrastructure issues
+        const result = await someUnreliableOperation(data);
+        return {
+          response: result,
+          events: []
+        };
+      }, "operations");
+    });
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_command_authorization"><a class="anchor" href="#_command_authorization"></a>Command Authorization</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">interface User {
+  id: string;
+  roles: string[];
+  permissions: string[];
+}
+
+class AuthorizationError extends Error {
+  constructor(message: string, public readonly requiredPermission: string) {
+    super(message);
+    this.name = 'AuthorizationError';
+  }
+}
+
+function requirePermission(permission: string) {
+  return function(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+    const originalMethod = descriptor.value;
+
+    descriptor.value = async function(user: User, ...args: any[]) {
+      if (!user.permissions.includes(permission)) {
+        throw new AuthorizationError(
+          `Permission ${permission} required`,
+          permission
+        );
+      }
+
+      return originalMethod.apply(this, args);
+    };
+  };
+}
+
+export class SecureCommands {
+  @requirePermission('admin:delete-user')
+  static async deleteUser(user: User, userId: string) {
+    return dispatchDirectCommand(async () =&gt; {
+      const userToDelete = await aggregates.load(UserAggregate, userId);
+
+      if (!userToDelete?.id) {
+        throw new BusinessError("User not found", "USER_NOT_FOUND");
+      }
+
+      userToDelete.markDeleted(user.id);
+
+      const events = await aggregates.persist(userToDelete);
+
+      return {
+        response: { deletedUserId: userId },
+        events
+      };
+    }, "users");
+  }
+
+  @requirePermission('finance:process-refund')
+  static async processRefund(user: User, orderId: string, amount: number) {
+    return dispatchDirectCommand(async () =&gt; {
+      // Refund logic here
+      const refund = Refund.create(orderId, amount, user.id);
+
+      const events = await aggregates.persist(refund);
+
+      return {
+        response: { refundId: refund.id },
+        events
+      };
+    }, "refunds");
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_testing_commands"><a class="anchor" href="#_testing_commands"></a>Testing Commands</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import {
+  eventClientInMemory,
+  setEventClient,
+  InMemoryDatastore,
+  setDataStore,
+  consumeFullEventLog
+} from "@eventicle/eventiclejs";
+
+describe("AccountCommands", () =&gt; {
+  beforeEach(() =&gt; {
+    setEventClient(eventClientInMemory());
+    setDataStore(new InMemoryDatastore());
+  });
+
+  describe("openAccount", () =&gt; {
+    it("should create a new account with valid input", async () =&gt; {
+      const result = await AccountCommands.openAccount({
+        accountId: "acc-123",
+        customerId: "customer-456",
+        initialDeposit: 1000,
+        accountType: "checking"
+      });
+
+      expect(result.response.accountId).toBe("acc-123");
+      expect(result.response.balance).toBe(1000);
+      expect(result.events).toHaveLength(1);
+      expect(result.events[0].type).toBe("AccountOpened");
+    });
+
+    it("should reject negative initial deposit", async () =&gt; {
+      await expect(AccountCommands.openAccount({
+        accountId: "acc-123",
+        customerId: "customer-456",
+        initialDeposit: -100,
+        accountType: "checking"
+      })).rejects.toThrow("Initial deposit cannot be negative");
+    });
+
+    it("should reject duplicate account", async () =&gt; {
+      // Create first account
+      await AccountCommands.openAccount({
+        accountId: "acc-123",
+        customerId: "customer-456",
+        initialDeposit: 1000,
+        accountType: "checking"
+      });
+
+      // Wait for events to be processed
+      await consumeFullEventLog();
+
+      // Try to create duplicate
+      await expect(AccountCommands.openAccount({
+        accountId: "acc-123",
+        customerId: "customer-789",
+        initialDeposit: 500,
+        accountType: "savings"
+      })).rejects.toThrow("Account already exists");
+    });
+  });
+
+  describe("transfer", () =&gt; {
+    beforeEach(async () =&gt; {
+      // Set up test accounts
+      await AccountCommands.openAccount({
+        accountId: "acc-source",
+        customerId: "customer-1",
+        initialDeposit: 1000,
+        accountType: "checking"
+      });
+
+      await AccountCommands.openAccount({
+        accountId: "acc-dest",
+        customerId: "customer-2",
+        initialDeposit: 500,
+        accountType: "savings"
+      });
+
+      await consumeFullEventLog();
+    });
+
+    it("should transfer money between accounts", async () =&gt; {
+      const result = await AccountCommands.transfer({
+        fromAccountId: "acc-source",
+        toAccountId: "acc-dest",
+        amount: 200
+      });
+
+      expect(result.response.fromAccountBalance).toBe(800);
+      expect(result.response.toAccountBalance).toBe(700);
+      expect(result.events).toHaveLength(2); // One for each account
+    });
+  });
+});</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_command_composition"><a class="anchor" href="#_command_composition"></a>Command Composition</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export class CompositeCommands {
+  static async createUserAndAccount(request: {
+    email: string;
+    password: string;
+    initialDeposit: number;
+  }) {
+    return dispatchDirectCommand(async () =&gt; {
+      // Step 1: Create user
+      const user = User.create(request.email, request.password);
+      const userEvents = await aggregates.persist(user);
+
+      // Step 2: Create account for user
+      const account = BankAccount.open(
+        `acc-${user.id}`,
+        user.id,
+        request.initialDeposit,
+        "checking"
+      );
+      const accountEvents = await aggregates.persist(account);
+
+      return {
+        response: {
+          userId: user.id,
+          accountId: account.id,
+          initialBalance: account.balance
+        },
+        events: [...userEvents, ...accountEvents]
+      };
+    }, "user-registration");
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_best_practices"><a class="anchor" href="#_best_practices"></a>Best Practices</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Validate Early</strong>: Check input parameters before loading aggregates</p>
+</li>
+<li>
+<p><strong>Fail Fast</strong>: Throw meaningful errors for invalid operations</p>
+</li>
+<li>
+<p><strong>Single Responsibility</strong>: Each command should do one thing well</p>
+</li>
+<li>
+<p><strong>Idempotency</strong>: Design commands to be safely retryable</p>
+</li>
+<li>
+<p><strong>Return Useful Data</strong>: Provide feedback about what was accomplished</p>
+</li>
+<li>
+<p><strong>Handle Errors Gracefully</strong>: Distinguish between different error types</p>
+</li>
+<li>
+<p><strong>Use Proper Abstractions</strong>: Separate validation, authorization, and business logic</p>
+</li>
+<li>
+<p><strong>Test Thoroughly</strong>: Cover both success and failure scenarios</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_next_steps"><a class="anchor" href="#_next_steps"></a>Next Steps</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Learn about <a href="#implementing-commands.adoc" class="xref unresolved">Implementing Commands</a> in detail</p>
+</li>
+<li>
+<p>Explore <a href="aggregate-roots.html" class="xref page">Aggregate Roots</a> for domain logic</p>
+</li>
+<li>
+<p>Understand <a href="testing.html" class="xref page">Testing Commands</a> patterns</p>
+</li>
+<li>
+<p>See <a href="#error-handling.adoc" class="xref unresolved">Error Handling</a> strategies</p>
+</li>
+</ul>
 </div>
 </div>
 </div>

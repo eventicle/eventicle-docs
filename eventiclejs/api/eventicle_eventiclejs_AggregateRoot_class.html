@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>class AggregateRoot :: Eventicle JS</title>
     <link rel="canonical" href="https://book.eventicle.com/eventiclejs/api/eventicle_eventiclejs_AggregateRoot_class.html">
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.1.14">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
   </head>
@@ -56,14 +56,35 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/installation.html">Installation &amp; Setup</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/quickstart.html">Quick Start Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/first-application.html">Your First Eventicle Application</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <span class="nav-text">Core Concepts</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/events-and-streams.html">Events and Event Streams</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/event-clients.html">Event Clients</a>
+  </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../book/aggregate-roots.html">Aggregate Roots</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../book/aggregate-root-xstate.html">XState Aggregate Root -  Formal State Machines</a>
+    <a class="nav-link" href="../book/aggregate-root-xstate.html">XState Aggregate Root - Formal State Machines</a>
   </li>
 </ul>
   </li>
@@ -79,17 +100,101 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../book/datastore.html">The Datastore</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/event-encoding.html">Event Encoding &amp; Codecs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#multi-tenancy.adoc">Multi-Tenancy</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">How To</span>
+    <span class="nav-text">How To Guides</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../book/observability.html">Observability</a>
+    <a class="nav-link" href="#building-aggregates.adoc">Building Aggregate Roots</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../book/testing.html">Testing</a>
+    <a class="nav-link" href="#implementing-commands.adoc">Implementing Commands</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#creating-views.adoc">Creating Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#building-sagas.adoc">Building Sagas for Workflows</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/testing.html">Testing Event-Driven Code</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#handling-transactions.adoc">Handling Transactions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#outbox-pattern.adoc">Using the Outbox Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-versioning.adoc">Event Versioning &amp; Schema Evolution</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#performance-optimization.adoc">Performance Optimization</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#error-handling.adoc">Error Handling &amp; Resilience</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Advanced Topics</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/advanced-event-client.html">Advanced Event Client Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/raw-event-view.html">Raw Event Views</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/lockmanager.html">Lock Manager</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/scheduler.html">Scheduling &amp; Timers</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-adapters.adoc">Event Adapters</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Operations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../book/observability.html">Observability &amp; Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#deployment.adoc">Deployment &amp; Scaling</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#troubleshooting.adoc">Troubleshooting Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Best Practices</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event-design.adoc">Event Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#aggregate-design.adoc">Aggregate Design Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#saga-patterns.adoc">Saga Patterns &amp; Strategies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#production-considerations.adoc">Production Considerations</a>
   </li>
 </ul>
   </li>
@@ -212,6 +317,19 @@
 </aside>
 <article class="doc">
 <h1 class="page">class AggregateRoot</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Base class for implementing event-sourced aggregate roots.</p>
+</div>
+<div class="paragraph">
+<p>Aggregate roots are the core building blocks of domain-driven design and event sourcing. They encapsulate business logic, maintain consistency boundaries, and generate events that represent state changes. The aggregate&#8217;s current state is rebuilt by replaying its historical events through reducer functions.</p>
+</div>
+<div class="paragraph">
+<p>Key Features: - *\*Event Sourcing\**: State is derived from events, not stored directly - \**Business Logic\**: Encapsulates domain rules and invariants - \**Event Generation\**: Emits events when state changes occur - \**Immutable History\**: Complete audit trail of all changes - \**Checkpointing\*\*: Optional performance optimization for large event histories</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_properties"><a class="anchor" href="#_properties"></a>Properties</h2>
 <div class="sectionbody">
@@ -219,6 +337,9 @@
 <h3 id="eventicle_eventiclejs_AggregateRoot_config_member"><a class="anchor" href="#eventicle_eventiclejs_AggregateRoot_config_member"></a>config</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Aggregate configuration settings</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -232,6 +353,9 @@
 <h3 id="eventicle_eventiclejs_AggregateRoot_history_member"><a class="anchor" href="#eventicle_eventiclejs_AggregateRoot_history_member"></a>history</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Complete event history for this aggregate instance</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -245,6 +369,9 @@
 <h3 id="eventicle_eventiclejs_AggregateRoot_id_member"><a class="anchor" href="#eventicle_eventiclejs_AggregateRoot_id_member"></a>id</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Unique identifier for this aggregate instance</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -258,6 +385,9 @@
 <h3 id="eventicle_eventiclejs_AggregateRoot_newEvents_member"><a class="anchor" href="#eventicle_eventiclejs_AggregateRoot_newEvents_member"></a>newEvents</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Events raised since last persistence (pending events)</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -271,6 +401,9 @@
 <h3 id="eventicle_eventiclejs_AggregateRoot_reducers_member"><a class="anchor" href="#eventicle_eventiclejs_AggregateRoot_reducers_member"></a>reducers</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Event reducer functions mapping event types to state update logic</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -284,6 +417,9 @@
 <h3 id="eventicle_eventiclejs_AggregateRoot_replaying_member"><a class="anchor" href="#eventicle_eventiclejs_AggregateRoot_replaying_member"></a>replaying</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Flag indicating if aggregate is currently replaying historical events</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -358,6 +494,12 @@
 <h3 id="eventicle_eventiclejs_AggregateRoot_currentCheckpoint_member_1"><a class="anchor" href="#eventicle_eventiclejs_AggregateRoot_currentCheckpoint_member_1"></a>currentCheckpoint()</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Returns the current state as a checkpoint for performance optimization.</p>
+</div>
+<div class="paragraph">
+<p>Checkpoints allow aggregates with long event histories to snapshot their current state, reducing the time needed to rebuild from events. This method should be implemented when <code>storeCheckpoint</code> is enabled in the config.</p>
+</div>
 <div class="listingblock">
 <div class="title">Signature</div>
 <div class="content">
@@ -371,6 +513,12 @@
 <h3 id="eventicle_eventiclejs_AggregateRoot_handleEvent_member_1"><a class="anchor" href="#eventicle_eventiclejs_AggregateRoot_handleEvent_member_1"></a>handleEvent(event)</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Applies an event to the aggregate state using the appropriate reducer.</p>
+</div>
+<div class="paragraph">
+<p>This method is called automatically by <code>raiseEvent</code> and during event replay. It looks up the reducer function for the event type and applies the event to update the aggregate&#8217;s state.</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Parameters</caption>
 <colgroup>
@@ -389,7 +537,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>event</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_EventicleEvent_interface.html" class="xref page">EventicleEvent</a></code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The event to apply to the aggregate state</p></td>
 </tr>
 </tbody>
 <tfoot>
@@ -413,6 +561,12 @@
 <h3 id="eventicle_eventiclejs_AggregateRoot_raiseEvent_member_1"><a class="anchor" href="#eventicle_eventiclejs_AggregateRoot_raiseEvent_member_1"></a>raiseEvent(event)</h3>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p>Raises a new domain event and applies it to the aggregate state.</p>
+</div>
+<div class="paragraph">
+<p>This is the primary method for recording state changes in event-sourced aggregates. The event is automatically assigned metadata (ID, timestamp, source) and applied through the appropriate reducer function.</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Parameters</caption>
 <colgroup>
@@ -431,14 +585,14 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>event</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_EventicleEvent_interface.html" class="xref page">EventicleEvent</a></code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The domain event to raise</p></td>
 </tr>
 </tbody>
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_EventicleEvent_interface.html" class="xref page">EventicleEvent</a>&lt;any&gt;</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The event with populated metadata</p></td>
 </tr>
 </tfoot>
 </table>
