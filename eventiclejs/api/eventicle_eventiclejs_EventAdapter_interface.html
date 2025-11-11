@@ -353,6 +353,25 @@
 </div>
 </div>
 <div class="sect2">
+<h3 id="eventicle_eventiclejs_EventAdapter_deleteConsumerGroupOnClose_member"><a class="anchor" href="#eventicle_eventiclejs_EventAdapter_deleteConsumerGroupOnClose_member"></a>deleteConsumerGroupOnClose</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>When true, deletes the Kafka consumer group when the adapter is closed.</p>
+</div>
+<div class="paragraph">
+<p>Useful for ephemeral adapters with dynamic consumer groups (e.g., UUID-based) to prevent accumulation of stale consumer groups in Kafka.</p>
+</div>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">deleteConsumerGroupOnClose?: boolean;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="eventicle_eventiclejs_EventAdapter_errorHandler_member"><a class="anchor" href="#eventicle_eventiclejs_EventAdapter_errorHandler_member"></a>errorHandler</h3>
 <div class="exampleblock">
 <div class="content">
