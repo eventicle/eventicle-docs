@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>package @eventicle/eventiclejs :: Eventicle JS</title>
     <link rel="canonical" href="https://book.eventicle.com/eventiclejs/api/eventicle_eventiclejs.html">
-    <meta name="generator" content="Antora 3.1.14">
+    <meta name="generator" content="Antora 3.1.15">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
   </head>
   <body class="article">
-<script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js'; mermaid.initialize("{ startOnLoad: true }");</script><header class="header">
+<script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js'; mermaid.initialize("{ startOnLoad: true }"); </script><header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://book.eventicle.com">Eventicle JS</a>
@@ -250,6 +250,9 @@
     <a class="nav-link" href="eventicle_eventiclejs_RawEventView_interface.html">RawEventView</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="eventicle_eventiclejs_RedisStreamConfig_interface.html">RedisStreamConfig</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="eventicle_eventiclejs_Saga_class.html">Saga</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -438,6 +441,10 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Defines a view for processing events in their raw, encoded format.</p>
 <p class="tableblock">RawEventView enables processing events without decoding them into domain objects, which is useful for scenarios requiring high performance, binary storage, or custom encoding schemes. Events are processed as EncodedEvent objects containing the raw buffer and metadata headers.</p>
 <p class="tableblock">Use Cases: - *\*High Performance\**: Avoid decoding overhead for throughput-sensitive scenarios - \**Binary Storage\**: Store events in their original encoded format - \**Custom Processing\**: Implement custom decoding or transformation logic - \**Event Forwarding\**: Route events to external systems without modification - \**Audit Trails\*\*: Preserve exact event format for compliance requirements</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="eventicle_eventiclejs_RedisStreamConfig_interface.html" class="xref page">RedisStreamConfig</a></strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -1019,7 +1026,7 @@ export doActionThatRequiresApproval(userId: string) {
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p><a href="https://kafka.js.org/docs/admin\#a-name-create-topics-a-create-topics" class="bare">https://kafka.js.org/docs/admin\#a-name-create-topics-a-create-topics</a></p>
+<p><a href="https://github.com/confluentinc/confluent-kafka-javascript/blob/dev\_early\_access\_development\_branch/MIGRATION.md" class="bare">https://github.com/confluentinc/confluent-kafka-javascript/blob/dev\_early\_access\_development\_branch/MIGRATION.md</a></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Parameters</caption>
@@ -1039,12 +1046,12 @@ export doActionThatRequiresApproval(userId: string) {
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>config</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>KafkaConfig</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">as per kafkjs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">as per @confluentinc/kafka-javascript kafkaJS compat layer</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>consumerConfig</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>\~ConsumerConfigFactory</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">as per kafkajs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">consumer configuration factory</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>onTopicFailureConfig</code></p></td>
@@ -1064,6 +1071,54 @@ export doActionThatRequiresApproval(userId: string) {
 <div class="title">Signature</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function eventClientOnKafka(config: KafkaConfig, consumerConfig?: ConsumerConfigFactory, onTopicFailureConfig?: (topicName: any) =&gt; Promise&lt;TopicFailureConfiguration&gt;): Promise&lt;EventClient&gt;;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_eventClientOnRedis_function_1"><a class="anchor" href="#eventicle_eventiclejs_eventClientOnRedis_function_1"></a>eventClientOnRedis(config)</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Factory function to create a Redis Streams-backed EventClient.</p>
+</div>
+<div class="paragraph">
+<p>The returned client implements the full EventClient interface using Redis Streams for event persistence and delivery. It supports hot, cold, and cold-hot subscriptions with consumer group load balancing.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Parameters</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 33.3333%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>config</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="eventicle_eventiclejs_RedisStreamConfig_interface.html" class="xref page">RedisStreamConfig</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Redis connection and stream configuration</p></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Promise&lt;<a href="eventicle_eventiclejs_EventClient_interface.html" class="xref page">EventClient</a>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A connected EventClient wrapped with transactional support</p></td>
+</tr>
+</tfoot>
+</table>
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function eventClientOnRedis(config: RedisStreamConfig): Promise&lt;EventClient&gt;;</code></pre>
 </div>
 </div>
 </div>
@@ -1561,6 +1616,19 @@ export doActionThatRequiresApproval(userId: string) {
 <div class="title">Signature</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function setScheduler(scheduler: ScheduleJobRunner): void;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eventicle_eventiclejs_shutdownAllAdapters_function_1"><a class="anchor" href="#eventicle_eventiclejs_shutdownAllAdapters_function_1"></a>shutdownAllAdapters()</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title">Signature</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">export declare function shutdownAllAdapters(): Promise&lt;void&gt;;</code></pre>
 </div>
 </div>
 </div>
